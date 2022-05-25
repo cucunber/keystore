@@ -20,7 +20,7 @@ export const FiatRampActionButtons = ({
   }
 
   return (
-    <ButtonGroup variant='ghost' colorScheme='blue'>
+    <ButtonGroup variant='ghost' colorScheme='lime'>
       <Button
         {...commonButtonProps}
         isActive={action === FiatRampAction.Buy}

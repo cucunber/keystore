@@ -58,7 +58,7 @@ export const QrCodeScanner = () => {
                 />
               </Alert>
               {error.message === PERMISSION_ERROR && (
-                <Button colorScheme='blue' mt='5' onClick={() => setError(null)}>
+                <Button colorScheme='lime' mt='5' onClick={() => setError(null)}>
                   {translate('modals.send.permissionsButton')}
                 </Button>
               )}

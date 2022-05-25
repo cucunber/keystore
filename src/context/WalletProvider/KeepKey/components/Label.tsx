@@ -62,7 +62,7 @@ export const KeepKeyLabel = () => {
         <Button
           isFullWidth
           size='lg'
-          colorScheme='blue'
+          colorScheme='lime'
           onClick={disposition === 'initializing' ? handleInitializeSubmit : handleRecoverSubmit}
           disabled={loading}
           mb={3}

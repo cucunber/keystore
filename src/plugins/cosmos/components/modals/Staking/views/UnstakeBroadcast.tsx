@@ -112,7 +112,7 @@ export const UnstakeBroadcast = ({
             </Tooltip>
           </CText>
           <Link
-            color={'blue.200'}
+            color={'lime.200'}
             target='_blank'
             href={`https://www.mintscan.io/cosmos/validators/${validatorAddress}`}
           >
@@ -123,7 +123,7 @@ export const UnstakeBroadcast = ({
         <Flex width='100%' mb='35px' justifyContent='space-between'>
           <Text translation={'transactionRow.txid'} color='gray.500' />
           {txId && asset && (
-            <Link isExternal color='blue.300' href={`${asset.explorerTxLink}${txId}`}>
+            <Link isExternal color='lime.300' href={`${asset.explorerTxLink}${txId}`}>
               <MiddleEllipsis address={txId} />
             </Link>
           )}
@@ -151,7 +151,7 @@ export const UnstakeBroadcast = ({
           <Button
             isLoading={loading}
             loadingText={translate('defi.modals.staking.unstakingYourTokens')}
-            colorScheme={'blue'}
+            colorScheme={'lime'}
             minWidth='150px'
             mb='10px'
             mt='25px'

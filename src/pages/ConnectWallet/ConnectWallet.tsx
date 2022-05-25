@@ -149,7 +149,7 @@ export const ConnectWallet = () => {
         <Flex flexDir='row' textAlign='center' fontSize={{ base: '6xl', lg: '8xl' }} mb={6}>
           <RawText color='white' fontWeight='medium' lineHeight='1'>
             {translate('connectWalletPage.exploreThe')}{' '}
-            <RawText color='blue.500' fontWeight='bold' as='span'>
+            <RawText color='lime.200' fontWeight='bold' as='span'>
               {translate('connectWalletPage.defiUniverse')}
             </RawText>
           </RawText>
@@ -170,7 +170,7 @@ export const ConnectWallet = () => {
           <Button
             size='lg'
             zIndex={1}
-            colorScheme='blue'
+            colorScheme='lime'
             onClick={() => dispatch({ type: WalletActions.SET_WALLET_MODAL, payload: true })}
             data-test='connect-wallet-button'
           >

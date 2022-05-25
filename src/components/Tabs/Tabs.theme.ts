@@ -46,7 +46,7 @@ export const TabsStyle = {
           color: mode('gray.800', 'white')(props),
         },
         _selected: {
-          bg: 'blue.500',
+          bg: 'lime.200',
           color: 'white',
           _hover: {
             color: 'white',

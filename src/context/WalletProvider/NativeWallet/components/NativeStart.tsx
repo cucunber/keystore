@@ -38,7 +38,7 @@ export const NativeStart = ({ history }: RouteComponentProps) => {
         <Stack mt={6} spacing={4}>
           <Button
             variant='ghost-filled'
-            colorScheme='blue'
+            colorScheme='lime'
             w='full'
             h='auto'
             px={6}
@@ -54,7 +54,7 @@ export const NativeStart = ({ history }: RouteComponentProps) => {
           <Divider />
           <Button
             variant='ghost-filled'
-            colorScheme='blue'
+            colorScheme='lime'
             w='full'
             h='auto'
             px={6}
@@ -68,7 +68,7 @@ export const NativeStart = ({ history }: RouteComponentProps) => {
           </Button>
           <Button
             variant='ghost-filled'
-            colorScheme='blue'
+            colorScheme='lime'
             w='full'
             h='auto'
             px={6}
@@ -95,7 +95,7 @@ export const NativeStart = ({ history }: RouteComponentProps) => {
                   variant='link'
                   ml={[0, 1.5]}
                   borderTopRadius='none'
-                  colorScheme='blue'
+                  colorScheme='lime'
                   onClick={() => history.push('/native/legacy/login')}
                 >
                   {translate('common.login')}

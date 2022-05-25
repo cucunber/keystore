@@ -23,7 +23,7 @@ const MenuLink = ({ index, path, icon, label }: MenuLinkProps) => {
       as={NavLink}
       leftIcon={icon}
       variant='tab'
-      colorScheme='blue'
+      colorScheme='lime'
       isActive={match}
       data-test={`${label.split('.')[0]}-${label.split('.')[1]}-button`}
     >

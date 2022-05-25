@@ -48,7 +48,7 @@ export const CosmosActionButtons = ({
   return (
     <Flex width='100%' borderRadius='12px' justifyContent='center' {...styleProps}>
       <Button
-        colorScheme='blue'
+        colorScheme='lime'
         variant={!isOverview ? 'ghost' : 'ghost-filled'}
         onClick={handleOverviewClick}
         mx='2px'
@@ -57,7 +57,7 @@ export const CosmosActionButtons = ({
         <Text translation='defi.overview' fontWeight='normal' />
       </Button>
       <Button
-        colorScheme='blue'
+        colorScheme='lime'
         variant={!isStake ? 'ghost' : 'ghost-filled'}
         onClick={handleStakeClick}
         isDisabled={false}
@@ -66,7 +66,7 @@ export const CosmosActionButtons = ({
         <Text translation='defi.stake' fontWeight='normal' />
       </Button>
       <Button
-        colorScheme='blue'
+        colorScheme='lime'
         onClick={handleUnstakeClick}
         variant={!isUnstake ? 'ghost' : 'ghost-filled'}
         mx='2px'

@@ -242,14 +242,14 @@ export const KeepKeyRecoverySentenceEntry = () => {
               borderRadius='lg'
               sx={{
                 '& > div': {
-                  background: 'blue.500',
+                  background: 'lime.200',
                 },
               }}
             />
             <Button
               width='30%'
               size='lg'
-              colorScheme='blue'
+              colorScheme='lime'
               type='submit'
               onClick={handleWordSubmit}
               mb={3}

@@ -55,7 +55,7 @@ export const NativeCreate = () => {
         flexBasis='31%'
         justifyContent='flex-start'
         fontSize='md'
-        colorScheme='blue'
+        colorScheme='lime'
         key={i}
       >
         <Code mr={2}>{i}</Code>
@@ -90,7 +90,7 @@ export const NativeCreate = () => {
                 justifyContent='flex-start'
                 fontSize='md'
                 key={word}
-                colorScheme='blue'
+                colorScheme='lime'
               >
                 <Code mr={2}>{index + 1}</Code>
                 {word}
@@ -143,13 +143,13 @@ export const NativeCreate = () => {
         </Wrap>
       </ModalBody>
       <ModalFooter justifyContent='space-between'>
-        <Button colorScheme='blue' variant='ghost' onClick={handleShow} leftIcon={<FaEye />}>
+        <Button colorScheme='lime' variant='ghost' onClick={handleShow} leftIcon={<FaEye />}>
           <Text
             translation={`walletProvider.shapeShift.create.${revealed ? 'hide' : 'show'}Words`}
           />
         </Button>
         <Button
-          colorScheme='blue'
+          colorScheme='lime'
           size='lg'
           disabled={!(vault && words && revealedOnce.current)}
           onClick={() => {

@@ -209,7 +209,7 @@ export const Stake = ({ assetId, apr }: StakeProps) => {
           <CText fontSize='14px' color='gray.500' mb='20px' lineHeight='1.3'>
             {`${translate('defi.modals.staking.byContinuing')} `}
             <Link
-              color={'blue.200'}
+              color={'lime.200'}
               fontWeight='bold'
               target='_blank'
               href='https://cosmos.network/learn/faq/what-are-the-risks-associated-with-staking'
@@ -218,7 +218,7 @@ export const Stake = ({ assetId, apr }: StakeProps) => {
             </Link>
             {` ${translate('defi.modals.staking.ofParticipating')} `}
             <Link
-              color={'blue.200'}
+              color={'lime.200'}
               fontWeight='bold'
               target='_blank'
               href='/#/legal/privacy-policy'
@@ -228,7 +228,7 @@ export const Stake = ({ assetId, apr }: StakeProps) => {
             </Link>
           </CText>
           <Button
-            colorScheme={values.amountFieldError ? 'red' : 'blue'}
+            colorScheme={values.amountFieldError ? 'red' : 'lime'}
             isDisabled={Boolean(!isValid || values.amountFieldError)}
             mb={2}
             minWidth='auto'

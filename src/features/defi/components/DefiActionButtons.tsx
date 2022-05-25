@@ -32,7 +32,7 @@ export const DefiActionButtons = ({ vaultExpired, showOverview }: DefiActionButt
   }
 
   return (
-    <ButtonGroup variant='ghost' colorScheme='blue'>
+    <ButtonGroup variant='ghost' colorScheme='lime'>
       {showOverview && (
         <Button
           isActive={match?.params?.action === DefiAction.Overview}

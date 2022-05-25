@@ -5,7 +5,7 @@ const $size = cssVar('spinner-size')
 export const SpinnerStyle = {
   // Styles for the base style
   baseStyle: {
-    color: 'blue.500',
+    color: 'lime.200',
   },
   // Styles for the size variations
   sizes: {

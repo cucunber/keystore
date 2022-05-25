@@ -146,7 +146,7 @@ export const UnstakeConfirm = ({ assetId, validatorAddress, onCancel }: UnstakeP
               </Tooltip>
             </CText>
             <Link
-              color={'blue.200'}
+              color={'lime.200'}
               target='_blank'
               href={`https://www.mintscan.io/cosmos/validators/${validatorAddress}`}
             >
@@ -182,7 +182,7 @@ export const UnstakeConfirm = ({ assetId, validatorAddress, onCancel }: UnstakeP
                 <Text translation='common.cancel' />
               </Button>
               <Button
-                colorScheme={!hasEnoughBalance ? 'red' : 'blue'}
+                colorScheme={!hasEnoughBalance ? 'red' : 'lime'}
                 isDisabled={!hasEnoughBalance}
                 mb={2}
                 size='lg'

@@ -58,7 +58,7 @@ export const Header = () => {
       <Flex direction='column' bg={bg} width='full' position='sticky' zIndex='banner' top={0}>
         {walletInfo?.deviceId === DemoConfig.name && (
           <Box
-            bg='blue.500'
+            bg='lime.200'
             width='full'
             minHeight='2.5rem'
             fontSize={{ base: 'sm', md: 'md' }}

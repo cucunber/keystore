@@ -242,7 +242,7 @@ export const Details = () => {
               loading ||
               Boolean(memoFieldError)
             }
-            colorScheme={amountFieldError || memoFieldError ? 'red' : 'blue'}
+            colorScheme={amountFieldError || memoFieldError ? 'red' : 'lime'}
             size='lg'
             onClick={handleNextClick}
             isLoading={loading}

@@ -154,7 +154,7 @@ export const ClaimConfirm = ({
               <Skeleton minWidth='100px' isLoaded={!!userAddress}>
                 <Link
                   isExternal
-                  color='blue.500'
+                  color='lime.200'
                   href={`${asset?.explorerAddressLink}${userAddress}`}
                 >
                   <MiddleEllipsis address={userAddress} />
@@ -195,7 +195,7 @@ export const ClaimConfirm = ({
             <Button size='lg' onClick={onBack}>
               {translate('common.cancel')}
             </Button>
-            <Button size='lg' colorScheme='blue' onClick={handleConfirm} isLoading={loading}>
+            <Button size='lg' colorScheme='lime' onClick={handleConfirm} isLoading={loading}>
               {translate('defi.modals.claim.confirmClaim')}
             </Button>
           </Stack>

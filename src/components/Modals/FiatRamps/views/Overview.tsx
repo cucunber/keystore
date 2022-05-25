@@ -241,7 +241,7 @@ export const Overview: React.FC<OverviewProps> = ({
         <Button
           width='full'
           size='lg'
-          colorScheme='blue'
+          colorScheme='lime'
           disabled={!selectedAsset || selectedAsset?.isBelowSellThreshold}
           mt='25px'
           onClick={() =>

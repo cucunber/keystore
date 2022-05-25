@@ -26,7 +26,7 @@ export const OpportunityCardList = ({ balances }: { balances: UseEarnBalancesRet
         </Flex>
         <Button
           variant='ghost'
-          colorScheme='blue'
+          colorScheme='lime'
           rightIcon={<ArrowForwardIcon />}
           as={NavLink}
           to='/defi/earn'
@@ -59,7 +59,7 @@ export const OpportunityCardList = ({ balances }: { balances: UseEarnBalancesRet
             />
             <Button
               variant='ghost'
-              colorScheme='blue'
+              colorScheme='lime'
               as={NavLink}
               to='/defi/earn'
               data-test='defi-view-opportunities-button'

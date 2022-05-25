@@ -42,7 +42,7 @@ export const ValidatorName = ({ moniker, isStaking, validatorAddress }: Validato
       <Flex alignItems='center' maxWidth='180px' mr={'-20px'}>
         <AssetIcon src={assetIcon} boxSize='8' />
         {isStaking ? (
-          <Tag colorScheme='blue'>
+          <Tag colorScheme='lime'>
             <TagLabel>{moniker}</TagLabel>
           </Tag>
         ) : (
@@ -177,7 +177,7 @@ export const StakingOpportunities = ({ assetId }: StakingOpportunitiesProps) => 
                 <Box width='100%' textAlign={'right'}>
                   <Button
                     as='span'
-                    colorScheme='blue'
+                    colorScheme='lime'
                     variant='ghost-filled'
                     size='sm'
                     cursor='pointer'
@@ -207,7 +207,7 @@ export const StakingOpportunities = ({ assetId }: StakingOpportunitiesProps) => 
             <Text translation='staking.staking' />
           </Card.Heading>
 
-          <Button size='sm' variant='link' colorScheme='blue' as={NavLink} to='/defi/earn'>
+          <Button size='sm' variant='link' colorScheme='lime' as={NavLink} to='/defi/earn'>
             <Text translation='common.seeAll' /> <ArrowForwardIcon />
           </Button>
         </HStack>

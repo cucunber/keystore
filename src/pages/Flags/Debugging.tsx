@@ -54,7 +54,7 @@ export const Debugging = () => {
       </Card>
 
       <HStack width='full'>
-        <Button onClick={() => window.location.reload()} colorScheme='blue'>
+        <Button onClick={() => window.location.reload()} colorScheme='lime'>
           Reload
         </Button>
       </HStack>

@@ -68,7 +68,7 @@ export const GetStarted = ({ assetId, stakingRouterHistory }: GetStartedProps) =
               size='lg'
               zIndex={1}
               width='100%'
-              colorScheme='blue'
+              colorScheme='lime'
               onClick={handleStartStakingClick}
             >
               <Text translation='defi.modals.getStarted.cta.startStaking' />

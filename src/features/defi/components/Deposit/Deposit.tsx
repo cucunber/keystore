@@ -270,7 +270,7 @@ export const Deposit = ({
                       isActive={option === percent}
                       key={option}
                       variant='ghost'
-                      colorScheme='blue'
+                      colorScheme='lime'
                       onClick={() => handlePercentClick(option)}
                     >
                       {option === 1 ? (
@@ -406,12 +406,12 @@ export const Deposit = ({
         <ModalFooter as={Stack} direction={{ base: 'column', md: 'row' }}>
           <RawText color='gray.500' fontSize='sm' mb={2}>
             {translate('modals.deposit.footerDisclaimer')}
-            <Link onClick={handleTosLink} color={useColorModeValue('blue.500', 'blue.200')}>
+            <Link onClick={handleTosLink} color={useColorModeValue('lime.200', 'lime.200')}>
               {translate('modals.deposit.footerDisclaimerLink')}
             </Link>
           </RawText>
           <Button
-            colorScheme={fieldError ? 'red' : 'blue'}
+            colorScheme={fieldError ? 'red' : 'lime'}
             isDisabled={!isValid}
             mb={2}
             size='lg'

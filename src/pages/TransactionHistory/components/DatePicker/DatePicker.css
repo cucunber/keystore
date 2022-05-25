@@ -1,8 +1,8 @@
 .light-theme{
   --light-gray: var(--chakra-colors-gray-100);
   --gray: var(--chakra-colors-gray-300);
-  --blue500:var(--chakra-colors-blue-500);
-  --blue300: var(--chakra-colors-blue-300);
+  --lime200:var(--chakra-colors-lime-200);
+  --lime300: var(--chakra-colors-lime-300);
   --gray400: var(--chakra-colors-gray-400);
   --gray300: var(--chakra-colors-gray-300);
   --gray200: var(--chakra-colors-gray-200);
@@ -15,8 +15,8 @@
 .dark-theme{
   --light-gray: var(--chakra-colors-gray-600);
   --gray: var(--chakra-colors-gray-600);
-  --blue500: var(--chakra-colors-blue-500);
-  --blue300: var(--chakra-colors-blue-300);
+  --lime200: var(--chakra-colors-lime-200);
+  --lime300: var(--chakra-colors-lime-300);
   --gray400: var(--chakra-colors-gray-500);
   --gray300: var(--chakra-colors-gray-600);
   --gray200: var(--chakra-colors-gray-700);
@@ -30,7 +30,7 @@
 	font-family: unset;
 	font-size: 0.8rem;
   font-weight: 400;
-  border-color: var(--blue300);
+  border-color: var(--lime300);
   border-radius: 2px;
   background-color: transparent;
 }
@@ -61,7 +61,7 @@
 .react-datepicker__navigation--previous,
 .react-datepicker__navigation--next {
   height: 40px;
-  color: var(--blue500);
+  color: var(--lime200);
   padding-top: 12px;
 }
 
@@ -144,13 +144,13 @@
 .react-datepicker__month-text--in-selecting-range,
 .react-datepicker__month-text--in-range,
 .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
-  background: var(--blue500);
+  background: var(--lime200);
   font-weight: normal;
   color: var(--chakra-colors-whiteAlpha-900);
 }
 
 .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover {
-  background: var(--blue500);
+  background: var(--lime200);
 }
 
 .react-datepicker__close-icon::after {
@@ -173,7 +173,7 @@
 }
 
 .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before {
-  border-bottom-color: var(--blue300)
+  border-bottom-color: var(--lime300)
 }
 
 .react-datepicker__day--outside-month {
@@ -185,7 +185,7 @@
 .react-datepicker__month-year-read-view--down-arrow,
 .react-datepicker__navigation-icon::before {
   border-width: 1px 1px 0 0;
-  border-color: var(--blue300);
+  border-color: var(--lime300);
 }
 
 .react-datepicker__day-name, 

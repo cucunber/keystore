@@ -89,7 +89,7 @@ export const Radio = <T extends RadioTypes>({
   onChange,
   defaultValue,
   variant = 'ghost',
-  colorScheme = 'blue',
+  colorScheme = 'lime',
   buttonGroupProps,
   radioProps,
   showCheck = false,

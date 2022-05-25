@@ -30,7 +30,7 @@ export const Approve = ({ api, getDepositGasEstimate }: YearnApproveProps) => {
   const translate = useTranslate()
   const { query } = useBrowserRouter<DefiQueryParams, DefiParams>()
   const { chain, tokenId } = query
-  const alertText = useColorModeValue('blue.800', 'white')
+  const alertText = useColorModeValue('lime.800', 'white')
 
   const network = NetworkTypes.MAINNET
   const assetNamespace = 'erc20'
@@ -113,7 +113,7 @@ export const Approve = ({ api, getDepositGasEstimate }: YearnApproveProps) => {
       loadingText='Approve on Wallet'
       learnMoreLink='https://shapeshift.zendesk.com/hc/en-us/articles/360018501700'
       preFooter={
-        <Alert status='info' borderRadius='lg' color='blue.500'>
+        <Alert status='info' borderRadius='lg' color='lime.200'>
           <FaGasPump />
           <AlertDescription textAlign='left' ml={3} color={alertText}>
             {translate('modals.approve.depositFee')}

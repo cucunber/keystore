@@ -60,7 +60,7 @@ export const FoxOpportunity = ({
             </CText>
           </Box>
           <Box alignSelf='center' width={{ base: 'full', md: 'auto' }}>
-            <Button onClick={onClick} colorScheme={'blue'} width={{ base: 'full', md: 'auto' }}>
+            <Button onClick={onClick} colorScheme={'lime'} width={{ base: 'full', md: 'auto' }}>
               <CText>{translate('plugins.foxPage.getStarted')}</CText>
             </Button>
           </Box>

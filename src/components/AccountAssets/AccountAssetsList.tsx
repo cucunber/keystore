@@ -71,7 +71,7 @@ export const AccountAssetsList = ({ assetIds, accountId, limit }: AccountAssetLi
               variant='link'
               p={4}
               borderTopRadius='none'
-              colorScheme='blue'
+              colorScheme='lime'
               onClick={onToggle}
               isFullWidth
               rightIcon={isOpen ? <FaArrowCircleUp /> : <FaArrowCircleDown />}

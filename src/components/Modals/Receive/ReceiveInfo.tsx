@@ -186,8 +186,8 @@ export const ReceiveInfo = ({ asset, accountId }: ReceivePropsType) => {
                       justifyContent='center'
                       fontSize='sm'
                       onClick={copyHandler}
-                      _hover={{ color: 'blue.500' }}
-                      _active={{ color: 'blue.800' }}
+                      _hover={{ color: 'lime.200' }}
+                      _active={{ color: 'lime.800' }}
                       cursor='pointer'
                     >
                       <MiddleEllipsis address={receiveAddress} data-test='receive-address-label' />
@@ -209,7 +209,7 @@ export const ReceiveInfo = ({ asset, accountId }: ReceivePropsType) => {
                 variant='link'
                 _hover={{ textDecoration: 'none', color: hoverColor }}
               >
-                <Circle bg={bg} mb={2} size='40px' _groupHover={{ bg: 'blue.500', color: 'white' }}>
+                <Circle bg={bg} mb={2} size='40px' _groupHover={{ bg: 'lime.200', color: 'white' }}>
                   <CopyIcon />
                 </Circle>
                 <Text translation='modals.receive.copy' />
@@ -228,7 +228,7 @@ export const ReceiveInfo = ({ asset, accountId }: ReceivePropsType) => {
                     bg={bg}
                     mb={2}
                     size='40px'
-                    _groupHover={{ bg: 'blue.500', color: 'white' }}
+                    _groupHover={{ bg: 'lime.200', color: 'white' }}
                   >
                     {verified ? <CheckIcon /> : <ViewIcon />}
                   </Circle>
@@ -251,7 +251,7 @@ export const ReceiveInfo = ({ asset, accountId }: ReceivePropsType) => {
                 variant='link'
                 _hover={{ textDecoration: 'none', color: hoverColor }}
               >
-                <Circle bg={bg} mb={2} size='40px' _groupHover={{ bg: 'blue.500', color: 'white' }}>
+                <Circle bg={bg} mb={2} size='40px' _groupHover={{ bg: 'lime.200', color: 'white' }}>
                   <ExternalLinkIcon />
                 </Circle>
                 <Text translation='modals.receive.blockExplorer' />

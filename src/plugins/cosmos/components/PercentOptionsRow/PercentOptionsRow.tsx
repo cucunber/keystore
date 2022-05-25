@@ -17,7 +17,7 @@ export const PercentOptionsRow = ({
   return (
     <ButtonGroup
       variant='ghost'
-      colorScheme='blue'
+      colorScheme='lime'
       width='100%'
       bgColor={bgColor}
       p='5px'
@@ -29,7 +29,7 @@ export const PercentOptionsRow = ({
           isActive={option === percent}
           key={option}
           variant='ghost'
-          colorScheme='blue'
+          colorScheme='lime'
           onClick={() => onPercentClick(option)}
           flexGrow={1}
           height='35px'

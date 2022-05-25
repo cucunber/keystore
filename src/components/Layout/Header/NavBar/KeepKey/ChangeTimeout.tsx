@@ -53,7 +53,7 @@ export const ChangeTimeout = () => {
 
   const setting = 'timeout'
   const colorScheme = useColorModeValue('blackAlpha', 'white')
-  const checkColor = useColorModeValue('green', 'blue.400')
+  const checkColor = useColorModeValue('green', 'lime.400')
 
   useEffect(() => {
     if (deviceTimeout?.value) {

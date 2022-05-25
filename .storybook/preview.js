@@ -9,7 +9,7 @@ initialize({
 
 const darkTheme = {
   ...themes.dark,
-  colorPrimary: theme.colors.blue[500],
+  colorPrimary: theme.colors.lime[200],
   colorSecondary: theme.colors.gray[500],
   appBg: theme.colors.gray[800],
   appContentBg: theme.colors.gray[750],

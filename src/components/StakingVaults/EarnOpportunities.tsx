@@ -87,7 +87,7 @@ export const EarnOpportunities = ({ assetId }: EarnOpportunitiesProps) => {
             <Button
               size='sm'
               variant='link'
-              colorScheme='blue'
+              colorScheme='lime'
               ml='auto'
               as={NavLink}
               to='/defi/earn'

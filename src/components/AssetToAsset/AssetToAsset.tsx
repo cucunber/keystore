@@ -48,14 +48,14 @@ export const AssetToAsset = ({
       <Flex>
         <Circle
           size={boxSize}
-          bg='blue.500'
+          bg='lime.200'
           p='2px'
           background={`linear-gradient(to right, ${borderLine}, ${borderLine})`}
         >
           <Circle bg={bg ? bg : defaultBg} size='100%'>
             <Center position='absolute'>{statusIcon}</Center>
             <CircularProgress
-              color='blue.500'
+              color='lime.200'
               thickness='6px'
               isIndeterminate={loading}
               trackColor='transparent'

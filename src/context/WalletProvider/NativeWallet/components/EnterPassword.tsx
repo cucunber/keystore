@@ -143,7 +143,7 @@ export const EnterPassword = () => {
             <FormErrorMessage>{errors?.password?.message}</FormErrorMessage>
           </FormControl>
           <Button
-            colorScheme='blue'
+            colorScheme='lime'
             size='lg'
             isFullWidth
             type='submit'
@@ -161,7 +161,7 @@ export const EnterPassword = () => {
               mb={[3]}
               ml={[0, 1.5]}
               borderTopRadius='none'
-              colorScheme='blue'
+              colorScheme='lime'
               onClick={() => {
                 disconnect()
                 dispatch({ type: WalletActions.SET_WALLET_MODAL, payload: true })

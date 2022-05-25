@@ -58,7 +58,7 @@ export const AssetChart = ({ accountId, assetId, isLoaded }: AssetChartProps) =>
     number: { toFiat },
   } = useLocaleFormatter({ fiatType: 'USD' })
   const [percentChange, setPercentChange] = useState(0)
-  const alertIconColor = useColorModeValue('blue.500', 'blue.200')
+  const alertIconColor = useColorModeValue('lime.200', 'lime.200')
   const [timeframe, setTimeframe] = useState(DEFAULT_HISTORY_TIMEFRAME)
   const assetIds = useMemo(() => [assetId].filter(Boolean), [assetId])
   const asset = useAppSelector(state => selectAssetById(state, assetId))
@@ -104,7 +104,7 @@ export const AssetChart = ({ accountId, assetId, isLoaded }: AssetChartProps) =>
           flexDir={{ base: 'column', md: 'row' }}
         >
           <Skeleton isLoaded={isLoaded} textAlign='center'>
-            <ButtonGroup size='sm' colorScheme='blue' variant='ghost'>
+            <ButtonGroup size='sm' colorScheme='lime' variant='ghost'>
               <Button isActive={view === View.Balance} onClick={() => setView(View.Balance)}>
                 <Text translation='assets.assetDetails.assetHeader.balance' />
               </Button>
@@ -156,7 +156,7 @@ export const AssetChart = ({ accountId, assetId, isLoaded }: AssetChartProps) =>
                 as={Stack}
                 py={2}
                 direction='row'
-                colorScheme='blue'
+                colorScheme='lime'
                 status='info'
                 variant='subtle'
                 borderRadius='xl'

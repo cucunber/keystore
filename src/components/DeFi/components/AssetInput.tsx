@@ -30,7 +30,7 @@ const CryptoInput = (props: InputProps) => (
     textAlign='right'
     variant='inline'
     placeholder='Enter amount'
-    style={{ caretColor: colors.blue[200] }}
+    style={{ caretColor: colors.lime[200] }}
     {...props}
   />
 )
@@ -69,7 +69,7 @@ export const AssetInput: React.FC<AssetInputProps> = ({
   const borderColor = useColorModeValue('gray.100', 'gray.750')
   const bgColor = useColorModeValue('white', 'gray.850')
   const focusBg = useColorModeValue('gray.100', 'gray.900')
-  const focusBorder = useColorModeValue('blue.500', 'blue.400')
+  const focusBorder = useColorModeValue('lime.200', 'lime.400')
   return (
     <FormControl
       pb={2}
@@ -107,7 +107,7 @@ export const AssetInput: React.FC<AssetInputProps> = ({
             onFocus={() => setIsFocused(true)}
           />
           {fiatAmount && (
-            <Button onClick={() => setIsFiat(!isFiat)} size='xs' variant='link' colorScheme='blue'>
+            <Button onClick={() => setIsFiat(!isFiat)} size='xs' variant='link' colorScheme='lime'>
               {isFiat ? (
                 <Amount.Crypto value={cryptoAmount || ''} symbol={assetName} />
               ) : (

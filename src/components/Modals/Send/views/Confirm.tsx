@@ -135,7 +135,7 @@ export const Confirm = () => {
           </Box>
         </Row>
         <Button
-          colorScheme='blue'
+          colorScheme='lime'
           disabled={!fees || isSubmitting}
           isLoading={isSubmitting}
           loadingText={translate('modals.send.broadcastingTransaction')}

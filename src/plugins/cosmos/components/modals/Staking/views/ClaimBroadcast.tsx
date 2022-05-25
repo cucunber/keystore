@@ -109,7 +109,7 @@ export const ClaimBroadcast = ({
         <Flex width='100%' mb='35px' justifyContent='space-between'>
           <Text translation={'transactionRow.txid'} color='gray.500' />
           {txId && asset && (
-            <Link isExternal color='blue.300' href={`${asset.explorerTxLink}${txId}`}>
+            <Link isExternal color='lime.300' href={`${asset.explorerTxLink}${txId}`}>
               <MiddleEllipsis address={txId} />
             </Link>
           )}
@@ -142,7 +142,7 @@ export const ClaimBroadcast = ({
             isLoading={loading}
             onClick={onClose}
             loadingText={translate('defi.modals.staking.claimingRewards')}
-            colorScheme={'blue'}
+            colorScheme={'lime'}
             minWidth='150px'
             mb='10px'
             mt='25px'

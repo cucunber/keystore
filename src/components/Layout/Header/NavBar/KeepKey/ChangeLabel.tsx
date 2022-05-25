@@ -75,7 +75,7 @@ export const ChangeLabel = () => {
           />
           <Button
             isLoading={awaitingDeviceInteraction}
-            colorScheme='blue'
+            colorScheme='lime'
             size='sm'
             onClick={handleChangeLabelInitializeEvent}
           >

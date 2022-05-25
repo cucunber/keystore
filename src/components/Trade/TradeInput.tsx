@@ -274,7 +274,7 @@ export const TradeInput = ({ history }: RouterProps) => {
                     h='1.75rem'
                     size='sm'
                     variant='ghost'
-                    colorScheme='blue'
+                    colorScheme='lime'
                     isDisabled={isSendMaxLoading || !hasValidBalance || !quote}
                     onClick={onSetMaxTrade}
                     data-test='token-row-sell-max-button'
@@ -300,7 +300,7 @@ export const TradeInput = ({ history }: RouterProps) => {
                 isRound
                 icon={<FaArrowsAltV />}
                 isLoading={!quote || error ? true : false}
-                _loading={{ color: 'blue.500' }}
+                _loading={{ color: 'lime.200' }}
                 data-test='swap-assets-button'
               />
               <Box
@@ -362,7 +362,7 @@ export const TradeInput = ({ history }: RouterProps) => {
                   (!hasEnoughBalanceForGas || !hasValidTradeBalance) &&
                   hasValidSellAmount)
                   ? 'red'
-                  : 'blue'
+                  : 'lime'
               }
               isLoading={isSubmitting || isSendMaxLoading}
               isDisabled={

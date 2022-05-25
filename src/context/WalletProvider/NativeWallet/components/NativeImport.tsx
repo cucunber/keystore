@@ -72,7 +72,7 @@ export const NativeImport = ({ history }: RouteComponentProps) => {
             </FormErrorMessage>
           </FormControl>
           <Button
-            colorScheme='blue'
+            colorScheme='lime'
             isFullWidth
             size='lg'
             type='submit'

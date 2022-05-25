@@ -17,10 +17,10 @@ export const FiatRamps = () => {
   return (
     <Button
       leftIcon={<BuySellIcon color='inherit' />}
-      colorScheme='blue'
+      colorScheme='lime'
       width='full'
       onClick={() => (isConnected ? fiatRamps.open({}) : handleWalletModalOpen())}
-      variant='ghost-filled'
+      // variant='ghost-filled'
       justifyContent={{ base: 'flex-start', md: 'center' }}
     >
       <Text translation='fiatRamps.headerLabel' />

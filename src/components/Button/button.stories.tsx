@@ -37,7 +37,7 @@ export const basic = () => (
     <Button colorScheme='gray'>Button</Button>
     <Button colorScheme='red'>Button</Button>
     <Button colorScheme='green'>Button</Button>
-    <Button colorScheme='blue'>Button</Button>
+    <Button colorScheme='lime'>Button</Button>
     <Button colorScheme='teal'>Button</Button>
     <Button colorScheme='pink'>Button</Button>
     <Button colorScheme='purple'>Button</Button>
@@ -55,7 +55,7 @@ export const outlines = () => (
     <Button variant='outline' colorScheme='green'>
       Button
     </Button>
-    <Button variant='outline' colorScheme='blue'>
+    <Button variant='outline' colorScheme='lime'>
       Button
     </Button>
     <Button variant='outline' colorScheme='teal'>
@@ -104,16 +104,16 @@ export const withVariants = () => (
 
 export const withSizes = () => (
   <HStack>
-    <Button colorScheme='blue' size='xs'>
+    <Button colorScheme='lime' size='xs'>
       Button
     </Button>
-    <Button colorScheme='blue' size='sm'>
+    <Button colorScheme='lime' size='sm'>
       Button
     </Button>
-    <Button colorScheme='blue' size='md'>
+    <Button colorScheme='lime' size='md'>
       Button
     </Button>
-    <Button colorScheme='blue' size='lg'>
+    <Button colorScheme='lime' size='lg'>
       Button
     </Button>
   </HStack>
@@ -136,7 +136,7 @@ export const WithLoading = () => (
       Email
     </Button>
 
-    <Button isLoading colorScheme='blue' spinner={<Spinner size='md' />}>
+    <Button isLoading colorScheme='lime' spinner={<Spinner size='md' />}>
       Click me
     </Button>
 
@@ -196,7 +196,7 @@ export const iconButton = () => (
   <Stack direction='row'>
     <IconButton aria-label='Search database' icon={<SearchIcon />} />
 
-    <IconButton colorScheme='blue' aria-label='Search database' icon={<SearchIcon />} />
+    <IconButton colorScheme='lime' aria-label='Search database' icon={<SearchIcon />} />
 
     <IconButton colorScheme='teal' aria-label='Call Segun' size='lg'>
       <PhoneIcon />
@@ -206,7 +206,7 @@ export const iconButton = () => (
 
 export const WithButtonGroup = () => (
   <ButtonGroup variant='outline'>
-    <Button colorScheme='blue'>Save</Button>
+    <Button colorScheme='lime'>Save</Button>
     <Button>Cancel</Button>
   </ButtonGroup>
 )

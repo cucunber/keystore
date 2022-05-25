@@ -68,7 +68,7 @@ export const Approve = ({
           </Box>
           <Text fontWeight='bold' translation={['modals.approve.header', { asset: asset.name }]} />
           <Text color='gray.500' translation={['modals.approve.body', { asset: asset.name }]} />
-          <Link color='blue.500' href={learnMoreLink} isExternal>
+          <Link color='lime.200' href={learnMoreLink} isExternal>
             {translate('modals.approve.learnMore')}
           </Link>
         </Stack>
@@ -96,7 +96,7 @@ export const Approve = ({
         <Button
           onClick={() => (isConnected ? onConfirm() : handleWalletModalOpen())}
           size='lg'
-          colorScheme='blue'
+          colorScheme='lime'
           data-test='defi-modal-approve-button'
           isLoading={loading}
           loadingText={loadingText}

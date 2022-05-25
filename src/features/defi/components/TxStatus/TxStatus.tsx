@@ -44,7 +44,7 @@ export const TxStatus = ({
           {onContinue && (
             <Button
               size='lg'
-              colorScheme='blue'
+              colorScheme='lime'
               data-test='defi-modal-status-continue'
               onClick={onContinue}
             >

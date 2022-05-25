@@ -127,7 +127,7 @@ export const Address = () => {
             isFullWidth
             isDisabled={!address || addressError}
             isLoading={isValidating}
-            colorScheme={addressError && !isValidating ? 'red' : 'blue'}
+            colorScheme={addressError && !isValidating ? 'red' : 'lime'}
             size='lg'
             onClick={handleNext}
             data-test='send-address-next-button'

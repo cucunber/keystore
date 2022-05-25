@@ -31,7 +31,7 @@ export const Approve = ({ api, getDepositGasEstimate }: FoxyApproveProps) => {
   const toast = useToast()
   const { query } = useBrowserRouter<DefiQueryParams, DefiParams>()
   const { chain, contractAddress, tokenId } = query
-  const alertText = useColorModeValue('blue.800', 'white')
+  const alertText = useColorModeValue('lime.800', 'white')
   const network = NetworkTypes.MAINNET
   const assetNamespace = 'erc20'
   const assetId = toAssetId({ chain, network, assetNamespace, assetReference: tokenId })
@@ -113,7 +113,7 @@ export const Approve = ({ api, getDepositGasEstimate }: FoxyApproveProps) => {
       loadingText={translate('common.approve')}
       learnMoreLink='https://shapeshift.zendesk.com/hc/en-us/articles/360018501700'
       preFooter={
-        <Alert status='info' borderRadius='lg' color='blue.500'>
+        <Alert status='info' borderRadius='lg' color='lime.200'>
           <FaGasPump />
           <AlertDescription textAlign='left' ml={3} color={alertText}>
             {translate('modals.approve.depositFee')}

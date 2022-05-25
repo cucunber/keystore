@@ -128,7 +128,7 @@ export const AssetAccountRow = ({
             {!asset.tokenId && (
               <Tag
                 whiteSpace='nowrap'
-                colorScheme='blue'
+                colorScheme='lime'
                 fontSize='x-small'
                 fontWeight='bold'
                 minHeight='auto'

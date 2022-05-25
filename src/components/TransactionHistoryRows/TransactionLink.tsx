@@ -13,7 +13,7 @@ export const TransactionLink = ({
     isExternal
     href={`${explorerTxLink}${txid}`}
     variant='ghost'
-    colorScheme='blue'
+    colorScheme='lime'
     bg='transparent'
     fontWeight='normal'
     fontFamily='monospace'

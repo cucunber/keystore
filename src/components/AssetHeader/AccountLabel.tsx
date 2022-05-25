@@ -14,7 +14,7 @@ export const AccountLabel = ({ accountId }: { accountId: AccountSpecifier }) => 
       <RawText>{feeAsset.name}</RawText>
       <Tag
         whiteSpace='nowrap'
-        colorScheme='blue'
+        colorScheme='lime'
         fontSize='x-small'
         fontWeight='bold'
         minHeight='auto'

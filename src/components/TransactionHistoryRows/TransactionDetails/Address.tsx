@@ -17,7 +17,7 @@ export const Address = ({
       isExternal
       bg='transparent'
       variant='ghost'
-      colorScheme='blue'
+      colorScheme='lime'
       fontWeight='normal'
       p={0}
       onClick={e => e.stopPropagation()}

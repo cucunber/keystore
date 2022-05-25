@@ -23,7 +23,7 @@ export const AwaitKeepKey = ({ children, translation, onCancel, ...props }: Awai
     },
     load,
   } = useWallet()
-  const blueShade = useColorModeValue('blue.500', 'blue.200')
+  const limeShade = useColorModeValue('lime.200', 'lime.200')
 
   const cancel = async () => {
     if (onCancel) {
@@ -39,10 +39,10 @@ export const AwaitKeepKey = ({ children, translation, onCancel, ...props }: Awai
       <Divider />
       <Box p={3}>
         <Flex {...props}>
-          <InfoIcon color={blueShade} mt={1} />
+          <InfoIcon color={limeShade} mt={1} />
           <Box ml={3}>
-            <Text translation={translation} mb={3} fontWeight='medium' color={blueShade} />
-            <Button colorScheme='blue' variant='ghost-filled' onClick={cancel} size='sm'>
+            <Text translation={translation} mb={3} fontWeight='medium' color={limeShade} />
+            <Button colorScheme='lime' variant='ghost-filled' onClick={cancel} size='sm'>
               {translate('common.cancel')}
             </Button>
           </Box>

@@ -177,7 +177,7 @@ export const PrimaryChart = ({
             <Line
               from={{ x: tooltipLeft, y: margin.top * 2 }}
               to={{ x: tooltipLeft, y: yMax + margin.top * 2 }}
-              stroke={colors.blue[500]}
+              stroke={colors.lime[200]}
               strokeWidth={2}
               opacity={0.5}
               pointerEvents='none'

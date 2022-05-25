@@ -125,7 +125,7 @@ export const TradeConfirm = ({ history }: RouterProps) => {
                   <Box textAlign='right'>
                     <Link
                       isExternal
-                      color='blue.500'
+                      color='lime.200'
                       href={`${trade.sellAsset?.explorerTxLink}${txid}`}
                     >
                       <Text translation='trade.viewTransaction' />
@@ -170,7 +170,7 @@ export const TradeConfirm = ({ history }: RouterProps) => {
             {!txid && (
               <Button
                 isLoading={isSubmitting}
-                colorScheme='blue'
+                colorScheme='lime'
                 size='lg'
                 width='full'
                 mt={6}

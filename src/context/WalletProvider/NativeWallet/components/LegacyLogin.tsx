@@ -222,7 +222,7 @@ export const LegacyLogin = () => {
 
           <Button
             disabled={!captchaSolution}
-            colorScheme='blue'
+            colorScheme='lime'
             isFullWidth
             size='lg'
             type='submit'

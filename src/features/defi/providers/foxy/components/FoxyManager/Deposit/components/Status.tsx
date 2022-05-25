@@ -112,7 +112,7 @@ export const Status = ({ apy }: FoxyStatusProps) => {
             <Link
               href={`${asset.explorerTxLink}/${state.txid}`}
               isExternal
-              color='blue.500'
+              color='lime.200'
               fontWeight='bold'
             >
               <MiddleEllipsis address={state.txid || ''} />

@@ -191,7 +191,7 @@ export const ClaimConfirm = ({
                 <Text translation='common.cancel' mx={5} />
               </Button>
               <Button
-                colorScheme={!hasEnoughBalance ? 'red' : 'blue'}
+                colorScheme={!hasEnoughBalance ? 'red' : 'lime'}
                 isDisabled={!hasEnoughBalance}
                 mb={2}
                 size='lg'

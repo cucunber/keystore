@@ -108,7 +108,7 @@ export const TransactionHistoryFilter = ({
         <PopoverTrigger>
           <ButtonGroup isAttached variant='ghost-filled'>
             <Button
-              colorScheme='blue'
+              colorScheme='lime'
               variant='ghost-filled'
               leftIcon={<IoOptionsOutline size='1.5em' />}
               onClick={() => setIsOpen(state => !state)}
@@ -118,7 +118,7 @@ export const TransactionHistoryFilter = ({
             <IconButton
               isDisabled={!hasAppliedFilter}
               variant='ghost-filled'
-              colorScheme='blue'
+              colorScheme='lime'
               aria-label={translate('transactionHistory.filters.resetFilters')}
               icon={<CloseIcon w={3} h={3} />}
               onClick={e => {
@@ -142,7 +142,7 @@ export const TransactionHistoryFilter = ({
                 variant='ghost'
                 p={2}
                 isDisabled={!hasAppliedFilter}
-                colorScheme='blue'
+                colorScheme='lime'
                 _hover={{ bg: 'transparent' }}
                 onClick={() => onResetFilters()}
               >
@@ -179,7 +179,7 @@ export const TransactionHistoryFilter = ({
                 ]}
               />
               <Flex justifyContent='center' alignItems='center'>
-                <Button colorScheme='blue' my={4} type='submit' onClick={() => setIsOpen(false)}>
+                <Button colorScheme='lime' my={4} type='submit' onClick={() => setIsOpen(false)}>
                   <Text translation='transactionHistory.filters.apply' />
                 </Button>
               </Flex>

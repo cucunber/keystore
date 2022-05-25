@@ -33,7 +33,7 @@ function getFeeColor(key: chainAdapters.FeeDataKey): string {
       return 'green'
     case chainAdapters.FeeDataKey.Average:
     default:
-      return 'blue'
+      return 'lime'
   }
 }
 

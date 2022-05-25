@@ -130,8 +130,8 @@ export const Approval = () => {
               trailColor={theme.colors.whiteAlpha[500]}
               duration={60}
               colors={[
-                [theme.colors.blue[500], 0.4],
-                [theme.colors.blue[500], 0.4],
+                [theme.colors.lime[200], 0.4],
+                [theme.colors.lime[200], 0.4],
               ]}
               onComplete={() => {
                 return [true, 0]
@@ -155,8 +155,8 @@ export const Approval = () => {
               textAlign='center'
               translation={['trade.needPermission', { symbol }]}
             />
-            <Link isExternal color='blue.500' href={APPROVAL_PERMISSION_URL}>
-              <Text color='blue.500' translation='trade.whyNeedThis' />
+            <Link isExternal color='lime.200' href={APPROVAL_PERMISSION_URL}>
+              <Text color='lime.200' translation='trade.whyNeedThis' />
             </Link>
             <Divider my={4} />
             <Flex flexDirection='column' width='full'>
@@ -168,7 +168,7 @@ export const Approval = () => {
                   <Row.Value>
                     <Link
                       isExternal
-                      color='blue.500'
+                      color='lime.200'
                       href={`${quote?.sellAsset?.explorerTxLink}${approvalTxId}`}
                     >
                       <MiddleEllipsis address={approvalTxId} />
@@ -189,7 +189,7 @@ export const Approval = () => {
                 type='submit'
                 size='lg'
                 isLoading={isSubmitting || !!approvalTxId}
-                colorScheme='blue'
+                colorScheme='lime'
                 mt={2}
               >
                 <Text translation='common.confirm' />

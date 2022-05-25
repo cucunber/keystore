@@ -74,7 +74,7 @@ export const WithdrawCard = ({ asset, ...rest }: WithdrawCardProps) => {
           maximumFractionDigits={4}
         />
         {isAvailable ? (
-          <Stack direction='row' alignItems='center' color='blue.500'>
+          <Stack direction='row' alignItems='center' color='lime.200'>
             <Text translation='defi.modals.claim.claimNow' />
             <FaArrowRight />
           </Stack>

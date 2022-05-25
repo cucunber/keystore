@@ -137,7 +137,7 @@ export const NativeLoad = ({ history }: RouteComponentProps) => {
                 alignItems='center'
                 justifyContent='space-between'
                 variant='btn-ghost'
-                colorScheme='blue'
+                colorScheme='lime'
                 data-test='native-saved-wallet'
               >
                 <Button

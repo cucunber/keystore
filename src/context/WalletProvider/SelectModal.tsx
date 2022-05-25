@@ -65,7 +65,7 @@ export const SelectModal = () => {
             mb={[3]}
             ml={[0, 1.5]}
             borderTopRadius='none'
-            colorScheme='blue'
+            colorScheme='lime'
             onClick={() => create(KeyManager.Native)}
             data-test='connect-wallet-create-one-button'
           >

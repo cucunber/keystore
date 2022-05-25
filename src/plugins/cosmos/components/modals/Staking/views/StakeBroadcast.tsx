@@ -123,7 +123,7 @@ export const StakeBroadcast = ({
             </Tooltip>
           </CText>
           <Link
-            color={'blue.200'}
+            color={'lime.200'}
             target='_blank'
             href={`https://www.mintscan.io/cosmos/validators/${validatorAddress}`}
           >
@@ -135,7 +135,7 @@ export const StakeBroadcast = ({
           {txId && asset && (
             <Link
               isExternal
-              color='blue.200'
+              color='lime.200'
               href={`${asset.explorerTxLink}${txId}`}
               target='_blank'
             >
@@ -186,7 +186,7 @@ export const StakeBroadcast = ({
             <Button
               isLoading={loading}
               loadingText={translate('defi.modals.staking.stakingYourTokens')}
-              colorScheme={'blue'}
+              colorScheme={'lime'}
               mb={2}
               size='lg'
               type='submit'

@@ -234,7 +234,7 @@ export const Unstake = ({ assetId, accountSpecifier, validatorAddress }: Unstake
                 <Text translation='common.cancel' />
               </Button>
               <Button
-                colorScheme={values.amountFieldError ? 'red' : 'blue'}
+                colorScheme={values.amountFieldError ? 'red' : 'lime'}
                 isDisabled={Boolean(!isValid || values.amountFieldError)}
                 mb={2}
                 size='lg'

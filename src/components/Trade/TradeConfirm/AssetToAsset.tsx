@@ -93,7 +93,7 @@ export const AssetToAsset = ({
       <Flex>
         <Circle
           size={boxSize}
-          bg='blue.500'
+          bg='lime.200'
           p='1px'
           background={`linear-gradient(to right, ${sellAssetColor}, ${buyAssetColor})`}
         >

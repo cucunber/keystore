@@ -264,7 +264,7 @@ export const Withdraw: React.FC<WithdrawProps> = ({
           {enableWithdrawType && (
             <FormControl mb={6}>
               <FormLabel color='gray.500'>{translate('modals.withdraw.withdrawType')}</FormLabel>
-              <ButtonGroup colorScheme='blue' width='full' variant='input'>
+              <ButtonGroup colorScheme='lime' width='full' variant='input'>
                 <Button
                   isFullWidth
                   flexDir='column'
@@ -360,7 +360,7 @@ export const Withdraw: React.FC<WithdrawProps> = ({
                     isActive={option === percent}
                     key={option}
                     variant='ghost'
-                    colorScheme='blue'
+                    colorScheme='lime'
                     isDisabled={values.withdrawType === WithdrawType.INSTANT}
                     onClick={() => handlePercentClick(option)}
                   >
@@ -480,7 +480,7 @@ export const Withdraw: React.FC<WithdrawProps> = ({
         {children && <ModalFooter as={Stack}>{children}</ModalFooter>}
         <ModalFooter as={Stack} direction='row'>
           <Button
-            colorScheme={fieldError ? 'red' : 'blue'}
+            colorScheme={fieldError ? 'red' : 'lime'}
             isDisabled={!isValid}
             size='lg'
             isFullWidth

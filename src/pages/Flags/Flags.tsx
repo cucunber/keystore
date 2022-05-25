@@ -70,7 +70,7 @@ export const Flags = () => {
       </Card>
 
       <HStack my={4} width='full'>
-        <Button onClick={handleApply} colorScheme='blue'>
+        <Button onClick={handleApply} colorScheme='lime'>
           Apply
         </Button>
         <Button onClick={handleResetPrefs}>Reset Flags to Default</Button>

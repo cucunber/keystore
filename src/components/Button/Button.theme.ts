@@ -41,7 +41,7 @@ function variantGhost(props: Record<string, any>) {
   const darkActiveBg = transparentize(`${c}.200`, 0.24)(theme)
 
   return {
-    color: mode(`${c}.600`, `${c}.200`)(props),
+    color: `${c}.200`,
     bg: 'transparent',
     _hover: {
       bg: mode(`${c}.50`, darkHoverBg)(props),
@@ -150,8 +150,8 @@ const accessibleColorMap: { [key: string]: AccessibleColor } = {
     hoverBg: 'cyan.500',
     activeBg: 'cyan.600',
   },
-  blue: {
-    bg: 'blue.500',
+  lime: {
+    bg: 'lime.200',
     color: 'white',
   },
 }
@@ -238,8 +238,8 @@ function variantTab(props: Record<string, any>) {
       borderColor: 'gray.500',
     },
     _active: {
-      color: mode(`${c}.500`, `${c}.200`)(props),
-      borderColor: mode(`${c}.500`, `${c}.200`)(props),
+      color: `${c}.200`,
+      borderColor: `${c}.200`,
     },
     _checked: {
       color: mode(`${c}.700`, `${c}.500`)(props),

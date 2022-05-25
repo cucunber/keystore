@@ -124,7 +124,7 @@ export const DownloadButton = ({ txIds }: { txIds: TxId[] }) => {
   return isLargerThanLg ? (
     <Button
       ml={[3, 3, 6]}
-      colorScheme='blue'
+      colorScheme='lime'
       variant='ghost-filled'
       isLoading={isLoading}
       onClick={generateCSV}

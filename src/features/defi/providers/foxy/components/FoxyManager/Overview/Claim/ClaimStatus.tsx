@@ -47,7 +47,7 @@ type ClaimState = {
 const StatusInfo = {
   [TxStatus.PENDING]: {
     text: 'defi.broadcastingTransaction',
-    color: 'blue.500',
+    color: 'lime.200',
   },
   [TxStatus.SUCCESS]: {
     text: 'defi.transactionComplete',
@@ -146,7 +146,7 @@ export const ClaimStatus = () => {
           <Row>
             <Row.Label>{translate('modals.status.transactionId')}</Row.Label>
             <Row.Value>
-              <Link isExternal color='blue.500' href={`${asset?.explorerTxLink}${txid}`}>
+              <Link isExternal color='lime.200' href={`${asset?.explorerTxLink}${txid}`}>
                 <MiddleEllipsis address={txid} />
               </Link>
             </Row.Value>
@@ -165,7 +165,7 @@ export const ClaimStatus = () => {
             <Row.Value>
               <Link
                 isExternal
-                color='blue.500'
+                color='lime.200'
                 href={`${asset?.explorerAddressLink}${userAddress}`}
               >
                 <MiddleEllipsis address={userAddress} />

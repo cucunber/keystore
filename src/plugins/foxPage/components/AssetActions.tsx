@@ -57,7 +57,7 @@ export const AssetActions = ({
               </SkeletonText>
 
               <Stack width='full'>
-                <Button onClick={onBuyClick} colorScheme={'blue'} mb={2} size='lg'>
+                <Button onClick={onBuyClick} colorScheme={'lime'} mb={2} size='lg'>
                   <CText>{buyCTA}</CText>
                 </Button>
                 <Button onClick={onReceiveClick} size='lg' colorScheme='gray'>

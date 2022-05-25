@@ -28,7 +28,7 @@ export const App = () => {
               </IconCircle>
               <AlertDescription ml={3}>{translate('updateToast.body')}</AlertDescription>
 
-              <Button colorScheme='blue' size='sm' onClick={() => window.location.reload()} ml={4}>
+              <Button colorScheme='lime' size='sm' onClick={() => window.location.reload()} ml={4}>
                 {translate('updateToast.cta')}
               </Button>
             </Alert>

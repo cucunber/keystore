@@ -66,7 +66,7 @@ export const StepRow: React.FC<StepRowProps> = ({
           mt={4}
           size='lg'
           width='full'
-          colorScheme='blue'
+          colorScheme='lime'
           onClick={buttonOnClick}
           {...buttonProps}
         >

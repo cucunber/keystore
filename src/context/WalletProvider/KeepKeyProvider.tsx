@@ -170,7 +170,7 @@ export const KeepKeyProvider = ({ children }: { children: React.ReactNode }): JS
         toastRef.current = toast({
           render: () => {
             return (
-              <Alert status='info' variant='solid' colorScheme='blue'>
+              <Alert status='info' variant='solid' colorScheme='lime'>
                 <Box alignSelf='flex-start' me={2}>
                   <RiFlashlightLine size={24} />
                 </Box>

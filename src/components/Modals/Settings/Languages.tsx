@@ -45,7 +45,7 @@ export const Languages = () => {
             _disabled={{ opacity: 1 }}
           >
             <Flex alignItems='center' textAlign='left'>
-              <Icon as={FaCheck} color='blue.500' />
+              <Icon as={FaCheck} color='lime.200' />
               <RawText ml={4}>{getLocaleLabel(selectedLocale)}</RawText>
             </Flex>
           </Button>

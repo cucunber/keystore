@@ -49,7 +49,7 @@ export const ChangePin = () => {
         <SubMenuBody>
           <LastDeviceInteractionStatus setting={setting} />
           <Button
-            colorScheme='blue'
+            colorScheme='lime'
             size='sm'
             onClick={handleChangePin}
             isLoading={awaitingDeviceInteraction}

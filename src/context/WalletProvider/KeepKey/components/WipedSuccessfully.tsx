@@ -40,7 +40,7 @@ export const WipedSuccessfully = () => {
         <Button
           isFullWidth
           size='lg'
-          colorScheme='blue'
+          colorScheme='lime'
           onClick={handleCreateWalletPress}
           disabled={loading}
           mb={3}

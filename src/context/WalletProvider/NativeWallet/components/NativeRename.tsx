@@ -106,7 +106,7 @@ export const NativeRename = ({ history, location }: NativeSetupProps) => {
             <FormErrorMessage>{errors?.password?.message}</FormErrorMessage>
           </FormControl>
           <Button
-            colorScheme='blue'
+            colorScheme='lime'
             size='lg'
             isFullWidth
             type='submit'

@@ -28,7 +28,7 @@ export const Approve = ({ api, getWithdrawGasEstimate }: FoxyApproveProps) => {
   const { state, dispatch } = useContext(WithdrawContext)
   const history = useHistory()
   const translate = useTranslate()
-  const alertText = useColorModeValue('blue.800', 'white')
+  const alertText = useColorModeValue('lime.800', 'white')
   const { query } = useBrowserRouter<DefiQueryParams, DefiParams>()
   const { chain, contractAddress, rewardId } = query
   const toast = useToast()
@@ -119,7 +119,7 @@ export const Approve = ({ api, getWithdrawGasEstimate }: FoxyApproveProps) => {
       loadingText={translate('common.approve')}
       learnMoreLink='https://shapeshift.zendesk.com/hc/en-us/articles/360018501700'
       preFooter={
-        <Alert status='info' borderRadius='lg' color='blue.500'>
+        <Alert status='info' borderRadius='lg' color='lime.200'>
           <FaGasPump />
           <AlertDescription textAlign='left' ml={3} color={alertText}>
             {translate('modals.withdraw.withdrawFee')}

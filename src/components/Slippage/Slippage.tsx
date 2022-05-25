@@ -24,7 +24,7 @@ export const Slippage = ({ onChange, value }: SlippageProps) => {
           <Input
             key={idx}
             placeholder='Custom'
-            colorScheme='blue'
+            colorScheme='lime'
             variant='filled'
             flex={2}
             textAlign='center'

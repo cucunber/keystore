@@ -63,7 +63,7 @@ export const Confirm = ({
             </Button>
             <Button
               size='lg'
-              colorScheme='blue'
+              colorScheme='lime'
               data-test='defi-modal-confirm-button'
               onClick={() => (isConnected ? onConfirm() : handleWalletModalOpen())}
               isLoading={loading}

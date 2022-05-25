@@ -21,7 +21,7 @@ export const Status = ({ status }: { status: chainAdapters.TxStatus }) => {
     case chainAdapters.TxStatus.Pending:
       return (
         <>
-          <Tag colorScheme='blue' size={tagSize}>
+          <Tag colorScheme='lime' size={tagSize}>
             <CircularProgress mr={2} size='5' />
             <Text translation='transactionRow.pending' />
           </Tag>

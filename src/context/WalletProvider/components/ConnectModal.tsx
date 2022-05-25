@@ -31,7 +31,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = props => {
         {props.loading ? (
           <Button
             isFullWidth
-            colorScheme='blue'
+            colorScheme='lime'
             isLoading
             loadingText='Pairing Wallet'
             spinner={<Spinner color='white' />}
@@ -42,7 +42,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = props => {
         ) : (
           <Button
             isFullWidth
-            colorScheme='blue'
+            colorScheme='lime'
             onClick={props.pairDevice}
             disabled={props.loading}
             data-test='wallet-pair-button'

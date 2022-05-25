@@ -39,7 +39,7 @@ export const LegacyLoginSuccess = () => {
           translation={'walletProvider.shapeShift.legacy.importInformations'}
         />
         <Button
-          colorScheme='blue'
+          colorScheme='lime'
           isFullWidth
           size='lg'
           onClick={() => history.push('/native/create', { vault: location.state.vault })}

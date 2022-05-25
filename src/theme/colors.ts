@@ -1,8 +1,8 @@
 const commonColors = {
-  blue: {
+  lime: {
     50: '#EBEFFE',
     100: '#B5C4FC',
-    200: '#7F99FB',
+    200: '#79C62B',
     300: '#5F80FA',
     400: '#486FF9',
     500: '#3761F9',
@@ -59,8 +59,8 @@ const commonColors = {
 }
 
 export const brand = {
-  primary: commonColors.blue[500],
-  altBg: `radial-gradient(94.32% 94.6% at 4.04% -44.6%,${commonColors.blue[600]}66 0%,${commonColors.gray[900]}00 100%),linear-gradient(0deg,${commonColors.gray[900]},${commonColors.gray[900]})`,
+  primary: commonColors.lime[200],
+  altBg: `radial-gradient(94.32% 94.6% at 4.04% -44.6%,${commonColors.lime[200]}66 0%,${commonColors.gray[900]}00 100%),linear-gradient(0deg,${commonColors.gray[900]},${commonColors.gray[900]})`,
 }
 
 export const colors = {

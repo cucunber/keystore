@@ -177,7 +177,7 @@ export const Details = () => {
           <Button
             isFullWidth
             isDisabled={!(cryptoAmount ?? fiatAmount) || !!amountFieldError || loading}
-            colorScheme={amountFieldError ? 'red' : 'blue'}
+            colorScheme={amountFieldError ? 'red' : 'lime'}
             size='lg'
             onClick={handleNextClick}
             isLoading={loading}

@@ -129,7 +129,7 @@ export const NativeTestPhrase = ({ history, location }: NativeSetupProps) => {
                   flex='1'
                   minW='30%'
                   variant='ghost-filled'
-                  colorScheme={invalidTries.includes(index) ? 'gray' : 'blue'}
+                  colorScheme={invalidTries.includes(index) ? 'gray' : 'lime'}
                   isDisabled={invalidTries.includes(index)}
                   onClick={() => handleClick(index)}
                 >
@@ -158,7 +158,7 @@ export const NativeTestPhrase = ({ history, location }: NativeSetupProps) => {
               />
             </Checkbox>
             <Button
-              colorScheme='blue'
+              colorScheme='lime'
               isFullWidth
               size='md'
               isDisabled={!hasAlreadySaved}

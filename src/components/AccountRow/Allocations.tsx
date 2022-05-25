@@ -14,7 +14,7 @@ export const Allocations = ({ value }: { value: number }) => {
     >
       <Box
         width={`${value < 5 ? 10 : value}%`}
-        backgroundColor='blue.500'
+        backgroundColor='lime.200'
         height='8px'
         position='absolute'
         borderRadius='full'

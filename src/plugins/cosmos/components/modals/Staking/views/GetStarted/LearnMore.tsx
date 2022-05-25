@@ -128,7 +128,7 @@ export const LearnMore = ({ assetId, onClose }: LearnMoreProps) => {
                 size='lg'
                 zIndex={1}
                 width='100%'
-                colorScheme='blue'
+                colorScheme='lime'
                 mb='20px'
                 onClick={handleNextOrCloseClick}
               >

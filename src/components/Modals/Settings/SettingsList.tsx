@@ -38,7 +38,7 @@ export const SettingsList = ({ appHistory, ...routeProps }: SettingsListProps) =
   const isLightMode = useColorModeValue(true, false)
   const selectedLocale = useAppSelector(selectSelectedLocale)
   // for both locale and currency
-  const selectedPreferenceValueColor = useColorModeValue('blue.500', 'blue.200')
+  const selectedPreferenceValueColor = useColorModeValue('lime.200', 'lime.200')
 
   const closeModalAndNavigateTo = (linkHref: string) => {
     settings.close()

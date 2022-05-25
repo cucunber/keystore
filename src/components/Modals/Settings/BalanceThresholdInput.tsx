@@ -37,7 +37,7 @@ export const BalanceThresholdInput = () => {
   return (
     <InputGroup alignItems='center' justifyContent='space-between' width='100px'>
       <InputLeftElement fontSize='12px' height='100%' pointerEvents='none'>
-        <Icon as={FaGreaterThanEqual} color={useColorModeValue('blue.500', 'blue.300')} />
+        <Icon as={FaGreaterThanEqual} color={useColorModeValue('lime.200', 'lime.300')} />
       </InputLeftElement>
       <NumberFormat
         inputMode='decimal'

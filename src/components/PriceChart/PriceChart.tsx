@@ -52,11 +52,11 @@ export const PriceChart: React.FC<PriceChartArgs> = ({
     return (
       <Box p={8}>
         <Alert status='info' variant='subtle' borderRadius='lg' pl={2}>
-          <IconCircle boxSize={8} color='blue.300' background='transparent'>
+          <IconCircle boxSize={8} color='lime.300' background='transparent'>
             <FaInfoCircle />
           </IconCircle>
           <Text
-            color='blue.300'
+            color='lime.300'
             translation={'assets.assetDetails.assetHeader.assetUnavailable'}
             fontWeight='semibold'
           />
