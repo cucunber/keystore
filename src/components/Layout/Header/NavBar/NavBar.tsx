@@ -8,10 +8,12 @@ import { usePlugins } from 'context/PluginProvider/PluginProvider'
 import { MainNavLink } from './MainNavLink'
 
 type NavBarProps = {
+  isSideBarActive?: boolean
   isCompact?: boolean
 } & StackProps
 
 export const NavBar = ({ isCompact, ...rest }: NavBarProps) => {
+  const { isSideBarActive } = rest
   const translate = useTranslate()
   const { routes: pluginRoutes } = usePlugins()
 
@@ -25,6 +27,7 @@ export const NavBar = ({ isCompact, ...rest }: NavBarProps) => {
               isCompact={isCompact}
               as={ReactRouterLink}
               key={idx}
+              isSideBarActive={isSideBarActive}
               leftIcon={item.icon}
               href={item.path}
               to={item.path}
