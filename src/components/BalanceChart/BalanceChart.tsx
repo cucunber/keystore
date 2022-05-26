@@ -33,7 +33,7 @@ export const BalanceChart: React.FC<BalanceChartArgs> = ({
     [balanceChartData, setPercentChange],
   )
 
-  const color = percentChange > 0 ? 'green.500' : 'red.500'
+  const color = percentChange > 0 ? 'lime.200' : 'red.500'
 
   return (
     <Card.Body p={0} height='350px'>

@@ -26,7 +26,7 @@ export const WithdrawCard = ({ asset, ...rest }: WithdrawCardProps) => {
   const hasClaim = bnOrZero(amount).gt(0)
   const textColor = useColorModeValue('black', 'white')
   const isAvailable = dayjs().isAfter(dayjs(releaseTime))
-  const successColor = useColorModeValue('green.500', 'green.200')
+  const successColor = useColorModeValue('lime.200', 'green.200')
 
   const handleClick = () => {
     history.push('/claim')

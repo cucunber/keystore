@@ -6,7 +6,7 @@ export const KeepKeySuccess = () => {
   return (
     <>
       <ModalBody textAlign='center' pb={8}>
-        <CheckCircleIcon color='green.500' boxSize={20} mb={6} />
+        <CheckCircleIcon color='lime.200' boxSize={20} mb={6} />
         <Text
           fontSize='lg'
           fontWeight='bold'

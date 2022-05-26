@@ -60,7 +60,7 @@ const SpacingSquare: React.FC<CenterProps> = ({ mb }) => (
     <Center w='50px'>
       <Text fontWeight='bold'>{mb}</Text>
     </Center>
-    <Box backgroundColor='green.500' pl={mb}>
+    <Box backgroundColor='lime.200' pl={mb}>
       <Center h='40px' backgroundColor='bg.normal' />
     </Box>
   </Flex>

@@ -214,7 +214,7 @@ export const Overview: React.FC<OverviewProps> = ({
                     size='sm'
                     color={
                       shownOnDisplay
-                        ? 'green.500'
+                        ? 'lime.200'
                         : shownOnDisplay === false
                         ? 'red.500'
                         : 'gray.500'

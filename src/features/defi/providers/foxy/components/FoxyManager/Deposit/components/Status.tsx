@@ -67,7 +67,7 @@ export const Status = ({ apy }: FoxyStatusProps) => {
     if (state.deposit.txStatus === 'success') {
       statusText = StatusTextEnum.success
       statusIcon = <CheckIcon color='white' />
-      statusBg = 'green.500'
+      statusBg = 'lime.200'
     }
     if (state.deposit.txStatus === 'failed') {
       statusText = StatusTextEnum.failed

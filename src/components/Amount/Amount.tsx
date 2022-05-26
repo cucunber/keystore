@@ -141,7 +141,7 @@ const Percent = ({ value, autoColor, options, ...props }: PercentAmountProps) =>
       return 'gray.500'
     }
     if (roundedValue > 0) {
-      return 'green.500'
+      return 'lime.200'
     }
     return 'red.500'
   }, [formattedNumber])

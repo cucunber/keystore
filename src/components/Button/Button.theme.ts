@@ -30,7 +30,8 @@ function variantGhost(props: Record<string, any>) {
       color: mode(`gray.500`, `gray.500`)(props),
       _hover: {
         color: mode('inherit', 'whiteAlpha.800')(props),
-        bg: mode(`gray.100`, `gray.750`)(props),
+        bg: 'transparent',
+        boxShadow: 'hover',
       },
       _active: { bg: mode(`gray.200`, `gray.700`)(props), color: mode(`gray.800`, 'white')(props) },
       _checked: { bg: mode(`gray.200`, `gray.700`)(props) },
@@ -76,7 +77,7 @@ function variantGhostFilled(props: Record<string, any>) {
   const darkBg = transparentize(`${c}.200`, 0.2)(theme)
 
   return {
-    color: mode(`${c}.500`, `${c}.200`)(props),
+    color: `${c}.200`,
     bg: mode(`${c}.50`, darkBg)(props),
     _hover: {
       bg: mode(`${c}.100`, darkHoverBg)(props),
@@ -160,12 +161,12 @@ function variantSolid(props: Record<string, any>) {
   const { colorScheme: c } = props
 
   if (c === 'gray') {
-    const bg = mode(`gray.100`, `gray.700`)(props)
+    const bg = mode(`gray.200`, `gray.200`)(props)
 
     return {
       bg,
       _hover: {
-        bg: mode(`gray.200`, `gray.600`)(props),
+        bg: mode(`gray.200`, `gray.200`)(props),
         _disabled: {
           bg,
         },
@@ -178,7 +179,7 @@ function variantSolid(props: Record<string, any>) {
   const {
     bg = `${c}.500`,
     color = 'white',
-    hoverBg = `${c}.600`,
+    hoverBg = `${c}.200`,
     activeBg = `${c}.700`,
   } = accessibleColorMap[c] || {}
 
@@ -188,7 +189,8 @@ function variantSolid(props: Record<string, any>) {
     bg: background,
     color: mode(color, `white`)(props),
     _hover: {
-      bg: mode(hoverBg, `${c}.300`)(props),
+      bg: mode(hoverBg, `${c}.200`)(props),
+      boxShadow: 'hover',
       _disabled: {
         bg: background,
       },
@@ -205,7 +207,7 @@ function variantLink(props: Record<string, any>) {
     height: 'auto',
     lineHeight: 'normal',
     verticalAlign: 'baseline',
-    color: mode(`${c}.500`, `${c}.200`)(props),
+    color: `${c}.200`,
     _hover: {
       textDecoration: 'underline',
       _disabled: {

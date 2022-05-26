@@ -51,7 +51,7 @@ const StatusInfo = {
   },
   [TxStatus.SUCCESS]: {
     text: 'defi.transactionComplete',
-    color: 'green.500',
+    color: 'lime.200',
     icon: <FaCheck />,
   },
   [TxStatus.FAILED]: {

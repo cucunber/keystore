@@ -21,7 +21,7 @@ export const FoxyEmpty = ({ assets, apy, onClick }: FoxyEmptyProps) => {
     >
       <Stack direction='row' spacing={1} justifyContent='center' mb={4}>
         <Text translation='defi.modals.foxyOverview.header' />
-        <Text color='green.500' translation={['common.apy', { apy }]} />
+        <Text color='lime.200' translation={['common.apy', { apy }]} />
       </Stack>
       <Text color='gray.500' translation='defi.modals.foxyOverview.body' />
       <Text color='gray.500' translation='defi.modals.foxyOverview.rewards' />

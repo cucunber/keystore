@@ -38,7 +38,7 @@ export const AssetToAsset = ({
   } = useLocaleFormatter({ fiatType: 'USD' })
   const gray = useColorModeValue('white', 'gray.750')
   const red = useColorModeValue('white', 'red.500')
-  const green = useColorModeValue('white', 'green.500')
+  const green = useColorModeValue('white', 'lime.200')
 
   const renderIcon = () => {
     switch (status) {
