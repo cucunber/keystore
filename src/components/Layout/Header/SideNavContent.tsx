@@ -1,6 +1,9 @@
-import { ChatIcon, SettingsIcon } from '@chakra-ui/icons'
-import { Box, Flex, FlexProps, Link, Stack, useMediaQuery } from '@chakra-ui/react'
+import { ChevronRightIcon, SettingsIcon } from '@chakra-ui/icons'
+import { Box, Flex, FlexProps, IconButton, Link, Stack, useMediaQuery } from '@chakra-ui/react'
+import { useCallback, useState } from 'react'
 import { useTranslate } from 'react-polyglot'
+import { FeedbackIcon } from 'components/Icons/FeedBack'
+import { ProfileIcon } from 'components/Icons/Profile'
 import { useModal } from 'hooks/useModal/useModal'
 import { breakpoints } from 'theme/theme'
 
@@ -16,6 +19,7 @@ type HeaderContentProps = {
 } & FlexProps
 
 export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
+  const [isSideBarActive, setIsSideBarActive] = useState(true)
   const translate = useTranslate()
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
   const { settings } = useModal()
@@ -25,6 +29,10 @@ export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
     onClick && onClick()
   }
 
+  const handleOpenSideBar = useCallback(() => {
+    setIsSideBarActive(!isSideBarActive)
+  }, [isSideBarActive])
+
   return (
     <Flex
       width='full'
@@ -33,6 +41,7 @@ export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
       justifyContent='flex-start'
       data-test='full-width-header'
       flexDir='column'
+      position='relative'
       p={4}
     >
       {!isLargerThanMd && (
@@ -48,24 +57,46 @@ export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
           </Box>
         </>
       )}
-
-      <NavBar isCompact={isCompact} mt={6} />
+      {isLargerThanMd && (
+        <IconButton
+          aria-label='opener'
+          onClick={handleOpenSideBar}
+          size='sm'
+          icon={<ChevronRightIcon transform={`rotate(${isSideBarActive ? 180 : 0}deg)`} />}
+          position='absolute'
+          right={-4}
+          top={1}
+          variant='solid'
+        />
+      )}
+      <NavBar isSideBarActive={isSideBarActive} isCompact={isCompact} mt={6} />
       <Stack width='full'>
+        <MainNavLink
+          variant='ghost'
+          isCompact={isCompact}
+          onClick={() => handleClick(() => settings.open({}))}
+          label={translate('common.profile')}
+          leftIcon={<ProfileIcon />}
+          isSideBarActive={isSideBarActive}
+          data-test='navigation-profile-button'
+        />
         <MainNavLink
           variant='ghost'
           isCompact={isCompact}
           onClick={() => handleClick(() => settings.open({}))}
           label={translate('common.settings')}
           leftIcon={<SettingsIcon />}
+          isSideBarActive={isSideBarActive}
           data-test='navigation-settings-button'
         />
         <MainNavLink
-          leftIcon={<ChatIcon />}
+          leftIcon={<FeedbackIcon />}
           isCompact={isCompact}
           as={Link}
           justifyContent='flex-start'
           variant='ghost'
           onClick={() => handleClick()}
+          isSideBarActive={isSideBarActive}
           label={translate('common.submitFeedback')}
           isExternal
           href='https://shapeshift.notion.site/Submit-Feedback-or-a-Feature-Request-af48a25fea574da4a05a980c347c055b'
