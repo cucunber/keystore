@@ -34,7 +34,7 @@ export const ExpandedMenuItem = ({
   ...props
 }: ExpandedMenuItemProps) => {
   const blackShade = useColorModeValue('blackAlpha.600', 'whiteAlpha.600')
-  const greenShade = useColorModeValue('green.600', 'green.500')
+  const greenShade = useColorModeValue('green.600', 'lime.200')
   const redShade = useColorModeValue('red.800', 'red.500')
   const yellowShade = useColorModeValue('yellow.600', 'yellow.200')
 

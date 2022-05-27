@@ -37,7 +37,7 @@ export const PrimaryChart = ({
   data,
   width = 10,
   height,
-  color = 'green.500',
+  color = 'lime.200',
   margin = { top: 0, right: 0, bottom: 0, left: 0 },
 }: PrimaryChartProps) => {
   const {

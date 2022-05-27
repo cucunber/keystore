@@ -74,7 +74,7 @@ export const AccountTable = () => {
               display='flex'
               lineHeight='shorter'
               alignItems='center'
-              color={value > 0 ? 'green.500' : 'red.500'}
+              color={value > 0 ? 'lime.200' : 'red.500'}
             >
               <StatArrow ml={1} type={value > 0 ? 'increase' : 'decrease'} />
               <Amount.Percent value={value * 0.01} />

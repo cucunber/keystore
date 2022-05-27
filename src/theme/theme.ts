@@ -121,8 +121,9 @@ export const theme = extendTheme({
   shadows: {
     xs: '0px 5px 10px rgba(0, 0, 0, 0.1);',
     xl: '0 2px 4px 2px rgba(0,0,0,.15),0 2px 10px 2px rgba(0,0,0,.2)',
-    'outline-inset': '0 0 0 3px rgba(66, 153, 225, 0.6) inset',
+    'outline-inset': '0 0 0 3px rgba(153, 225, 66, 0.6) inset',
     right: '3px 0px 2px rgba(0,0,0,.5), 5px 0 10px rgba(0,0,0,.2)',
+    hover: '0px 5px 10px rgba(0, 0, 0, 0.1)',
   },
   config: {
     initialColorMode: 'dark',

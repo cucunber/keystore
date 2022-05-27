@@ -46,7 +46,7 @@ export const PriceChart: React.FC<PriceChartArgs> = ({
     selectPriceHistoriesLoadingByAssetTimeframe(state, assetIds, timeframe),
   )
 
-  const color = percentChange > 0 ? 'green.500' : 'red.500'
+  const color = percentChange > 0 ? 'lime.200' : 'red.500'
 
   if (!loading && !data.length)
     return (

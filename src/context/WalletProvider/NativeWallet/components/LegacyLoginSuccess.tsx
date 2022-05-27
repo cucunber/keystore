@@ -16,7 +16,7 @@ export const LegacyLoginSuccess = () => {
   const history = useHistory()
   const location = useLocation<LocationState>()
   const translate = useTranslate()
-  const successColor = useColorModeValue('green.500', 'green.200')
+  const successColor = useColorModeValue('lime.200', 'green.200')
 
   return (
     <>

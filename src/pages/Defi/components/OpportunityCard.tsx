@@ -137,7 +137,7 @@ export const OpportunityCard = ({
               </StatLabel>
             </Skeleton>
             <Skeleton isLoaded={isLoaded} maxWidth='100px' ml='auto'>
-              <StatNumber color='green.500'>
+              <StatNumber color='lime.200'>
                 <Amount.Percent value={String(apy)} />
               </StatNumber>
             </Skeleton>

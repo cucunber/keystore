@@ -38,7 +38,7 @@ export const StepRow: React.FC<StepRowProps> = ({
   buttonProps,
   ...rest
 }) => {
-  const successColor = useColorModeValue('green.500', 'green.200')
+  const successColor = useColorModeValue('lime.200', 'green.200')
   return (
     <Stack spacing={4} {...rest}>
       <Stack

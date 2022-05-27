@@ -169,7 +169,7 @@ export const StakingOpportunities = ({ assetId }: StakingOpportunitiesProps) => 
                       .div(`1e+${asset.precision}`)
                       .times(bnOrZero(marketData.price))
                       .toPrecision()}
-                    color='green.500'
+                    color='lime.200'
                     prefix='≈'
                   />
                 </HStack>

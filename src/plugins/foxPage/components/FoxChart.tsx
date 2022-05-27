@@ -45,7 +45,7 @@ export const FoxChart: React.FC<FoxChartProps> = ({ assetId }) => {
             display='flex'
             alignItems='center'
             justifyContent='center'
-            color={percentChange > 0 ? 'green.500' : 'red.500'}
+            color={percentChange > 0 ? 'lime.200' : 'red.500'}
           >
             <StatArrow type={percentChange > 0 ? 'increase' : 'decrease'} />
             {isFinite(percentChange) && <RawText>{percentChange}%</RawText>}

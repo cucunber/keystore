@@ -41,7 +41,7 @@ const TransactionIcon = ({ type }: { type: string }) => {
       return <ArrowUpIcon />
     case chainAdapters.TxType.Receive:
     case Direction.Inbound:
-      return <ArrowDownIcon color='green.500' />
+      return <ArrowDownIcon color='lime.200' />
     case chainAdapters.TradeType.Trade:
       return <FaExchangeAlt />
     case Direction.InPlace:
