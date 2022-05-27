@@ -187,7 +187,7 @@ export const withDisabled = () => (
 )
 
 export const customComposition = () => (
-  <Button size='md' height='48px' width='200px' border='2px solid' borderColor='green.500'>
+  <Button size='md' height='48px' width='200px' border='2px solid' borderColor='lime.200'>
     Button
   </Button>
 )

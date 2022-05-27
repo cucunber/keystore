@@ -20,7 +20,6 @@ export const FiatRamps = () => {
       colorScheme='lime'
       width='full'
       onClick={() => (isConnected ? fiatRamps.open({}) : handleWalletModalOpen())}
-      // variant='ghost-filled'
       justifyContent={{ base: 'flex-start', md: 'center' }}
     >
       <Text translation='fiatRamps.headerLabel' />

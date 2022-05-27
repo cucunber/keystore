@@ -1,15 +1,8 @@
-import {
-  FaFlag,
-  FaHistory,
-  FaLock,
-  FaRocket,
-  FaTable,
-  FaTractor,
-  FaWallet,
-  FaWater,
-} from 'react-icons/fa'
+import { FaHistory, FaLock, FaTable, FaTractor, FaWater } from 'react-icons/fa'
+import { AccountsIcon } from 'components/Icons/Accounts'
 import { AssetsIcon } from 'components/Icons/Assets'
 import { DashboardIcon } from 'components/Icons/Dashboard'
+import { DeFiIcon } from 'components/Icons/DeFi'
 import { Account } from 'pages/Accounts/Account'
 import { Accounts } from 'pages/Accounts/Accounts'
 import { AccountToken } from 'pages/Accounts/AccountToken/AccountToken'
@@ -23,7 +16,6 @@ import { Farming } from 'pages/Defi/views/Farming'
 import { LiquidityPools } from 'pages/Defi/views/LiquidityPools'
 import { Overview } from 'pages/Defi/views/Overview'
 import { StakingVaults } from 'pages/Defi/views/StakingVaults'
-import { Flags } from 'pages/Flags/Flags'
 import { TransactionHistory } from 'pages/TransactionHistory/TransactionHistory'
 
 import { Route as NestedRoute } from './helpers'
@@ -66,7 +58,7 @@ export const routes: Array<NestedRoute> = [
     path: '/accounts',
     label: 'navBar.accounts',
     main: Accounts,
-    icon: <FaWallet color='inherit' />,
+    icon: <AccountsIcon />,
     routes: [
       {
         path: '/:accountId',
@@ -109,7 +101,7 @@ export const routes: Array<NestedRoute> = [
   {
     path: '/defi',
     label: 'navBar.defi',
-    icon: <FaRocket />,
+    icon: <DeFiIcon />,
     main: null,
     routes: [
       {
@@ -145,12 +137,5 @@ export const routes: Array<NestedRoute> = [
     label: 'navBar.transactionHistory',
     icon: <FaHistory />,
     main: TransactionHistory,
-  },
-  {
-    path: '/flags',
-    label: 'navBar.featureFlags',
-    icon: <FaFlag />,
-    hide: window.location.hostname !== 'localhost',
-    main: Flags,
   },
 ]

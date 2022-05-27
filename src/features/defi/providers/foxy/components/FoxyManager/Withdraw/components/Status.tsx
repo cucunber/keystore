@@ -72,7 +72,7 @@ export const Status = () => {
     if (state.withdraw.txStatus === 'success') {
       statusText = StatusTextEnum.success
       statusIcon = <CheckIcon color='green' />
-      statusBg = 'green.500'
+      statusBg = 'lime.200'
     }
     if (state.withdraw.txStatus === 'failed') {
       statusText = StatusTextEnum.failed

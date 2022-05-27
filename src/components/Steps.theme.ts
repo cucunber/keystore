@@ -17,7 +17,7 @@ export const StepsStyle = {
         },
         _highlighted: {
           '& span': {
-            color: 'green.500',
+            color: 'lime.200',
           },
         },
         _activeStep: {

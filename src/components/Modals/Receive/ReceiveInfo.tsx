@@ -216,7 +216,7 @@ export const ReceiveInfo = ({ asset, accountId }: ReceivePropsType) => {
               </Button>
               {!(wallet.getVendor() === 'Native') ? (
                 <Button
-                  color={verified ? 'green.500' : verified === false ? 'red.500' : 'gray.500'}
+                  color={verified ? 'lime.200' : verified === false ? 'red.500' : 'gray.500'}
                   flexDir='column'
                   role='group'
                   variant='link'
