@@ -7,55 +7,39 @@ import {
   ModalContent,
   ModalOverlay,
 } from '@chakra-ui/react'
-import { useToast } from '@chakra-ui/toast'
 import { AnimatePresence } from 'framer-motion'
-import { useCallback, useEffect } from 'react'
-import { useTranslate } from 'react-polyglot'
+import { useEffect } from 'react'
 import { Route, Switch, useHistory, useLocation, useRouteMatch } from 'react-router-dom'
 import { SlideTransition } from 'components/SlideTransition'
-import { WalletActions } from 'context/WalletProvider/actions'
-import { useWallet } from 'hooks/useWallet/useWallet'
+import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 
-import { SUPPORTED_WALLETS } from './config'
-import { SelectModal } from './SelectModal'
+import { AuthorizationActions } from './AuthorizationActionTypes'
+import { SignIn } from './components/SignIn'
+import { AUTHORIZATION_STEPS } from './config'
 
-export const WalletViewsSwitch = () => {
+export const AuthorizationViewsSwitch = () => {
   const history = useHistory()
   const location = useLocation()
-  const toast = useToast()
-  const translate = useTranslate()
   const match = useRouteMatch('/')
-  const {
-    state: { wallet, modal, showBackButton, initialRoute, type },
-    dispatch,
-  } = useWallet()
 
-  const cancelWalletRequests = useCallback(async () => {
-    await wallet?.cancel().catch(e => {
-      console.error(e)
-      toast({
-        title: translate('common.error'),
-        description: e?.message ?? translate('common.somethingWentWrong'),
-        status: 'error',
-        isClosable: true,
-      })
-    })
-  }, [toast, translate, wallet])
+  const {
+    state: { initialRoute, modal, showBackButton, type },
+    dispatch,
+  } = useAuthorization()
 
   const onClose = async () => {
     history.replace('/')
-    dispatch({ type: WalletActions.SET_WALLET_MODAL, payload: false })
-    await cancelWalletRequests()
+    dispatch({
+      type: AuthorizationActions.SET_AUTHORIZATION_MODAL,
+      payload: false,
+    })
   }
 
   const handleBack = async () => {
     history.goBack()
-    // If we're back at the select wallet modal, remove the initial route
-    // otherwise clicking the button for the same wallet doesn't do anything
     if (history.location.pathname === '/') {
-      dispatch({ type: WalletActions.SET_INITIAL_ROUTE, payload: '' })
+      dispatch({ type: AuthorizationActions.SET_INITIAL_ROUTE, payload: '/' })
     }
-    await cancelWalletRequests()
   }
 
   useEffect(() => {
@@ -63,6 +47,9 @@ export const WalletViewsSwitch = () => {
       history.push(initialRoute)
     }
   }, [history, initialRoute])
+
+  // eslint-disable-next-line no-console
+  console.log(history)
 
   return (
     <>
@@ -93,7 +80,7 @@ export const WalletViewsSwitch = () => {
             <SlideTransition key={location.key}>
               <Switch key={location.pathname} location={location}>
                 {type &&
-                  SUPPORTED_WALLETS[type].routes.map((route, index) => {
+                  AUTHORIZATION_STEPS[type].routes.map((route, index) => {
                     const Component = route.component
                     return !Component ? null : (
                       <Route
@@ -104,7 +91,7 @@ export const WalletViewsSwitch = () => {
                       />
                     )
                   })}
-                <Route children={() => <SelectModal />} />
+                <Route render={routeProps => <SignIn {...routeProps} />} />
               </Switch>
             </SlideTransition>
           </AnimatePresence>

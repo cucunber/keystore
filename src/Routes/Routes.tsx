@@ -4,7 +4,8 @@ import { Layout } from 'components/Layout/Layout'
 import { DemoConfig } from 'context/WalletProvider/DemoWallet/config'
 import { useBrowserRouter } from 'hooks/useBrowserRouter/useBrowserRouter'
 import { useWallet } from 'hooks/useWallet/useWallet'
-import { ConnectWallet } from 'pages/ConnectWallet/ConnectWallet'
+import { Authorization } from 'pages/Authorization/Authorization'
+// import { ConnectWallet } from 'pages/ConnectWallet/ConnectWallet'
 import { Flags } from 'pages/Flags/Flags'
 import { PrivacyPolicy } from 'pages/Legal/PrivacyPolicy'
 import { TermsOfService } from 'pages/Legal/TermsOfService'
@@ -67,7 +68,7 @@ export const Routes = () => {
         )
       })}
       <Route path='/connect-wallet'>
-        <ConnectWallet />
+        <Authorization />
       </Route>
       <Route path={'/legal/terms-of-service'}>
         <Layout>
