@@ -48,6 +48,8 @@ export const SignIn = ({ history }: RouteComponentProps) => {
             <Input
               id='signIn-email'
               type='email'
+              size='lg'
+              variant='filled'
               placeholder={translate('authorization.common.emailPlaceholder')}
               value={email}
               onChange={onEmailChangeHandler}
@@ -56,13 +58,14 @@ export const SignIn = ({ history }: RouteComponentProps) => {
         </Box>
         <Box>
           <FormLabel htmlFor='signIn-password'>
-            <Text translation='authorization.common.password' />
+            <Text size='sm' translation='authorization.common.password' />
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
             <Input
               id='signIn-password'
               type='password'
               value={password}
+              placeholder='**********'
               onChange={onPasswordChangeHandler}
             />
             <InputRightElement>
@@ -70,6 +73,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
                 aria-label={translate(`modals.shapeShift.password.${showPw ? 'hide' : 'show'}`)}
                 h='1.75rem'
                 size='sm'
+                variant='ghost'
                 onClick={handleShowClick}
                 icon={!showPw ? <FaEye /> : <FaEyeSlash />}
               />

@@ -6,12 +6,14 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalOverlay,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import { Route, Switch, useHistory, useLocation, useRouteMatch } from 'react-router-dom'
 import { SlideTransition } from 'components/SlideTransition'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
+import { breakpoints } from 'theme/theme'
 
 import { AuthorizationActions } from './AuthorizationActionTypes'
 import { SignIn } from './components/SignIn'
@@ -21,6 +23,8 @@ export const AuthorizationViewsSwitch = () => {
   const history = useHistory()
   const location = useLocation()
   const match = useRouteMatch('/')
+
+  const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
 
   const {
     state: { initialRoute, modal, showBackButton, type },
@@ -48,9 +52,6 @@ export const AuthorizationViewsSwitch = () => {
     }
   }, [history, initialRoute])
 
-  // eslint-disable-next-line no-console
-  console.log(history)
-
   return (
     <>
       <Modal
@@ -61,7 +62,13 @@ export const AuthorizationViewsSwitch = () => {
         closeOnOverlayClick={false}
       >
         <ModalOverlay />
-        <ModalContent justifyContent='center' px={3} pt={3} pb={6}>
+        <ModalContent
+          justifyContent='center'
+          px={3}
+          pt={3}
+          pb={6}
+          minWidth={isLargerThanMd ? '700px' : '90%'}
+        >
           <Flex justifyContent='space-between' alignItems='center' position='relative'>
             {!match?.isExact && showBackButton && (
               <IconButton
