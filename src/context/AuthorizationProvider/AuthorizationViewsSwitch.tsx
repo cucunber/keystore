@@ -57,7 +57,7 @@ export const AuthorizationViewsSwitch = () => {
       <Modal
         isOpen={modal}
         onClose={onClose}
-        isCentered
+        scrollBehavior='outside'
         trapFocus={false}
         closeOnOverlayClick={false}
       >

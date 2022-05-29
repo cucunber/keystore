@@ -67,7 +67,7 @@
   },
   "authorization": {
     "signIn": {
-      "title": "Sing in",
+      "title": "Sing In",
       "register": "Register",
       "dontHaveAccount": "Don't have an account?"
     },
@@ -79,6 +79,8 @@
     "register": {
       "title": "Register a Free Account",
       "subtitle": "Sign up by entering your details below",
+      "createPassword": "Create Password",
+      "confirmPassword": "Confirm Password",
       "haveAccount": "Already have an account?",
       "createAccount": "Create Account"
     },
@@ -110,7 +112,7 @@
         "alphabet": "Roman alphabet only",
         "uppercaseAmount": "At least %{amount} uppercase letter",
         "lowercaseAmount": "At least %{amount} lowercase letter",
-        "numberAmount": "At least ${amount} number"
+        "numberAmount": "At least %{amount} number"
       }    
     }
   },

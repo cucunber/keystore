@@ -14,7 +14,7 @@ export interface InitialState {
 
 const initialState: InitialState = {
   modal: false,
-  showBackButton: false,
+  showBackButton: true,
   initialRoute: '',
   type: AuthorizationSteps.signIn,
 }
