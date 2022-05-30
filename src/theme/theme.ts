@@ -20,6 +20,7 @@ import { StatStyle as Stat } from 'components/Stat/Stat.theme'
 import { StepsStyle as CustomSteps } from 'components/Steps.theme'
 import { TableStyle as Table } from 'components/Table/Table.theme'
 import { TabsStyle as Tabs } from 'components/Tabs/Tabs.theme'
+import { TagStyle as Tag } from 'components/Tag.theme'
 import { TextareaStyle as Textarea } from 'components/Textarea/Textarea.theme'
 import { TooltipStyle as Tooltip } from 'components/Tooltip/Tooltip.theme'
 
@@ -117,6 +118,7 @@ export const theme = extendTheme({
     Skeleton,
     Steps: CustomSteps,
     Popover,
+    Tag,
   },
   shadows: {
     xs: '0px 5px 10px rgba(0, 0, 0, 0.1);',
