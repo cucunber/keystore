@@ -34,6 +34,9 @@ const commonColors = {
   keystoneNeutral: {
     200: '#012A36',
   },
+  keystonePrimarySlate: {
+    200: '#012A36',
+  },
   green: {
     900: '#004F3A',
     800: '#00684D',

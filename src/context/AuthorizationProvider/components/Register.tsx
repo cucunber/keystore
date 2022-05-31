@@ -21,7 +21,10 @@ import { useTranslate } from 'react-polyglot'
 import { RouteComponentProps } from 'react-router'
 import { object, ref, string } from 'yup'
 import { Text } from 'components/Text'
+import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { breakpoints } from 'theme/theme'
+
+import { AuthorizationActions } from '../AuthorizationActionTypes'
 
 const registerValidator = object().shape({
   firstName: string().min(2).required(),
@@ -29,17 +32,19 @@ const registerValidator = object().shape({
   phone: string()
     .required()
     .test('is-phone', '', phone =>
-      phone ? new RegExp(/^(27)+\d{2}\d{3}\d{2}$/gm).test(phone) : false,
+      phone ? new RegExp(/^\+?(27)[ -]?\d{2}[ -]?\d{3}[ -]?\d{2}$/gm).test(phone) : false,
     ),
   email: string().email().required(),
   password: string()
     .min(8)
     .required()
     .test('only romans', '', pass => (pass ? new RegExp(/[a-z][0-9]*/i).test(pass) : false))
-    .test('with upper', '', pass => (pass ? new RegExp(/[A-B]/).test(pass) : false))
-    .test('with lower', '', pass => (pass ? new RegExp(/[a-b]/).test(pass) : false))
+    .test('with upper', '', pass => (pass ? new RegExp(/[A-Z]/).test(pass) : false))
+    .test('with lower', '', pass => (pass ? new RegExp(/[a-z]/).test(pass) : false))
     .test('with numbers', '', pass => (pass ? new RegExp(/[0-9]/).test(pass) : false)),
-  confirmation: string().oneOf([ref('password')]),
+  confirm: string()
+    .required()
+    .oneOf([ref('password')]),
 })
 
 export const Register = ({ history }: RouteComponentProps) => {
@@ -54,17 +59,25 @@ export const Register = ({ history }: RouteComponentProps) => {
   })
 
   const [showPw, setShowPw] = useState(false)
+  const [showConf, setShowConf] = useState(false)
+
+  const { dispatch } = useAuthorization()
 
   const translate = useTranslate()
 
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
 
   const onSendRegistrationClick = (data: FieldValues) => {
-    // eslint-disable-next-line no-console
-    console.log(data)
+    dispatch({
+      type: AuthorizationActions.SET_ACCESSORY_INFO,
+      payload: { email: data.email, phone: data.phone },
+    })
+    history.push('/verify-phone')
   }
 
   const handleShowClick = () => setShowPw(!showPw)
+  const handleShowClickConf = () => setShowConf(!showConf)
+
   return (
     <>
       <ModalHeader textAlign='center'>
@@ -232,15 +245,26 @@ export const Register = ({ history }: RouteComponentProps) => {
               translation='authorization.register.confirmPassword'
             />
           </FormLabel>
-          <Input
-            id='register-confirm-password'
-            type='password'
-            variant='filled'
-            placeholder='**********'
-            {...register('confirmPassword', {
-              required: true,
-            })}
-          />
+          <InputGroup size='lg' variant='filled'>
+            <Input
+              id='register-confirm-password'
+              type={showConf ? 'text' : 'password'}
+              placeholder='**********'
+              {...register('confirm', {
+                required: true,
+              })}
+            />
+            <InputRightElement>
+              <IconButton
+                aria-label={translate(`modals.shapeShift.password.${showConf ? 'hide' : 'show'}`)}
+                h='1.75rem'
+                size='sm'
+                variant='ghost'
+                onClick={handleShowClickConf}
+                icon={!showConf ? <FaEye /> : <FaEyeSlash />}
+              />
+            </InputRightElement>
+          </InputGroup>
         </Box>
         <Box>Captcha</Box>
         <Flex mt={8} justifyContent='space-between' alignItems='center'>

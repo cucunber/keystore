@@ -12,6 +12,9 @@ import { FieldValues, useForm } from 'react-hook-form'
 import { useTranslate } from 'react-polyglot'
 import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
+import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
+
+import { AuthorizationActions } from '../AuthorizationActionTypes'
 
 export const RecoverPassword = ({ history }: RouteComponentProps) => {
   const {
@@ -24,10 +27,12 @@ export const RecoverPassword = ({ history }: RouteComponentProps) => {
   })
 
   const translate = useTranslate()
+  const { dispatch } = useAuthorization()
 
   const onSendResetClick = (data: FieldValues) => {
-    // eslint-disable-next-line no-console
-    console.log(data)
+    dispatch({ type: AuthorizationActions.SET_ACCESSORY_INFO, payload: { email: data.email } })
+    dispatch({ type: AuthorizationActions.SET_SHOW_BACK_BUTTON, payload: false })
+    history.push('/recover-password/waiting')
   }
 
   return (

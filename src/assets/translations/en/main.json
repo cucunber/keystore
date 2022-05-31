@@ -82,6 +82,11 @@
       "provideEmail": "Provide us with your email address so that we can send you a reset password link.",
       "sendResetLink": "Send Reset Link"
     },
+    "checkInbox": {
+      "title": "Check Your Inbox",
+      "sendMessage": "We have sent a reset password link to",
+      "followTo": "Please follow the instructions to change your password."
+    },
     "register": {
       "title": "Register a Free Account",
       "subtitle": "Sign up by entering your details below",
@@ -92,12 +97,12 @@
     },
     "verifyMobile": {
       "title": "Verify Mobile Number",
-      "subtitle": "We have sent a verification code to %{phoneNumber}.",
+      "subtitle": "We have sent a verification code to",
       "enterCode": "Please enter the code below to continue."
     },
     "verifyEmail": {
       "title": "Check Your Inbox",
-      "subtitle": "A verification email has been sent to %{email}.",
+      "subtitle": "A verification email has been sent to",
       "followEmail": "Please follow the link to verify your email address."
     },
     "common": {

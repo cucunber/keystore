@@ -1,0 +1,38 @@
+.spinner {
+  transform-origin: center;
+  animation: spin 1.5s infinite ease-in-out;
+}
+
+.spinner svg{
+  width: 100%;
+  height: 100%;
+}
+
+.spinner.sm{
+    width: 2rem;
+    height: 2rem;
+}
+
+.spinner.md{
+    width: 3rem;
+    height: 3rem;
+}
+
+.spinner.md{
+    width: 4rem;
+    height: 4rem;
+}
+
+@keyframes spin {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(0deg);
+  }
+}
