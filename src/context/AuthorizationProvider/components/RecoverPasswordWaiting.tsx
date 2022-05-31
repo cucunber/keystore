@@ -1,10 +1,9 @@
 import { Button, Flex, ModalBody, ModalHeader, Text as ChakraText } from '@chakra-ui/react'
 import { useCallback, useEffect, useMemo } from 'react'
-import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { useTimer } from 'hooks/useTimer'
-export const RecoverPasswordWaiting = ({ history }: RouteComponentProps) => {
+export const RecoverPasswordWaiting = () => {
   const { start, seconds, formate } = useTimer({ timer: 300 })
 
   const resendDisabled = useMemo(() => seconds !== 0, [seconds])
