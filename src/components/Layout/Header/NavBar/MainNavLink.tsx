@@ -19,19 +19,15 @@ export const MainNavLink = memo(
     const location = useLocation()
     const active = location?.pathname.includes(href ?? '')
     return (
-      <Tooltip
-        label={label}
-        isDisabled={isLargerThan2xl || !isCompact || isSideBarActive}
-        placement='right'
-      >
+      <Tooltip label={label} isDisabled={isLargerThan2xl || isSideBarActive} placement='right'>
         <Button
           width='full'
           justifyContent='flex-start'
           variant='ghost'
           transition='all 300ms ease-in-out'
           isActive={href ? active : false}
-          minWidth={isCompact ? (isSideBarActive ? 280 : 'auto') : 10}
-          iconSpacing={isLargerThan2xl ? 4 : isCompact && !isSideBarActive ? 0 : 4}
+          minWidth={isSideBarActive ? 280 : 'auto'}
+          iconSpacing={!isSideBarActive ? 0 : 4}
           ref={ref}
           {...rest}
         >

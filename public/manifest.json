@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": ".",
-  "name": "ShapeShift",
-  "short_name": "ShapeShift",
+  "name": "KeyStore",
+  "short_name": "KeyStore",
   "description": "Your Web3 & DeFi Portal",
   "icons": [
     {
