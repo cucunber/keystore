@@ -39,6 +39,57 @@
     "body": "Новая версия приложения доступна",
     "cta": "Перезагрузить приложение"
   },
+  "authorization": {
+    "signIn": {
+      "title": "Sing In",
+      "register": "Register",
+      "dontHaveAccount": "Don't have an account?"
+    },
+    "forgetPassword": {
+      "title": "Forget password?",
+      "provideEmail": "Provide us with your email address so that we can send you a reset password link.",
+      "sendResetLink": "Send Reset Link"
+    },
+    "register": {
+      "title": "Register a Free Account",
+      "subtitle": "Sign up by entering your details below",
+      "createPassword": "Create Password",
+      "confirmPassword": "Confirm Password",
+      "haveAccount": "Already have an account?",
+      "createAccount": "Create Account"
+    },
+    "verifyMobile": {
+      "title": "Verify Mobile Number",
+      "subtitle": "We have sent a verification code to",
+      "enterCode": "Please enter the code below to continue."
+    },
+    "verifyEmail": {
+      "title": "Check Your Inbox",
+      "subtitle": "A verification email has been sent to",
+      "followEmail": "Please follow the link to verify your email address."
+    },
+    "common": {
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "First Name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Surname",
+      "mobileNumber": "Mobile Number",
+      "mobileNumberPlaceholder": "+27",
+      "password": "Password",
+      "createPassword": "Create Password",
+      "confirmPassword": "Confirm Password",
+      "resend": "Resend",
+      "passwordRules": {
+        "minCharsAmount": "Minimum of 8 characters",
+        "alphabet": "Roman alphabet only",
+        "uppercaseAmount": "At least %{amount} uppercase letter",
+        "lowercaseAmount": "At least %{amount} lowercase letter",
+        "numberAmount": "At least %{amount} number"
+      }    
+    }
+  },
   "dashboard": {
     "portfolio": {
       "addAsset": "Добавить актив",

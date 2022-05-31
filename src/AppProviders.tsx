@@ -6,6 +6,7 @@ import { HashRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 import { ScrollToTop } from 'Routes/ScrollToTop'
 import { AppProvider } from 'context/AppProvider/AppContext'
+import { AuthorizationProvider } from 'context/AuthorizationProvider/AuthorizationProvider'
 import { BrowserRouterProvider } from 'context/BrowserRouterProvider/BrowserRouterProvider'
 import { I18nProvider } from 'context/I18nProvider/I18nProvider'
 import { MarketDataProvider } from 'context/MarketDataProvider/MarketDataProvider'
@@ -35,15 +36,17 @@ export function AppProviders({ children }: ProvidersProps) {
                 <I18nProvider>
                   <WalletProvider>
                     <KeepKeyProvider>
-                      <ModalProvider>
-                        <TransactionsProvider>
-                          <AppProvider>
-                            <MarketDataProvider>
-                              <DefiManagerProvider>{children}</DefiManagerProvider>
-                            </MarketDataProvider>
-                          </AppProvider>
-                        </TransactionsProvider>
-                      </ModalProvider>
+                      <AuthorizationProvider>
+                        <ModalProvider>
+                          <TransactionsProvider>
+                            <AppProvider>
+                              <MarketDataProvider>
+                                <DefiManagerProvider>{children}</DefiManagerProvider>
+                              </MarketDataProvider>
+                            </AppProvider>
+                          </TransactionsProvider>
+                        </ModalProvider>
+                      </AuthorizationProvider>
                     </KeepKeyProvider>
                   </WalletProvider>
                 </I18nProvider>

@@ -12,6 +12,7 @@
     "@formatjs/intl-locale": "^2.4.46",
     "@formatjs/intl-numberformat": "^7.4.2",
     "@formatjs/intl-pluralrules": "^4.3.2",
+    "@hookform/resolvers": "^2.8.10",
     "@metamask/detect-provider": "^1.2.0",
     "@reduxjs/toolkit": "^1.8.0",
     "@shapeshiftoss/asset-service": "^4.2.3",
@@ -94,7 +95,8 @@
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "web-vitals": "^2.1.0",
-    "web3": "^1.6.1"
+    "web3": "^1.6.1",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "show-linked-packages": "find node_modules node_modules/@* -maxdepth 1 -type l -print",
