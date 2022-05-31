@@ -94,7 +94,6 @@ export const Authorization = () => {
           // The second `!state.isConnected` filters any intent to redirect if the redirecting had already happened.
           if (!state.isConnected) {
             dispatch({ type: WalletActions.SET_IS_CONNECTED, payload: true })
-            authDispatch({ type: AuthorizationActions.SET_AUTHORIZATION_MODAL, payload: false })
             history.push(query?.returnUrl ? query.returnUrl : '/dashboard')
           }
         })
