@@ -57,7 +57,7 @@ export const SettingsList = ({ appHistory, ...routeProps }: SettingsListProps) =
             onClick={toggleColorMode}
             icon={<Icon as={isLightMode ? SunIcon : MoonIcon} color='gray.500' />}
           >
-            <Switch isChecked={isLightMode} pointerEvents='none' />
+            <Switch colorScheme='lime' isChecked={isLightMode} pointerEvents='none' />
           </SettingsListItem>
           <Divider my={1} />
           <SettingsListItem

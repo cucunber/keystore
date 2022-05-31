@@ -104,7 +104,6 @@ export const WalletViewsSwitch = () => {
                       />
                     )
                   })}
-
                 <Route children={() => <SelectModal />} />
               </Switch>
             </SlideTransition>
