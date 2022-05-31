@@ -45,7 +45,7 @@ function variantGhost(props: Record<string, any>) {
     color: `${c}.200`,
     bg: 'transparent',
     _hover: {
-      bg: mode(`${c}.50`, darkHoverBg)(props),
+      bg: mode(`slate.25`, darkHoverBg)(props),
     },
     _active: {
       bg: mode(`${c}.200`, darkActiveBg)(props),
