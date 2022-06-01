@@ -1,8 +1,8 @@
 import { NativeAdapter } from '@shapeshiftoss/hdwallet-native'
-import { FoxIcon } from 'components/Icons/FoxIcon'
+import { KeyStoreIcon } from 'components/Icons/KeyStoreIcon'
 
 export const DemoConfig = {
   adapter: NativeAdapter,
-  icon: FoxIcon,
-  name: 'DemoWallet',
+  icon: KeyStoreIcon,
+  name: 'KeyDemo',
 }

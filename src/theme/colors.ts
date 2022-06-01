@@ -77,7 +77,9 @@ const commonColors = {
 
 export const brand = {
   primary: commonColors.lime[200],
-  altBg: `radial-gradient(94.32% 94.6% at 4.04% -44.6%,${commonColors.lime[200]}66 0%,${commonColors.gray[900]}00 100%),linear-gradient(0deg,${commonColors.gray[900]},${commonColors.gray[900]})`,
+  altBg: `radial-gradient(94.32% 94.6% at 4.04% -44.6%,
+    ${commonColors.lime[200]}66 0%,${commonColors.keystonePrimarySlate[200]}00 100%),
+    linear-gradient(0deg,${commonColors.keystonePrimarySlate[200]},${commonColors.keystonePrimarySlate[200]})`,
 }
 
 export const colors = {
