@@ -267,7 +267,13 @@ export const Register = ({ history }: RouteComponentProps) => {
           </InputGroup>
         </Box>
         <Box>Captcha</Box>
-        <Flex mt={8} justifyContent='space-between' alignItems='center'>
+        <Stack
+          mt={8}
+          direction={{ md: 'row', base: 'column' }}
+          spacing={{ base: 2, md: 8 }}
+          justifyContent='space-between'
+          alignItems='center'
+        >
           <Flex justifyContent='space-between' alignItems='center'>
             <Text
               mr={1}
@@ -297,7 +303,7 @@ export const Register = ({ history }: RouteComponentProps) => {
           >
             <Text translation='authorization.register.createAccount' />
           </Button>
-        </Flex>
+        </Stack>
       </ModalBody>
     </>
   )
