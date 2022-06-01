@@ -13,7 +13,7 @@ type SidebarLinkProps = {
 } & ButtonProps
 
 export const MainNavLink = memo(
-  forwardRef<SidebarLinkProps, 'div'>(({ isCompact, ...rest }: SidebarLinkProps, ref) => {
+  forwardRef<SidebarLinkProps, 'div'>(({ ...rest }: SidebarLinkProps, ref) => {
     const { href, label, isSideBarActive } = rest
     const [isLargerThan2xl] = useMediaQuery(`(min-width: ${breakpoints['2xl']})`)
     const location = useLocation()
@@ -27,13 +27,11 @@ export const MainNavLink = memo(
           transition='all 300ms ease-in-out'
           isActive={href ? active : false}
           minWidth={isSideBarActive ? 280 : 'auto'}
-          iconSpacing={!isSideBarActive ? 0 : 4}
+          iconSpacing={isSideBarActive ? 4 : 0}
           ref={ref}
           {...rest}
         >
-          <Box display={{ base: isCompact && !isSideBarActive ? 'none' : 'flex', '2xl': 'block' }}>
-            {label}
-          </Box>
+          <Box display={{ base: isSideBarActive ? 'flex' : 'none' }}>{label}</Box>
         </Button>
       </Tooltip>
     )

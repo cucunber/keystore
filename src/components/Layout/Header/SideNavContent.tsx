@@ -18,7 +18,7 @@ type HeaderContentProps = {
   onClose?: () => void
 } & FlexProps
 
-export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
+export const SideNavContent = ({ onClose }: HeaderContentProps) => {
   const [isSideBarActive, setIsSideBarActive] = useState(true)
   const translate = useTranslate()
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
@@ -69,11 +69,11 @@ export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
           variant='solid'
         />
       )}
-      <NavBar isSideBarActive={isSideBarActive} isCompact={isCompact} mt={6} />
+      <NavBar isSideBarActive={isSideBarActive} isCompact={isSideBarActive} mt={6} />
       <Stack width='full'>
         <MainNavLink
           variant='ghost'
-          isCompact={isCompact}
+          isCompact={isSideBarActive}
           onClick={() => handleClick(() => settings.open({}))}
           label={translate('common.profile')}
           leftIcon={<ProfileIcon />}
@@ -82,7 +82,7 @@ export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
         />
         <MainNavLink
           variant='ghost'
-          isCompact={isCompact}
+          isCompact={isSideBarActive}
           onClick={() => handleClick(() => settings.open({}))}
           label={translate('common.settings')}
           leftIcon={<SettingsIcon />}
@@ -91,7 +91,7 @@ export const SideNavContent = ({ isCompact, onClose }: HeaderContentProps) => {
         />
         <MainNavLink
           leftIcon={<FeedbackIcon />}
-          isCompact={isCompact}
+          isCompact={isSideBarActive}
           as={Link}
           justifyContent='flex-start'
           variant='ghost'

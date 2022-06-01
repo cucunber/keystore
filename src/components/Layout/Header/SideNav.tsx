@@ -24,7 +24,7 @@ export const SideNav = () => {
         position='sticky'
         top={top}
         maxWidth='xs'
-        flex={{ base: 'inherit', '2xl': '1 1 0%' }}
+        flex={{ base: 'inherit' }}
         display={{ base: 'none', md: 'flex' }}
       >
         <SideNavContent isCompact={true} />
