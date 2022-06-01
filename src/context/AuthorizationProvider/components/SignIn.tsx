@@ -17,7 +17,10 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useTranslate } from 'react-polyglot'
 import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
+import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { useWallet } from 'hooks/useWallet/useWallet'
+
+import { AuthorizationActions } from '../AuthorizationActionTypes'
 
 export const SignIn = ({ history }: RouteComponentProps) => {
   const {
@@ -31,8 +34,14 @@ export const SignIn = ({ history }: RouteComponentProps) => {
   const [showPw, setShowPw] = useState(false)
 
   const { connectDemo } = useWallet()
+  const { dispatch } = useAuthorization()
 
   const handleShowClick = () => setShowPw(!showPw)
+
+  const handleSignIn = () => {
+    connectDemo()
+    dispatch({ type: AuthorizationActions.SET_AUTHORIZATION_MODAL, payload: false })
+  }
 
   const translate = useTranslate()
   return (
@@ -129,7 +138,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
             </Button>
           </Flex>
           <Button
-            onClick={connectDemo}
+            onClick={handleSignIn}
             disabled={!isValid}
             paddingLeft='50px'
             paddingRight='50px'

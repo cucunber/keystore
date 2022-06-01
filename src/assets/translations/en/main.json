@@ -73,7 +73,7 @@
   },
   "authorization": {
     "signIn": {
-      "title": "Sing In",
+      "title": "Sign In",
       "register": "Register",
       "dontHaveAccount": "Don't have an account?"
     },
