@@ -2,6 +2,7 @@ import { ChevronRightIcon, SettingsIcon } from '@chakra-ui/icons'
 import { Box, Flex, FlexProps, IconButton, Link, Stack, useMediaQuery } from '@chakra-ui/react'
 import { useCallback, useState } from 'react'
 import { useTranslate } from 'react-polyglot'
+import { Link as ReactRouterLink } from 'react-router-dom'
 import { FeedbackIcon } from 'components/Icons/FeedBack'
 import { ProfileIcon } from 'components/Icons/Profile'
 import { useModal } from 'hooks/useModal/useModal'
@@ -74,11 +75,14 @@ export const SideNavContent = ({ onClose }: HeaderContentProps) => {
         <MainNavLink
           variant='ghost'
           isCompact={isSideBarActive}
-          onClick={() => handleClick(() => settings.open({}))}
+          onClick={() => handleClick()}
           label={translate('common.profile')}
+          as={ReactRouterLink}
           leftIcon={<ProfileIcon />}
           isSideBarActive={isSideBarActive}
           data-test='navigation-profile-button'
+          href='/profile'
+          to='/profile'
         />
         <MainNavLink
           variant='ghost'
