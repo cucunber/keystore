@@ -21,7 +21,6 @@ import { useAppSelector } from 'state/store'
 
 export const ProfileHeader = () => {
   const { user } = useAppSelector(state => selectProfile(state))
-  console.log('user', user)
 
   const steps = [
     {
