@@ -1,65 +1,28 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Spacer,
-  Text,
-  Tag,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Spacer, Text } from "@chakra-ui/react";
 import profile from "assets/profile.svg";
-import { Card } from "components/Card/Card";
 import { EditIcon } from "components/Icons/Edit";
 import { MailIcon } from "components/Icons/Mail";
 import { PhoneIcon } from "components/Icons/Phone";
 import { SignOutIcon } from "components/Icons/SignOut";
-import { Main } from "components/Layout/Main";
-import { Levels } from 'components/Levels/Levels'
-import {selectProfile} from 'state/slices/selectors'
-import { useAppSelector } from 'state/store'
 
-export const ProfileHeader = () => {
-  const { user } = useAppSelector(state => selectProfile(state))
-
-  const steps = [
-    {
-      label: "Register a Profile",
-      isCompleted: true,
-      step: 0,
-      subtitle: "Create a profile using your personal details.",
-    },
-    {
-      label: "Level 1",
-      isCompleted: false,
-      step: 1,
-      subtitle: "Trade up to a total amount of R15 000",
-      buttonSubtitle: 'Upload a selfie and enable two-factor-authentication',
-    },
-    {
-      label: "Level 2",
-      isCompleted: false,
-      step: 2,
-      subtitle: "Deposit or withdraw up to R50 000 per month.",
-      buttonSubtitle: 'Upload government issued ID',
-    },
-    {
-      label: "Level 3",
-      isCompleted: false,
-      step: 3,
-      subtitle: "Trade, deposit, withdraw without any limits.",
-      buttonSubtitle: 'Upload proof of residential address.',
-    },
-  ];
-  const activeStep = steps.find((step) => !step.isCompleted);
-
-  const TitleComponent = () => (
+export const ProfileHeader = ({
+  firstName,
+  lastName,
+  phone,
+  email,
+}: {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+}) => {
+  return (
     <Box p={["0", "8"]}>
       <Flex mb={8}>
         <Box display="flex" alignItems="center">
           <Image src={profile} />
           <Text ml={4} fontSize={["md", "lg", "3xl"]}>
-            {user.firstName} {user.lastName}
+            {firstName} {lastName}
           </Text>
         </Box>
         <Spacer />
@@ -81,43 +44,16 @@ export const ProfileHeader = () => {
         <Box display="flex" alignItems="center">
           <MailIcon />
           <Text ml={3} fontSize={["xs", "s", "md"]}>
-            {user.phone}
+            {phone}
           </Text>
         </Box>
         <Box display="flex" alignItems="center" ml={20}>
           <PhoneIcon />
           <Text ml={3} fontSize={["xs", "s", "md"]}>
-            {user.email}
+            {email}
           </Text>
         </Box>
       </Flex>
     </Box>
-  );
-
-  return (
-    <Main titleComponent={<TitleComponent />}>
-      <Card p={4}>
-        <Card.Header textAlign="left">
-          <Flex>
-            <Box display="flex" alignItems="center">
-              <Heading as="h4" size="md" color="keystone.200">
-                Verification Status
-              </Heading>
-            </Box>
-            <Spacer />
-            <Box>
-              <Tag bgColor="lime.bg" color="slate.200">
-                <Heading as="h4" size="md">
-                  Level {user.level}
-                </Heading>
-              </Tag>
-            </Box>
-          </Flex>
-        </Card.Header>
-        <Card.Body>
-          <Levels activeStep={activeStep?.step || 0} steps={steps} />
-        </Card.Body>
-      </Card>
-    </Main>
   );
 };
