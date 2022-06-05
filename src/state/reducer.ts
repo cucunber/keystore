@@ -7,6 +7,7 @@ import { assetApi, assets } from './slices/assetsSlice/assetsSlice'
 import { marketApi, marketData } from './slices/marketDataSlice/marketDataSlice'
 import { portfolio, portfolioApi } from './slices/portfolioSlice/portfolioSlice'
 import { preferences } from './slices/preferencesSlice/preferencesSlice'
+import { profile } from './slices/profileSlice/profileSlice'
 import { txHistory, txHistoryApi } from './slices/txHistorySlice/txHistorySlice'
 import { validatorData, validatorDataApi } from './slices/validatorDataSlice/validatorDataSlice'
 
@@ -18,6 +19,7 @@ export const slices = {
   portfolio,
   preferences,
   accountSpecifiers,
+  profile,
 }
 
 const preferencesPersistConfig = {
@@ -34,6 +36,7 @@ export const sliceReducers = {
   preferences: persistReducer(preferencesPersistConfig, preferences.reducer),
   accountSpecifiers: accountSpecifiers.reducer,
   validatorData: validatorData.reducer,
+  profile: profile.reducer
 }
 
 export const apiSlices = {

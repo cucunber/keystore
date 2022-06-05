@@ -15,16 +15,13 @@ import { MailIcon } from "components/Icons/Mail";
 import { PhoneIcon } from "components/Icons/Phone";
 import { SignOutIcon } from "components/Icons/SignOut";
 import { Main } from "components/Layout/Main";
-import { Levels } from "components/Levels/Levels";
+import { Levels } from 'components/Levels/Levels'
+import {selectProfile} from 'state/slices/selectors'
+import { useAppSelector } from 'state/store'
 
 export const ProfileHeader = () => {
-  const user = {
-    firstName: "Name",
-    lastName: "Surname",
-    email: "sarahjane@mail.com",
-    phone: "+27 83 445 5423",
-    level: 0,
-  };
+  const { user } = useAppSelector(state => selectProfile(state))
+  console.log('user', user)
 
   const steps = [
     {
