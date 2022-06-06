@@ -30,6 +30,7 @@ const commonColors = {
     50: '#F7FAFC',
   },
   keystone: {
+    150: '#CDD5DF',
     200: '#748094',
   },
   keystoneNeutral: {

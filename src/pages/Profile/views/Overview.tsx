@@ -1,12 +1,12 @@
-import { Main } from "components/Layout/Main";
-import { selectProfile } from "state/slices/selectors";
-import { useAppSelector } from "state/store";
+import { Main } from 'components/Layout/Main'
+import { selectProfile } from 'state/slices/selectors'
+import { useAppSelector } from 'state/store'
 
-import { ProfileBody } from "../components/ProfileBody";
-import { ProfileHeader } from "../components/ProfileHeader";
+import { ProfileBody } from '../components/ProfileBody'
+import { ProfileHeader } from '../components/ProfileHeader'
 
 export const ProfileOverview = () => {
-  const { user } = useAppSelector((state) => selectProfile(state));
+  const { user } = useAppSelector(state => selectProfile(state))
   return (
     <Main
       titleComponent={
@@ -20,5 +20,5 @@ export const ProfileOverview = () => {
     >
       <ProfileBody level={user.level} />
     </Main>
-  );
-};
+  )
+}
