@@ -36,7 +36,7 @@ export const sliceReducers = {
   preferences: persistReducer(preferencesPersistConfig, preferences.reducer),
   accountSpecifiers: accountSpecifiers.reducer,
   validatorData: validatorData.reducer,
-  profile: profile.reducer
+  profile: profile.reducer,
 }
 
 export const apiSlices = {
