@@ -1,38 +1,44 @@
-import { Box, Flex, Heading, Spacer, Tag } from '@chakra-ui/react';
-import { Card } from 'components/Card/Card';
-import { Levels } from 'components/Levels/Levels';
+import { Box, Flex, Heading, Spacer, Tag } from '@chakra-ui/react'
+import { VFC } from 'react'
+import { Card } from 'components/Card/Card'
+import { Levels } from 'components/Levels/Levels'
 
-export const VerificationStatus = ({ level }: { level: number }) => {
-  const steps = [
-    {
-      label: 'Register a Profile',
-      isCompleted: true,
-      step: 0,
-      subtitle: 'Create a profile using your personal details.',
-    },
-    {
-      label: 'Level 1',
-      isCompleted: false,
-      step: 1,
-      subtitle: 'Trade up to a total amount of R15 000',
-      buttonSubtitle: 'Upload a selfie and enable two-factor-authentication',
-    },
-    {
-      label: 'Level 2',
-      isCompleted: false,
-      step: 2,
-      subtitle: 'Deposit or withdraw up to R50 000 per month.',
-      buttonSubtitle: 'Upload government issued ID',
-    },
-    {
-      label: 'Level 3',
-      isCompleted: false,
-      step: 3,
-      subtitle: 'Trade, deposit, withdraw without any limits.',
-      buttonSubtitle: 'Upload proof of residential address.',
-    },
-  ];
-  const activeStep = steps.find((step) => !step.isCompleted);
+interface IVerificationStatus {
+  level: number
+}
+
+const steps = [
+  {
+    label: 'Register a Profile',
+    isCompleted: true,
+    step: 0,
+    subtitle: 'Create a profile using your personal details.',
+  },
+  {
+    label: 'Level 1',
+    isCompleted: false,
+    step: 1,
+    subtitle: 'Trade up to a total amount of R15 000',
+    buttonSubtitle: 'Upload a selfie and enable two-factor-authentication',
+  },
+  {
+    label: 'Level 2',
+    isCompleted: false,
+    step: 2,
+    subtitle: 'Deposit or withdraw up to R50 000 per month.',
+    buttonSubtitle: 'Upload government issued ID',
+  },
+  {
+    label: 'Level 3',
+    isCompleted: false,
+    step: 3,
+    subtitle: 'Trade, deposit, withdraw without any limits.',
+    buttonSubtitle: 'Upload proof of residential address.',
+  },
+]
+
+export const VerificationStatus: VFC<IVerificationStatus> = ({ level }) => {
+  const activeStep = steps.find(step => !step.isCompleted)
 
   return (
     <Card p={4}>
@@ -57,5 +63,5 @@ export const VerificationStatus = ({ level }: { level: number }) => {
         <Levels activeStep={activeStep?.step || 0} steps={steps} />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
