@@ -5,7 +5,8 @@ import { EditIcon } from 'components/Icons/Edit'
 import { MailIcon } from 'components/Icons/Mail'
 import { PhoneIcon } from 'components/Icons/Phone'
 import { SignOutIcon } from 'components/Icons/SignOut'
-import { useModal } from 'hooks/useModal/useModal'
+import { ProfileActions } from 'context/ProfileProvider/ProfileActionTypes'
+import { useProfile } from 'hooks/useProfile/useProfile'
 
 interface IProfileHeader {
   firstName: string
@@ -15,7 +16,7 @@ interface IProfileHeader {
 }
 
 export const ProfileHeader: VFC<IProfileHeader> = ({ firstName, lastName, phone, email }) => {
-  const { editDetails } = useModal()
+  const { dispatch } = useProfile()
   return (
     <Box p={['0', '8']}>
       <Flex mb={8}>
@@ -27,7 +28,16 @@ export const ProfileHeader: VFC<IProfileHeader> = ({ firstName, lastName, phone,
         </Box>
         <Spacer />
         <Box>
-          <Button leftIcon={<EditIcon />} colorScheme='gray' onClick={() => editDetails.open()}>
+          <Button
+            leftIcon={<EditIcon />}
+            colorScheme='gray'
+            onClick={() =>
+              dispatch({
+                type: ProfileActions.SET_PROFILE_MODAL,
+                payload: { route: '/edit-details', modal: true },
+              })
+            }
+          >
             Edit Details
           </Button>
           <Button leftIcon={<SignOutIcon />} variant='outline' colorScheme='slate' ml={2.5}>
