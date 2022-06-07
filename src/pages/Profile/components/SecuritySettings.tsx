@@ -1,14 +1,10 @@
-import {
-  Button,
-  Checkbox,
-  Divider,
-  Flex,
-  Heading,
-  Text,
-} from '@chakra-ui/react';
-import { Card } from 'components/Card/Card';
+import { Button, Checkbox, Divider, Flex, Heading, Text } from '@chakra-ui/react'
+import { Card } from 'components/Card/Card'
+import { ProfileActions } from 'context/ProfileProvider/ProfileActionTypes'
+import { useProfile } from 'hooks/useProfile/useProfile'
 
 export const SecuritySettings = () => {
+  const { dispatch } = useProfile()
   return (
     <Card p={4} w='370px' h='300px'>
       <Card.Header textAlign='left'>
@@ -24,7 +20,19 @@ export const SecuritySettings = () => {
               Keep me signed in
             </Text>
           </Flex>
-          <Button variant='outline' colorScheme='lime' mt={5} mb={5} w='160px'>
+          <Button
+            variant='outline'
+            colorScheme='lime'
+            mt={5}
+            mb={5}
+            w='160px'
+            onClick={() =>
+              dispatch({
+                type: ProfileActions.SET_PROFILE_MODAL,
+                payload: { route: '/change-password', modal: true },
+              })
+            }
+          >
             Change password
           </Button>
           <Divider color='keystone.150' />
@@ -37,5 +45,5 @@ export const SecuritySettings = () => {
         </Flex>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}

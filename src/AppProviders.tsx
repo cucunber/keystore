@@ -12,6 +12,7 @@ import { I18nProvider } from 'context/I18nProvider/I18nProvider'
 import { MarketDataProvider } from 'context/MarketDataProvider/MarketDataProvider'
 import { ModalProvider } from 'context/ModalProvider/ModalProvider'
 import { PluginProvider } from 'context/PluginProvider/PluginProvider'
+import { ProfileProvider } from 'context/ProfileProvider/ProfileProvider'
 import { TransactionsProvider } from 'context/TransactionsProvider/TransactionsProvider'
 import { KeepKeyProvider } from 'context/WalletProvider/KeepKeyProvider'
 import { WalletProvider } from 'context/WalletProvider/WalletProvider'
@@ -37,15 +38,17 @@ export function AppProviders({ children }: ProvidersProps) {
                   <WalletProvider>
                     <KeepKeyProvider>
                       <AuthorizationProvider>
-                        <ModalProvider>
-                          <TransactionsProvider>
-                            <AppProvider>
-                              <MarketDataProvider>
-                                <DefiManagerProvider>{children}</DefiManagerProvider>
-                              </MarketDataProvider>
-                            </AppProvider>
-                          </TransactionsProvider>
-                        </ModalProvider>
+                        <ProfileProvider>
+                          <ModalProvider>
+                            <TransactionsProvider>
+                              <AppProvider>
+                                <MarketDataProvider>
+                                  <DefiManagerProvider>{children}</DefiManagerProvider>
+                                </MarketDataProvider>
+                              </AppProvider>
+                            </TransactionsProvider>
+                          </ModalProvider>
+                        </ProfileProvider>
                       </AuthorizationProvider>
                     </KeepKeyProvider>
                   </WalletProvider>
