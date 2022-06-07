@@ -7,10 +7,11 @@ import {
   ModalBody,
   ModalHeader,
   Stack,
-  Text,
 } from '@chakra-ui/react'
 // import { yupResolver } from '@hookform/resolvers/yup'
 import { FieldValues, useForm } from 'react-hook-form'
+import { useTranslate } from 'react-polyglot'
+import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 // import { object, string } from 'yup'
 import { profile as profileSlice } from 'state/slices/profileSlice/profileSlice'
@@ -31,6 +32,7 @@ export const EditDetails = () => {
   const dispatch = useAppDispatch()
   const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))
+  const translate = useTranslate()
   const { register, handleSubmit } = useForm()
   const handleUpdateProfile = (data: FieldValues) => {
     dispatch(
@@ -59,13 +61,11 @@ export const EditDetails = () => {
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-first-name'>
-                  <Text color='keystone.200' mb={1}>
-                    First Name
-                  </Text>
+                  <Text color='keystone.200' mb={1} translation='authorization.common.firstName' />
                 </FormLabel>
                 <Input
                   id='register-first-name'
-                  placeholder='Michael'
+                  placeholder={translate('authorization.common.firstNamePlaceholder')}
                   {...register('firstName', {
                     minLength: 2,
                   })}
@@ -75,13 +75,11 @@ export const EditDetails = () => {
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-last-name'>
-                  <Text color='keystone.200' mb={1}>
-                    Last Name
-                  </Text>
+                  <Text color='keystone.200' mb={1} translation='authorization.common.lastName' />
                 </FormLabel>
                 <Input
                   id='register-last-name'
-                  placeholder='Johnson'
+                  placeholder={translate('authorization.common.lastNamePlaceholder')}
                   {...register('lastName', {
                     minLength: 2,
                   })}
@@ -93,21 +91,29 @@ export const EditDetails = () => {
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-phone'>
-                  <Text color='keystone.200' mb={1}>
-                    Mobile Number
-                  </Text>
+                  <Text
+                    color='keystone.200'
+                    mb={1}
+                    translation='authorization.common.mobileNumber'
+                  />
                 </FormLabel>
-                <Input id='register-phone' placeholder='+27 83 554 6753' {...register('phone')} />
+                <Input
+                  id='register-phone'
+                  placeholder={translate('authorization.common.mobileNumberPlaceholder')}
+                  {...register('phone')}
+                />
               </Flex>
             </FormControl>
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-email'>
-                  <Text color='keystone.200' mb={1}>
-                    Email
-                  </Text>
+                  <Text color='keystone.200' mb={1} translation='authorization.common.email' />
                 </FormLabel>
-                <Input id='register-email' placeholder='example@email.com' {...register('email')} />
+                <Input
+                  id='register-email'
+                  placeholder={translate('authorization.common.emailPlaceholder')}
+                  {...register('email')}
+                />
               </Flex>
             </FormControl>
           </Flex>
@@ -116,7 +122,7 @@ export const EditDetails = () => {
             colorScheme='lime'
             onClick={handleSubmit(handleUpdateProfile)}
           >
-            Save Changes
+            <Text translation='changePassword.saveChanges' />
           </Button>
         </Stack>
       </ModalBody>

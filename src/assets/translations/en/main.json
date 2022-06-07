@@ -127,6 +127,22 @@
       }    
     }
   },
+  "profile": {
+    "changePassword": {
+      "title": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "saveChanges": "Save Changes"
+    },
+    "securitySettings": {
+      "title": "Security Settings",
+      "keepSign": "Keep me signed in",
+      "changePassword": "Change password",
+      "twoFactorAuth": "Two-Factor Authentication",
+      "enable2FA": "Enable 2FA"
+    }
+  },
   "dashboard": {
     "portfolio": {
       "addAsset": "Add Asset",

@@ -9,17 +9,17 @@ import {
   InputRightElement,
   ModalBody,
   ModalHeader,
+  Text,
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { RouteComponentProps } from 'react-router'
-import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
-export const ChangePassword = ({ history }: RouteComponentProps) => {
+export const Enable2FA = ({ history }: RouteComponentProps) => {
   const {
     register,
     formState: { isValid },
@@ -47,21 +47,16 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
   return (
     <>
       <ModalHeader textAlign='center'>
-        <Text
-          color='keystoneNeutral.200'
-          size='50px'
-          fontWeight='extrabold'
-          translation='changePassword.title'
-        />
+        <Text color='keystoneNeutral.200' size='50px' fontWeight='extrabold'>
+          Change Password
+        </Text>
       </ModalHeader>
       <ModalBody>
         <Box mt={4}>
           <FormLabel htmlFor='current-password'>
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation='changePassword.currentPassword'
-            />
+            <Text fontSize='13px' color='keystone.200'>
+              Current Password
+            </Text>
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
             <Input
@@ -86,7 +81,9 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
         </Box>
         <Box mt={4}>
           <FormLabel htmlFor='new-password'>
-            <Text fontSize='13px' color='keystone.200' translation='changePassword.newPassword' />
+            <Text fontSize='13px' color='keystone.200'>
+              New Password
+            </Text>
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
             <Input
@@ -111,42 +108,20 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
         </Box>
         <Flex mt={1}>
           <Box>
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation={['authorization.common.passwordRules.minCharsAmount', { amount: 8 }]}
-            />
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation='authorization.common.passwordRules.alphabet'
-            />
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation={['authorization.common.passwordRules.uppercaseAmount', { amount: 1 }]}
-            />
+            <Text>Minimum of 8 characters</Text>
+            <Text>Roman alphabet only</Text>
+            <Text>At least 1 uppercase letter</Text>
           </Box>
           <Box>
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation={['authorization.common.passwordRules.lowercaseAmount', { amount: 1 }]}
-            />
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation={['authorization.common.passwordRules.numberAmount', { amount: 1 }]}
-            />
+            <Text>At least 1 lowercase letter</Text>
+            <Text>At least one number</Text>
           </Box>
         </Flex>
         <Box mt={4}>
           <FormLabel htmlFor='confirm-password'>
-            <Text
-              fontSize='13px'
-              color='keystone.200'
-              translation='changePassword.confirmPassword'
-            />
+            <Text fontSize='13px' color='keystone.200'>
+              Confirm Password
+            </Text>
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
             <Input
@@ -179,7 +154,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           variant='solid'
           colorScheme='lime'
         >
-          <Text translation='changePassword.saveChanges' />
+          <Text>Save Changes</Text>
         </Button>
       </ModalBody>
     </>
