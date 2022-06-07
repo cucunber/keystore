@@ -10,6 +10,7 @@ const commonColors = {
     700: '#243EA1',
     800: '#1C317E',
     900: '#15255F',
+    bg: 'rgba(121, 198, 43, 0.2)',
   },
   gray: {
     900: '#171923',
@@ -29,6 +30,7 @@ const commonColors = {
     50: '#F7FAFC',
   },
   keystone: {
+    150: '#CDD5DF',
     200: '#748094',
   },
   keystoneNeutral: {

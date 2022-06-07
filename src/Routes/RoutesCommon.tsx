@@ -16,6 +16,7 @@ import { Farming } from 'pages/Defi/views/Farming'
 import { LiquidityPools } from 'pages/Defi/views/LiquidityPools'
 import { Overview } from 'pages/Defi/views/Overview'
 import { StakingVaults } from 'pages/Defi/views/StakingVaults'
+import { ProfileOverview } from 'pages/Profile/views/Overview'
 import { TransactionHistory } from 'pages/TransactionHistory/TransactionHistory'
 
 import { Route as NestedRoute } from './helpers'
@@ -137,5 +138,11 @@ export const routes: Array<NestedRoute> = [
     label: 'navBar.transactionHistory',
     icon: <FaHistory />,
     main: TransactionHistory,
+  },
+  {
+    path: '/profile',
+    main: ProfileOverview,
+    hide: true,
+    label: 'common.profile',
   },
 ]
