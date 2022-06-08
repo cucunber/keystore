@@ -20,12 +20,11 @@ import { breakpoints } from 'theme/theme'
 import { ProfileActions } from '../ProfileActionTypes'
 
 export const EnterVerificationCode = ({ history }: RouteComponentProps) => {
-  const { start, seconds, formate } = useTimer({
-    timer: 300,
-    startTimeName: 'EnterVerificationCodeStartTime',
-    timerName: 'EnterVerificationCodeTimer',
-  })
   const { user } = useAppSelector(state => selectProfile(state))
+  const { start, seconds, formate, finish } = useTimer({
+    timer: 300,
+    id: user.is2FAEnabled ? 'disable-verification' : 'enable-verification',
+  })
   const { dispatch } = useProfile()
 
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
@@ -51,8 +50,9 @@ export const EnterVerificationCode = ({ history }: RouteComponentProps) => {
     if (pinValue.length === 5) {
       dispatch({ type: ProfileActions.SET_SHOW_BACK_BUTTON, payload: false })
       history.push('/enter-verification/success')
+      finish()
     }
-  }, [dispatch, history, pinValue.length])
+  }, [dispatch, finish, history, pinValue.length])
   return (
     <>
       <ModalHeader textAlign='center'>

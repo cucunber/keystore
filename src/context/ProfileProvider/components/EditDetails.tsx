@@ -119,11 +119,7 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
             </FormControl>
           </Flex>
           <Flex justifyContent='flex-end'>
-            <Button
-              // disabled={!isValid}
-              colorScheme='lime'
-              onClick={handleSubmit(handleUpdateProfile)}
-            >
+            <Button colorScheme='lime' onClick={handleSubmit(handleUpdateProfile)}>
               <Text translation='profile.changePassword.saveChanges' />
             </Button>
           </Flex>

@@ -18,7 +18,7 @@ import { breakpoints } from 'theme/theme'
 
 import { AuthorizationActions } from '../AuthorizationActionTypes'
 export const VerifyPhone = ({ history }: RouteComponentProps) => {
-  const { start, seconds, formate } = useTimer({ timer: 300 })
+  const { start, seconds, formate } = useTimer({ timer: 300, id: 'verify-phone' })
 
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
 

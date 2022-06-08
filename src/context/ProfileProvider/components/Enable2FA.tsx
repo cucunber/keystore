@@ -1,16 +1,7 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  ModalBody,
-  ModalHeader,
-  Stack,
-  Text as UIText,
-} from '@chakra-ui/react'
+import { Box, Button, Flex, Image, ModalBody, ModalHeader, Stack } from '@chakra-ui/react'
 import { RouteComponentProps } from 'react-router'
 import qrCode from 'assets/qrCode.png'
-import { Text } from 'components/Text'
+import { RawText, Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 
 import { ProfileActions } from '../ProfileActionTypes'
@@ -64,15 +55,11 @@ export const Enable2FA = ({ history }: RouteComponentProps) => {
             size='19px'
             fontWeight='bold'
           />
-          <UIText color='lime.200' fontSize='45px' mt={4}>
+          <RawText color='lime.200' fontSize='45px' mt={4}>
             {textCode}
-          </UIText>
+          </RawText>
           <Flex justifyContent='flex-end'>
-            <Button
-              // disabled={!isValid}
-              colorScheme='lime'
-              onClick={handleUpdateProfile}
-            >
+            <Button colorScheme='lime' onClick={handleUpdateProfile}>
               <Text translation='profile.enable2FA.next' />
             </Button>
           </Flex>
