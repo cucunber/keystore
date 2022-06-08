@@ -147,6 +147,16 @@
       "subtitle": "Link your Authenticator app to your Yiled Guru account by scanning the code below. When you’re done, press the next button to continue.",
       "orEnterCode": "Or enter this code manually.",
       "next": "Next"
+    },
+    "enterVerificationCode": {
+      "title": "Enter Verification Code",
+      "subtitle": "Enter the verification code from your Authenticator app.",
+      "confirm": "Confirm"
+    },
+    "enterVerificationSuccess": {
+      "success": "Success",
+      "subtitle": "Your Two-factor authentication is now enabled.",
+      "done": "Done"
     }
   },
   "dashboard": {

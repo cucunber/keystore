@@ -15,6 +15,7 @@ import { SlideTransition } from 'components/SlideTransition'
 import { useProfile } from 'hooks/useProfile/useProfile'
 import { breakpoints } from 'theme/theme'
 
+import { EditDetails } from './components/EditDetails'
 import { PROFILE_STEPS } from './config'
 import { ProfileActions } from './ProfileActionTypes'
 
@@ -103,6 +104,7 @@ export const ProfileViewsSwitch = () => {
                       />
                     )
                   })}
+                <Route render={routeProps => <EditDetails {...routeProps} />} />
               </Switch>
             </SlideTransition>
           </AnimatePresence>

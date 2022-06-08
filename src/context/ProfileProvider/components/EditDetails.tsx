@@ -11,6 +11,7 @@ import {
 // import { yupResolver } from '@hookform/resolvers/yup'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useTranslate } from 'react-polyglot'
+import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 // import { object, string } from 'yup'
@@ -28,7 +29,7 @@ import { ProfileActions } from '../ProfileActionTypes'
 //   ),
 //   email: string().email(),
 // })
-export const EditDetails = () => {
+export const EditDetails = ({ history }: RouteComponentProps) => {
   const dispatch = useAppDispatch()
   const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))

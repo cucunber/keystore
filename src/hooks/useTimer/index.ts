@@ -4,22 +4,30 @@ type TimerProps = {
   timer: number
   onEnd?: () => void
   onStart?: () => void
+  startTimeName?: string
+  timerName?: string
 }
 
-export const useTimer = ({ timer, onEnd, onStart }: TimerProps) => {
+export const useTimer = ({
+  timer,
+  onEnd,
+  onStart,
+  startTimeName = 'startTime',
+  timerName = 'timerName',
+}: TimerProps) => {
   const [seconds, setSeconds] = useState(timer)
   const timerRef = useRef<NodeJS.Timer | null>(null)
 
   const start = useCallback(() => {
     if (!timerRef.current) {
       onStart?.()
-      localStorage.setItem('startTime', String(Date.now() / 1000))
-      localStorage.setItem('timer', String(timer))
+      localStorage.setItem(startTimeName, String(Date.now() / 1000))
+      localStorage.setItem(timerName, String(timer))
       timerRef.current = setInterval(() => {
         setSeconds(prev => prev - 1)
       }, 1000)
     }
-  }, [onStart, timer])
+  }, [onStart, startTimeName, timer, timerName])
 
   useEffect(() => {
     if (timerRef.current) {
@@ -33,8 +41,8 @@ export const useTimer = ({ timer, onEnd, onStart }: TimerProps) => {
 
   useEffect(() => {
     const now = Date.now() / 1000
-    const previousStart = localStorage.getItem('startTime')
-    const previousTimer = localStorage.getItem('timer')
+    const previousStart = localStorage.getItem(startTimeName)
+    const previousTimer = localStorage.getItem(timerName)
     if (previousStart && previousTimer) {
       const newTimer = +previousTimer + +previousStart - now
       if (newTimer > 0) {
@@ -48,7 +56,7 @@ export const useTimer = ({ timer, onEnd, onStart }: TimerProps) => {
         timerRef.current = null
       }
     }
-  }, [start])
+  }, [start, startTimeName, timerName])
 
   const formate = (secs: number) => {
     const hours = Math.floor(secs / (60 * 60))
