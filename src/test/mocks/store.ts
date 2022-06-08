@@ -49,6 +49,7 @@ export const mockStore: ReduxState = {
       email: '',
       phone: '',
       level: 0,
+      is2FAEnabled: false,
     },
   },
   accountSpecifiers: {

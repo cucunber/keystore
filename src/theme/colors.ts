@@ -28,6 +28,7 @@ const commonColors = {
     200: '#E2E8F0',
     100: '#EDF2F7',
     50: '#F7FAFC',
+    dark: '#858689',
   },
   keystone: {
     150: '#CDD5DF',

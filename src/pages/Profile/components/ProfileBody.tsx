@@ -1,8 +1,8 @@
-import { Flex } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { Flex } from '@chakra-ui/react'
+import { VFC } from 'react'
 
-import { SecuritySettings } from './SecuritySettings';
-import { VerificationStatus } from './VerificationStatus';
+import { SecuritySettings } from './SecuritySettings'
+import { VerificationStatus } from './VerificationStatus'
 
 interface IProfileBody {
   level: number
@@ -14,5 +14,5 @@ export const ProfileBody: VFC<IProfileBody> = ({ level }) => {
       <VerificationStatus level={level} />
       <SecuritySettings />
     </Flex>
-  );
-};
+  )
+}
