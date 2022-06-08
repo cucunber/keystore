@@ -51,7 +51,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           color='keystoneNeutral.200'
           size='50px'
           fontWeight='extrabold'
-          translation='changePassword.title'
+          translation='profile.changePassword.title'
         />
       </ModalHeader>
       <ModalBody>
@@ -60,7 +60,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
             <Text
               fontSize='13px'
               color='keystone.200'
-              translation='changePassword.currentPassword'
+              translation='profile.changePassword.currentPassword'
             />
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
@@ -86,7 +86,11 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
         </Box>
         <Box mt={4}>
           <FormLabel htmlFor='new-password'>
-            <Text fontSize='13px' color='keystone.200' translation='changePassword.newPassword' />
+            <Text
+              fontSize='13px'
+              color='keystone.200'
+              translation='profile.changePassword.newPassword'
+            />
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
             <Input
@@ -145,7 +149,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
             <Text
               fontSize='13px'
               color='keystone.200'
-              translation='changePassword.confirmPassword'
+              translation='profile.changePassword.confirmPassword'
             />
           </FormLabel>
           <InputGroup size='lg' variant='filled'>
@@ -179,7 +183,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           variant='solid'
           colorScheme='lime'
         >
-          <Text translation='changePassword.saveChanges' />
+          <Text translation='profile.changePassword.saveChanges' />
         </Button>
       </ModalBody>
     </>

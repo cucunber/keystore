@@ -122,7 +122,7 @@ export const EditDetails = () => {
             colorScheme='lime'
             onClick={handleSubmit(handleUpdateProfile)}
           >
-            <Text translation='changePassword.saveChanges' />
+            <Text translation='profile.changePassword.saveChanges' />
           </Button>
         </Stack>
       </ModalBody>

@@ -19,21 +19,33 @@ export const Enable2FA = () => {
   return (
     <>
       <ModalHeader textAlign='center'>
-        <Text color='slate.200' size='30px' fontWeight='extrabold' translation='enable2FA.title' />
+        <Text
+          color='slate.200'
+          size='30px'
+          fontWeight='extrabold'
+          translation='profile.enable2FA.title'
+        />
       </ModalHeader>
       <ModalBody alignItems='center' justifyContent='center' textAlign='center' pt={0} px={0}>
         <Text
           color='keystoneNeutral.200'
           size='18px'
           fontWeight='bold'
-          translation='enable2FA.subtitle'
+          translation='profile.enable2FA.subtitle'
         />
         <Stack width='full' p={0} spacing='18px'>
-          <Box p={3} borderRadius='8px' mt={7} borderWidth='1px' borderColor='keystone.150'>
+          <Box
+            p={3}
+            borderRadius='8px'
+            mt={7}
+            borderWidth='1px'
+            borderColor='keystone.150'
+            w='200px'
+          >
             <Image src={qrCode} />
           </Box>
           <Text
-            translation='enable2FA.orEnterCode'
+            translation='profile.enable2FA.orEnterCode'
             color='grey.dark'
             mt={5}
             size='19px'
@@ -47,7 +59,7 @@ export const Enable2FA = () => {
             colorScheme='lime'
             onClick={handleUpdateProfile}
           >
-            <Text translation='enable2FA.next' />
+            <Text translation='profile.enable2FA.next' />
           </Button>
         </Stack>
       </ModalBody>
