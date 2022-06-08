@@ -1,14 +1,17 @@
-import { Button, Center, Circle, Flex } from '@chakra-ui/react'
+import { Button, Center, Circle, DarkMode, Flex, Link, Stack } from '@chakra-ui/react'
 import { Keyring } from '@shapeshiftoss/hdwallet-core'
 import * as native from '@shapeshiftoss/hdwallet-native'
 import { NativeHDWallet } from '@shapeshiftoss/hdwallet-native'
 import { Vault } from '@shapeshiftoss/hdwallet-native-vault'
 import { Dispatch, useEffect } from 'react'
+import { isFirefox } from 'react-device-detect'
 import { useTranslate } from 'react-polyglot'
 import { generatePath, matchPath, useHistory } from 'react-router'
+import Orbs from 'assets/orbs.svg'
+import OrbsStatic from 'assets/orbs-static.png'
 import { KeyStoreLightIcon } from 'components/Icons/KeyStoreLight'
 import { Page } from 'components/Layout/Page'
-import { RawText } from 'components/Text'
+import { RawText, Text } from 'components/Text'
 import { AuthorizationActions } from 'context/AuthorizationProvider/AuthorizationActionTypes'
 import { ActionTypes, WalletActions } from 'context/WalletProvider/actions'
 import { SUPPORTED_WALLETS } from 'context/WalletProvider/config'
@@ -16,6 +19,7 @@ import { KeyManager } from 'context/WalletProvider/KeyManager'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { useQuery } from 'hooks/useQuery/useQuery'
 import { useWallet } from 'hooks/useWallet/useWallet'
+import { colors } from 'theme/colors'
 
 async function connectCypressWallet(
   keyring: Keyring,
@@ -101,6 +105,17 @@ export const Authorization = () => {
     }
   }, [history, hasWallet, authDispatch, query, state, dispatch, isCypressTest])
 
+  const onRegistrationClick = () => {
+    authDispatch({
+      type: AuthorizationActions.SET_INITIAL_ROUTE,
+      payload: '/registration',
+    })
+    authDispatch({
+      type: AuthorizationActions.SET_AUTHORIZATION_MODAL,
+      payload: true,
+    })
+  }
+
   return (
     <Page>
       <Flex
@@ -115,20 +130,57 @@ export const Authorization = () => {
         bottom={0}
         alignItems={'center'}
       >
-        <Center flexDir='column' height='100vh' px={6}>
-          <Circle size='100px' mb={6}>
-            <KeyStoreLightIcon boxSize='100%' color='white' />
-          </Circle>
-          <Flex flexDir='row' textAlign='center' fontSize={{ base: '6xl', lg: '8xl' }} mb={6}>
-            <RawText color='white' fontWeight='medium' lineHeight='1'>
-              {translate('connectWalletPage.exploreThe')}{' '}
-              <RawText color='lime.200' fontWeight='bold' as='span'>
-                {translate('connectWalletPage.defiUniverse')}
-              </RawText>
-            </RawText>
+        <DarkMode>
+          <Flex width='full' alignItems='center' justifyContent='center' gap={8}>
+            <Link href='/#/legal/terms-of-service'>
+              <Text color='gray.500' translation='common.terms' />
+            </Link>
+            <Link href='/#/legal/privacy-policy'>
+              <Text color='gray.500' translation='common.privacy' />
+            </Link>
           </Flex>
+        </DarkMode>
+      </Flex>
+      <Center
+        flexDir='column'
+        height='100vh'
+        backgroundImage={colors.altBg}
+        px={6}
+        _after={{
+          position: 'absolute',
+          content: '""',
+          left: 0,
+          top: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundImage: `url(${isFirefox ? OrbsStatic : Orbs})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+        }}
+      >
+        <Circle size='100px' mb={6}>
+          <KeyStoreLightIcon fill='transparent' boxSize='100%' color='white' minWidth={232} />
+        </Circle>
+        <Flex flexDir='row' textAlign='center' fontSize={{ base: '4xl', lg: '8xl' }} mb={6}>
+          <RawText color='white' fontWeight='medium' lineHeight='1'>
+            {translate('connectWalletPage.exploreThe')}{' '}
+            <RawText color='lime.200' fontWeight='bold' as='span'>
+              {translate('connectWalletPage.defiUniverse')}
+            </RawText>
+          </RawText>
+        </Flex>
+        <Stack
+          mt={10}
+          alignItems='center'
+          spacing={{ base: 2, md: 8 }}
+          mx='auto'
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Button
             size='lg'
+            colorScheme='lime'
+            padding='14px 68px'
+            zIndex={1}
             onClick={() =>
               authDispatch({
                 type: AuthorizationActions.SET_AUTHORIZATION_MODAL,
@@ -136,10 +188,20 @@ export const Authorization = () => {
               })
             }
           >
-            Sign in
+            {translate('authorization.signIn.title')}
           </Button>
-        </Center>
-      </Flex>
+          <Text
+            color='gray.500'
+            fontSize='lg'
+            fontWeight='bold'
+            textAlign='center'
+            translation='common.or'
+          />
+          <Button padding='14px 68px' zIndex={1} size='lg' onClick={onRegistrationClick}>
+            {translate('authorization.signIn.register')}
+          </Button>
+        </Stack>
+      </Center>
     </Page>
   )
 }

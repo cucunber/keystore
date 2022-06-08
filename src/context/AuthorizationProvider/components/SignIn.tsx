@@ -10,6 +10,7 @@ import {
   InputRightElement,
   ModalBody,
   ModalHeader,
+  Stack,
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -118,7 +119,14 @@ export const SignIn = ({ history }: RouteComponentProps) => {
             />
           </Button>
         </Flex>
-        <Flex mt={8} justifyContent='space-between' alignItems='center'>
+        <Stack
+          mt={10}
+          alignItems='center'
+          spacing={{ base: 2, md: 8 }}
+          mx='auto'
+          justifyContent='space-between'
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Flex justifyContent='space-between' alignItems='center'>
             <Text
               mr={1}
@@ -148,7 +156,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
           >
             <Text translation='authorization.signIn.title' />
           </Button>
-        </Flex>
+        </Stack>
       </ModalBody>
     </>
   )

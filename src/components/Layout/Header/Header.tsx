@@ -88,7 +88,7 @@ export const Header = () => {
             />
           </Box>
           <Flex justifyContent={{ base: 'center', md: 'flex-start' }}>
-            <Box minWidth={16}>
+            <Box mr={{ base: 0, md: 8 }} minWidth={16}>
               <Link style={{ width: '100%', display: 'inline-block' }} to='/'>
                 <FoxIcon style={{ width: '100%' }} boxSize='7' />
               </Link>
