@@ -3,11 +3,14 @@ import { Card } from 'components/Card/Card'
 import { Text } from 'components/Text'
 import { ProfileActions } from 'context/ProfileProvider/ProfileActionTypes'
 import { useProfile } from 'hooks/useProfile/useProfile'
+import { selectProfile } from 'state/slices/selectors'
+import { useAppSelector } from 'state/store'
 
 export const SecuritySettings = () => {
   const { dispatch } = useProfile()
+  const { user } = useAppSelector(state => selectProfile(state))
   return (
-    <Card p={4} w='370px' h='300px'>
+    <Card p={3} w='370px' h='300px'>
       <Card.Header textAlign='left'>
         <Text as='h4' size='md' color='keystone.200' translation='profile.securitySettings.title' />
       </Card.Header>
@@ -49,7 +52,13 @@ export const SecuritySettings = () => {
               })
             }
           >
-            <Text translation='profile.securitySettings.enable2FA' />
+            <Text
+              translation={
+                user.is2FAEnabled
+                  ? 'profile.securitySettings.disable2FA'
+                  : 'profile.securitySettings.enable2FA'
+              }
+            />
           </Button>
         </Flex>
       </Card.Body>

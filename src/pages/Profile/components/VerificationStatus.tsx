@@ -41,7 +41,7 @@ export const VerificationStatus: VFC<IVerificationStatus> = ({ level }) => {
   const activeStep = steps.find(step => !step.isCompleted)
 
   return (
-    <Card p={4}>
+    <Card p={4} w='full'>
       <Card.Header textAlign='left'>
         <Flex>
           <Box display='flex' alignItems='center'>

@@ -18,7 +18,7 @@ interface IProfileHeader {
 export const ProfileHeader: VFC<IProfileHeader> = ({ firstName, lastName, phone, email }) => {
   const { dispatch } = useProfile()
   return (
-    <Box p={['0', '8']}>
+    <Box pt={8} pb={8}>
       <Flex mb={8}>
         <Box display='flex' alignItems='center'>
           <Image src={profile} />

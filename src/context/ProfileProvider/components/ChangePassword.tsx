@@ -114,7 +114,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           </InputGroup>
         </Box>
         <Flex mt={1}>
-          <Box>
+          <Box mr='100px'>
             <Text
               fontSize='13px'
               color='keystone.200'
@@ -173,18 +173,19 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
             </InputRightElement>
           </InputGroup>
         </Box>
-
-        <Button
-          onClick={handleSavePassword}
-          disabled={!isValid}
-          paddingLeft='50px'
-          paddingRight='50px'
-          size='lg'
-          variant='solid'
-          colorScheme='lime'
-        >
-          <Text translation='profile.changePassword.saveChanges' />
-        </Button>
+        <Flex justifyContent='flex-end' mt={10}>
+          <Button
+            onClick={handleSavePassword}
+            disabled={!isValid}
+            paddingLeft='50px'
+            paddingRight='50px'
+            size='lg'
+            variant='solid'
+            colorScheme='lime'
+          >
+            <Text translation='profile.changePassword.saveChanges' />
+          </Button>
+        </Flex>
       </ModalBody>
     </>
   )
