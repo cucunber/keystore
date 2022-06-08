@@ -141,6 +141,12 @@
       "changePassword": "Change password",
       "twoFactorAuth": "Two-Factor Authentication",
       "enable2FA": "Enable 2FA"
+    },
+    "enable2FA": {
+      "title": "Scan this code with your authenticator App",
+      "subtitle": "Link your Authenticator app to your Yiled Guru account by scanning the code below. When you’re done, press the next button to continue.",
+      "orEnterCode": "Or enter this code manually.",
+      "next": "Next"
     }
   },
   "dashboard": {

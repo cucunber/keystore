@@ -39,7 +39,16 @@ export const SecuritySettings = () => {
             mb={3}
             translation='profile.securitySettings.twoFactorAuth'
           />
-          <Button colorScheme='lime' w='115px'>
+          <Button
+            colorScheme='lime'
+            w='115px'
+            onClick={() =>
+              dispatch({
+                type: ProfileActions.SET_PROFILE_MODAL,
+                payload: { route: '/enable-2fa', modal: true },
+              })
+            }
+          >
             <Text translation='profile.securitySettings.enable2FA' />
           </Button>
         </Flex>
