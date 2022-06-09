@@ -39,20 +39,9 @@ export function AppProviders({ children }: ProvidersProps) {
                   <WalletProvider>
                     <KeepKeyProvider>
                       <AuthorizationProvider>
-<<<<<<< HEAD
-                        <ModalProvider>
-                          <TransactionsProvider>
-                            <AppProvider>
-                              <NativeWallet />
-                              <MarketDataProvider>
-                                <DefiManagerProvider>{children}</DefiManagerProvider>
-                              </MarketDataProvider>
-                            </AppProvider>
-                          </TransactionsProvider>
-                        </ModalProvider>
-=======
                         <ProfileProvider>
                           <ModalProvider>
+                            <NativeWallet />
                             <TransactionsProvider>
                               <AppProvider>
                                 <MarketDataProvider>
@@ -62,7 +51,6 @@ export function AppProviders({ children }: ProvidersProps) {
                             </TransactionsProvider>
                           </ModalProvider>
                         </ProfileProvider>
->>>>>>> ad25ef7d4a827e32baf3b479ecea5e1259f47459
                       </AuthorizationProvider>
                     </KeepKeyProvider>
                   </WalletProvider>
