@@ -1,7 +1,6 @@
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
 import { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { RouteComponentProps } from 'react-router'
 import { FileUpload } from 'components/FileUpload'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
@@ -12,7 +11,7 @@ import { breakpoints } from 'theme/theme'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
-export const LevelVerification3 = ({ history }: RouteComponentProps) => {
+export const LevelVerification3 = () => {
   const [hasImgURL, setHasImgURL] = useState(false)
   const { control } = useForm()
   const dispatch = useAppDispatch()

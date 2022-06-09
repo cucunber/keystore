@@ -13,13 +13,12 @@ import {
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
-export const ChangePassword = ({ history }: RouteComponentProps) => {
+export const ChangePassword = () => {
   const {
     register,
     formState: { isValid },
