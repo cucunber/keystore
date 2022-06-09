@@ -139,6 +139,16 @@ export const ActivityCard = ({
     history.push(`/activity/${hash}`)
   }, [hash, history])
 
+  const activityCardCancelTransactionClickHandler: MouseEventHandler<HTMLButtonElement> =
+    useCallback(
+      e => {
+        e.preventDefault()
+        history.push(`/activity/notification/${hash}/cancel`)
+        e.stopPropagation()
+      },
+      [hash, history],
+    )
+
   const activityCardSpeedUpClickHandler: MouseEventHandler<HTMLButtonElement> = useCallback(
     e => {
       e.preventDefault()
@@ -188,7 +198,13 @@ export const ActivityCard = ({
           <Button onClick={activityCardSpeedUpClickHandler} px={8} size='sm' colorScheme='lime'>
             {translate('wallet.common.speedUp')}
           </Button>
-          <Button px={8} size='sm' colorScheme='lime' variant='outline'>
+          <Button
+            onClick={activityCardCancelTransactionClickHandler}
+            px={8}
+            size='sm'
+            colorScheme='lime'
+            variant='outline'
+          >
             {translate('wallet.common.cancel')}
           </Button>
         </ButtonGroup>

@@ -62,7 +62,7 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-first-name'>
-                  <Text color='keystone.200' mb={1} translation='authorization.common.firstName' />
+                  <Text color='keystore.200' mb={1} translation='authorization.common.firstName' />
                 </FormLabel>
                 <Input
                   id='register-first-name'
@@ -76,7 +76,7 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-last-name'>
-                  <Text color='keystone.200' mb={1} translation='authorization.common.lastName' />
+                  <Text color='keystore.200' mb={1} translation='authorization.common.lastName' />
                 </FormLabel>
                 <Input
                   id='register-last-name'
@@ -93,7 +93,7 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-phone'>
                   <Text
-                    color='keystone.200'
+                    color='keystore.200'
                     mb={1}
                     translation='authorization.common.mobileNumber'
                   />
@@ -108,7 +108,7 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
             <FormControl>
               <Flex flexDirection='column' width='full' alignItems='flex-start'>
                 <FormLabel htmlFor='register-email'>
-                  <Text color='keystone.200' mb={1} translation='authorization.common.email' />
+                  <Text color='keystore.200' mb={1} translation='authorization.common.email' />
                 </FormLabel>
                 <Input
                   id='register-email'

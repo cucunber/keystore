@@ -14,17 +14,20 @@ export const Activity = ({ history }: RouteComponentProps) => {
   } = useNativeWallet()
   const { isLoading, transactionList } = transaction
   useEffect(() => {
-    dispatch({
-      type: NativeWalletActions.SET_TRANSACTION_STATUS,
-      payload: true,
-    })
-    setTimeout(() => {
+    if (transactionList.length === 0) {
       dispatch({
-        type: NativeWalletActions.SET_TRANSACTIONS,
-        payload: { transactions, shouldConcat: false },
+        type: NativeWalletActions.SET_TRANSACTION_STATUS,
+        payload: true,
       })
-    }, 1500)
-  }, [dispatch])
+      setTimeout(() => {
+        dispatch({
+          type: NativeWalletActions.SET_TRANSACTIONS,
+          payload: { transactions, shouldConcat: false },
+        })
+      }, 1500)
+    }
+  }, [dispatch, transactionList.length])
+
   return (
     <Box height='440px' overflowY='auto'>
       <Text

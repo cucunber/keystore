@@ -1,4 +1,5 @@
 import { Activity } from '../pages'
+import { CancelTransaction } from '../pages/Cancel'
 import { GasFee } from '../pages/GasFee'
 import { TransactionInfo } from '../pages/Transaction'
 
@@ -14,7 +15,7 @@ export const WALLET_PAGES = {
       { path: '/activity/:hash', component: TransactionInfo },
       { path: '/activity/notification/:type', component: Activity },
       { path: '/activity/notification/:hash/gas', component: GasFee },
-      { path: '/activity/notification/:hash/cancel', component: Activity },
+      { path: '/activity/notification/:hash/cancel', component: CancelTransaction },
     ],
   },
   [WalletManager.Notification]: { routes: [] },

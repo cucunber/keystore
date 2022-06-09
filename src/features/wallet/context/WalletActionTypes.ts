@@ -11,6 +11,7 @@ export enum NativeWalletActions {
   SET_NATIVE_WALLET_MODAL = 'SET_NATIVE_WALLET_MODAL',
   SET_LAST_TRANSACTION = 'SET_LAST_TRANSACTION',
   SET_LAST_TRANSACTION_STATUS = 'SET_LAST_TRANSACTION_STATUS',
+  TOGGLE_MODAL = 'TOGGLE_MODAL',
 }
 
 export type NativeWalletActionTypes =
@@ -23,3 +24,4 @@ export type NativeWalletActionTypes =
   | { type: NativeWalletActions.SET_NETWORK_STATUS; payload: boolean }
   | { type: NativeWalletActions.SET_LAST_TRANSACTION; payload: Transaction }
   | { type: NativeWalletActions.SET_LAST_TRANSACTION_STATUS; payload: boolean }
+  | { type: NativeWalletActions.TOGGLE_MODAL }

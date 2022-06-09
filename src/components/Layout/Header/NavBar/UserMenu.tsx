@@ -1,7 +1,16 @@
 import { ChevronDownIcon, WarningTwoIcon } from '@chakra-ui/icons'
 import { Menu, MenuButton, MenuGroup, MenuItem, MenuList } from '@chakra-ui/menu'
-import { Button, ButtonGroup, Flex, HStack, IconButton, useColorModeValue } from '@chakra-ui/react'
-import { FC, useEffect, useState } from 'react'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Flex,
+  HStack,
+  IconButton,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { NativeWallet } from 'features/wallet'
+import { FC, useEffect, useRef, useState } from 'react'
 import { FaWallet } from 'react-icons/fa'
 import { useTranslate } from 'react-polyglot'
 import { MemoryRouter, Route, Switch } from 'react-router-dom'
@@ -133,6 +142,8 @@ export const UserMenu: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   const { state, dispatch, disconnect } = useWallet()
   const { isConnected, walletInfo, type, isLocked } = state
 
+  const btnRef = useRef<HTMLDivElement | null>(null)
+
   if (isLocked) disconnect()
   const hasWallet = Boolean(walletInfo?.deviceId)
   const handleConnect = () => {
@@ -140,40 +151,43 @@ export const UserMenu: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
     dispatch({ type: WalletActions.SET_WALLET_MODAL, payload: true })
   }
   return (
-    <ButtonGroup>
-      <WalletButton
-        onConnect={handleConnect}
-        walletInfo={walletInfo}
-        isConnected={isConnected}
-        isLoadingLocalWallet={state.isLoadingLocalWallet}
-      />
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          aria-label='Open wallet dropdown menu'
-          icon={<ChevronDownIcon />}
-          data-test='navigation-wallet-dropdown-button'
+    <Box position='relative'>
+      <ButtonGroup ref={btnRef}>
+        <WalletButton
+          onConnect={handleConnect}
+          walletInfo={walletInfo}
+          isConnected={isConnected}
+          isLoadingLocalWallet={state.isLoadingLocalWallet}
         />
-        <MenuList
-          maxWidth={{ base: 'full', md: 'xs' }}
-          minWidth={{ base: 0, md: 'xs' }}
-          overflow='hidden'
-          // Override zIndex to prevent InputLeftElement displaying over menu
-          zIndex={2}
-        >
-          {hasWallet ? (
-            <WalletConnected
-              isConnected={isConnected || walletInfo?.deviceId === DemoConfig.name}
-              walletInfo={walletInfo}
-              onDisconnect={disconnect}
-              onSwitchProvider={handleConnect}
-              type={type}
-            />
-          ) : (
-            <NoWallet onClick={handleConnect} />
-          )}
-        </MenuList>
-      </Menu>
-    </ButtonGroup>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label='Open wallet dropdown menu'
+            icon={<ChevronDownIcon />}
+            data-test='navigation-wallet-dropdown-button'
+          />
+          <MenuList
+            maxWidth={{ base: 'full', md: 'xs' }}
+            minWidth={{ base: 0, md: 'xs' }}
+            overflow='hidden'
+            // Override zIndex to prevent InputLeftElement displaying over menu
+            zIndex={2}
+          >
+            {hasWallet ? (
+              <WalletConnected
+                isConnected={isConnected || walletInfo?.deviceId === DemoConfig.name}
+                walletInfo={walletInfo}
+                onDisconnect={disconnect}
+                onSwitchProvider={handleConnect}
+                type={type}
+              />
+            ) : (
+              <NoWallet onClick={handleConnect} />
+            )}
+          </MenuList>
+        </Menu>
+      </ButtonGroup>
+      <NativeWallet btnRef={btnRef} />
+    </Box>
   )
 }

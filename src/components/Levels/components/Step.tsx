@@ -33,7 +33,7 @@ export const Step = ({
               Comptlete {buttonTitle}
             </Button>
           )}
-          <Text color="keystone.200">{buttonSubtitle}</Text>
+          <Text color="keystore.200">{buttonSubtitle}</Text>
         </Flex>
       </Box>
     </Flex>

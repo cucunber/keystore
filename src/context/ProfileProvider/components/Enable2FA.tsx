@@ -30,7 +30,7 @@ export const Enable2FA = ({ history }: RouteComponentProps) => {
       </ModalHeader>
       <ModalBody alignItems='center' justifyContent='center' textAlign='center' pt={0} px={0}>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='18px'
           fontWeight='bold'
           translation='profile.enable2FA.subtitle'
@@ -42,7 +42,7 @@ export const Enable2FA = ({ history }: RouteComponentProps) => {
               borderRadius='8px'
               mt={7}
               borderWidth='1px'
-              borderColor='keystone.150'
+              borderColor='keystore.150'
               w='200px'
             >
               <Image src={qrCode} />

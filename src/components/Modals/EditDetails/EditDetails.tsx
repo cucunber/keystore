@@ -64,7 +64,7 @@ const EditDetails = () => {
                 <FormControl>
                   <Flex flexDirection='column' width='full' alignItems='flex-start'>
                     <FormLabel htmlFor='register-first-name'>
-                      <Text color='keystone.200' mb={1}>
+                      <Text color='keystore.200' mb={1}>
                         First Name
                       </Text>
                     </FormLabel>
@@ -80,7 +80,7 @@ const EditDetails = () => {
                 <FormControl>
                   <Flex flexDirection='column' width='full' alignItems='flex-start'>
                     <FormLabel htmlFor='register-last-name'>
-                      <Text color='keystone.200' mb={1}>
+                      <Text color='keystore.200' mb={1}>
                         Last Name
                       </Text>
                     </FormLabel>
@@ -98,7 +98,7 @@ const EditDetails = () => {
                 <FormControl>
                   <Flex flexDirection='column' width='full' alignItems='flex-start'>
                     <FormLabel htmlFor='register-phone'>
-                      <Text color='keystone.200' mb={1}>
+                      <Text color='keystore.200' mb={1}>
                         Mobile Number
                       </Text>
                     </FormLabel>
@@ -112,7 +112,7 @@ const EditDetails = () => {
                 <FormControl>
                   <Flex flexDirection='column' width='full' alignItems='flex-start'>
                     <FormLabel htmlFor='register-email'>
-                      <Text color='keystone.200' mb={1}>
+                      <Text color='keystore.200' mb={1}>
                         Email
                       </Text>
                     </FormLabel>

@@ -1,5 +1,5 @@
 import { RefObject } from 'react'
-import { useEventListener } from 'hooks/useEventListener/useEventListener'
+import useEventListener from 'hooks/useEventListener/useEventListener'
 
 type Handler = (event: MouseEvent) => void
 
@@ -16,7 +16,7 @@ export function useOnClickOutside<
     const el = ref?.current
     const btn = btnRef?.current
     // Do nothing if clicking ref's element or descendent elements
-    if (!el || el.contains(event.target as Node) || btn?.contains(event.target as Node)) {
+    if ((el && el.contains(event.target as Node)) || (btn && btn.contains(event.target as Node))) {
       return
     }
 

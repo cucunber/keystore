@@ -108,7 +108,7 @@ export const TransactionInfo = ({}: TransactionProps) => {
 
   if (!currentTransaction) {
     return (
-      <Flex minHeight='620px' alignItems='center' justifyContent='center'>
+      <Flex minHeight='420px' alignItems='center' justifyContent='center'>
         <Spinner size='xl' />
       </Flex>
     )
@@ -118,7 +118,7 @@ export const TransactionInfo = ({}: TransactionProps) => {
   const { method, status, from, to, nonce, amount, fee, logs } = currentTransaction
 
   return (
-    <Box maxHeight='620px' px='20px' overflowY='auto'>
+    <Box maxHeight='440px' px='20px' overflowY='auto'>
       <RawText ml={8} mb={8} mt='3px' fontSize='lg' fontWeight='bold' color='keystoreNeutral.200'>
         {formatText(method.name, 'capitalize')}
       </RawText>

@@ -1,11 +1,16 @@
+import { RefObject } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 
 import { NativeWalletViewsSwitch } from './WalletViewsSwitch'
 
-export const NativeWalletViewsRouter = () => {
+interface NativeWalletViewsRouterProps {
+  btnRef?: RefObject<any>
+}
+
+export const NativeWalletViewsRouter = ({ btnRef }: NativeWalletViewsRouterProps) => {
   return (
     <MemoryRouter initialIndex={0}>
-      <NativeWalletViewsSwitch />
+      <NativeWalletViewsSwitch btnRef={btnRef} />
     </MemoryRouter>
   )
 }

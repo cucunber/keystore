@@ -104,12 +104,18 @@
       "newGasFeeTooltip": "New Gas Fee tooltip",
       "likelyIn": "Likely in < 15 seconds",
       "veryLikelyIn": "Very likely in < 15 second",
-      "maybeIn": "Maybe in 15 seconds",
+      "maybeIn": "Maybe in 30 seconds",
       "low": "Low",
       "medium": "Medium",
       "high": "High",
       "advancedOptions": "Advanced Options",
-      "howShouldIChoose": "How should I choose?" 
+      "howShouldIChoose": "How should I choose?" ,
+      "maxPriorityFee": "Max priority fee",
+      "maxFee": "Max fee"
+    },
+    "cancel": {
+      "cancelTransaction": "Cancel transaction",
+      "cancel": "Cancel"
     },
     "activity": {
       "title": "Wallet Activity"

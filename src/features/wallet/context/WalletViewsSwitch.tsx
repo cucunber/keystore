@@ -31,14 +31,29 @@ export const NativeWalletViewsSwitch = ({ btnRef }: INativeWalletViewsSwitch) =>
   } = useNativeWallet()
 
   const onClose = async () => {
-    // eslint-disable-next-line no-console
-    console.log('close')
-    /* history.replace('/')
+    history.replace('/')
     dispatch({
       type: NativeWalletActions.SET_NATIVE_WALLET_MODAL,
       payload: false,
-    }) */
+    })
   }
+
+  useEffect(() => {
+    const toggleEvent = () => {
+      dispatch({
+        type: NativeWalletActions.TOGGLE_MODAL,
+      })
+    }
+
+    if (btnRef && btnRef.current) {
+      btnRef.current.addEventListener('click', toggleEvent)
+    }
+    return () => {
+      if (btnRef && btnRef.current) {
+        btnRef.current.removeEventListener('click', toggleEvent)
+      }
+    }
+  }, [btnRef, dispatch])
 
   useOnClickOutside(walletRef, onClose, btnRef)
 
@@ -59,7 +74,7 @@ export const NativeWalletViewsSwitch = ({ btnRef }: INativeWalletViewsSwitch) =>
     <>
       <Box
         position='absolute'
-        top='0'
+        top='100%'
         right='0'
         pointerEvents={modal ? 'all' : 'none'}
         transform={modal ? 'scale(1)' : 'scale(0)'}

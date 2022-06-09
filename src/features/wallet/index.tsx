@@ -1,5 +1,11 @@
+import { RefObject } from 'react'
+
 import { NativeWalletProvider } from './context/WalletProvider'
 
-export const NativeWallet = () => {
-  return <NativeWalletProvider />
+interface NativeWalletProps {
+  btnRef?: RefObject<any>
+}
+
+export const NativeWallet = ({ btnRef }: NativeWalletProps) => {
+  return <NativeWalletProvider btnRef={btnRef} />
 }

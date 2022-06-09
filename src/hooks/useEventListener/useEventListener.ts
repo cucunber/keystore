@@ -1,16 +1,16 @@
 /* eslint-disable no-redeclare */
 import { RefObject, useEffect, useRef } from 'react'
 
-export function useEventListener<K extends keyof WindowEventMap>(
+function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
   handler: (event: WindowEventMap[K]) => void,
 ): void
-export function useEventListener<
+function useEventListener<
   K extends keyof HTMLElementEventMap,
   T extends HTMLElement = HTMLDivElement,
 >(eventName: K, handler: (event: HTMLElementEventMap[K]) => void, element: RefObject<T>): void
 
-export function useEventListener<
+function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,
   T extends HTMLElement | void = void,
@@ -46,3 +46,6 @@ export function useEventListener<
     }
   }, [eventName, element, handler])
 }
+
+// eslint-disable-next-line import/no-default-export
+export default useEventListener

@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useReducer } from 'react'
+import { ReactNode, RefObject, useMemo, useReducer } from 'react'
 
 import { NetworkData } from '../types/network'
 import { Transaction } from '../types/Transaction'
@@ -45,7 +45,7 @@ const initialState: InitialState = {
     lastTransaction: null,
   },
   showBackButton: true,
-  modal: true,
+  modal: false,
 }
 
 const reducer = (state: InitialState, action: NativeWalletActionTypes): InitialState => {
@@ -119,6 +119,12 @@ const reducer = (state: InitialState, action: NativeWalletActionTypes): InitialS
         },
       }
     }
+    case NativeWalletActions.TOGGLE_MODAL: {
+      return {
+        ...state,
+        modal: !state.modal,
+      }
+    }
     default: {
       return state
     }
@@ -131,15 +137,16 @@ const getInitialState = () => {
 
 interface NativeWalletProviderProps {
   children?: ReactNode
+  btnRef?: RefObject<any>
 }
 
-export const NativeWalletProvider = ({ children }: NativeWalletProviderProps) => {
+export const NativeWalletProvider = ({ children, btnRef }: NativeWalletProviderProps) => {
   const [state, dispatch] = useReducer(reducer, getInitialState())
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch])
   return (
     <NativeWalletContext.Provider value={value}>
       {children}
-      <NativeWalletViewsRouter />
+      <NativeWalletViewsRouter btnRef={btnRef} />
     </NativeWalletContext.Provider>
   )
 }

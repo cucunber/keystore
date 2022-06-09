@@ -45,7 +45,7 @@ export const VerificationStatus: VFC<IVerificationStatus> = ({ level }) => {
       <Card.Header textAlign='left'>
         <Flex>
           <Box display='flex' alignItems='center'>
-            <Heading as='h4' size='md' color='keystone.200'>
+            <Heading as='h4' size='md' color='keystore.200'>
               Verification Status
             </Heading>
           </Box>

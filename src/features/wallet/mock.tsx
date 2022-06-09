@@ -114,7 +114,7 @@ export const transactions: Transaction[] = [
       address: 'Account 1',
       icon: avatar1,
     },
-    hash: '0xfb7e97296c937fa635c0e8750d6d5aa251100fc14bfcaa9e713e5226b1e1cf79',
+    hash: '0x041e55fdbe1b745ad504336814bb58a550dd8112920cc6fc6bb2c3a4770c394a',
     method: {
       name: 'stake',
       functionType: 'Stake(Uint256)',

@@ -43,7 +43,7 @@ export const EnterVerificationSuccess = ({ history }: RouteComponentProps) => {
       </ModalHeader>
       <ModalBody alignItems='center' justifyContent='center' textAlign='center' pt={0} px={0}>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='18px'
           fontWeight='bold'
           mt={8}

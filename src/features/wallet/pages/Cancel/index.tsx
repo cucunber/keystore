@@ -8,7 +8,6 @@ import {
   Button,
   Flex,
   HStack,
-  Link,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
@@ -21,7 +20,7 @@ import {
 import { RadioCardGroup } from 'features/wallet/components/RadioGroup'
 import { NativeWalletActions } from 'features/wallet/context/WalletActionTypes'
 import { useNativeWallet } from 'features/wallet/hooks/useNativeWallet/useNativeWallet'
-import { Transaction } from 'features/wallet/types'
+import { Transaction, TransactionStatus } from 'features/wallet/types'
 import { useCallback, useEffect, useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useTranslate } from 'react-polyglot'
@@ -60,10 +59,10 @@ const gwei = {
   '3': 3.47,
 }
 
-export const GasFee = ({ history }: RouteComponentProps) => {
+export const CancelTransaction = ({ history }: RouteComponentProps) => {
   const { hash } = useParams<{ hash: string }>()
   const {
-    state: { transaction },
+    state: { transaction, network },
     dispatch,
   } = useNativeWallet()
 
@@ -90,11 +89,12 @@ export const GasFee = ({ history }: RouteComponentProps) => {
   const maxPriorityFee = watch('maxPriorityFee')
   const maxFee = watch('maxFee')
 
-  const onFeeApply = useCallback(
+  const onCancelTransaction = useCallback(
     (data: FieldValues) => {
       if (currentTransaction) {
         const newTransaction = {
           ...currentTransaction,
+          status: TransactionStatus.Canceled,
           fee: {
             ...currentTransaction.fee,
             gasLimit: data.gasLimit,
@@ -144,6 +144,7 @@ export const GasFee = ({ history }: RouteComponentProps) => {
   }
 
   const { fee } = currentTransaction
+  const { isLoading: networkIsLoading, network: networkData } = network
 
   return (
     <Box height='440px' overflowY='auto'>
@@ -153,15 +154,40 @@ export const GasFee = ({ history }: RouteComponentProps) => {
           size='lg'
           fontWeight='bold'
           color='keystore.200'
-          translation='wallet.gasFee.newGasFee'
+          translation='wallet.cancel.cancelTransaction'
         />
         <Tooltip label={translate('wallet.gasFee.newGasFeeTooltip')}>
           <InfoIcon color='keystore.200' />
         </Tooltip>
       </HStack>
-      <RawText mt={8} align='center' fontSize='4xl' color='keystorePrimarySlate.200'>
-        <Amount.Fiat value={feeMultiplier[feeSpeedValue] * fee.totalFee} prefix='≈' />
-      </RawText>
+      <Box mt={8}>
+        {networkIsLoading ? (
+          <Flex minHeight='40px' alignItems='center' justifyContent='center'>
+            <Spinner size='xl' />
+          </Flex>
+        ) : (
+          <VStack alignItems='center'>
+            <Amount.Crypto
+              fontSize='4xl'
+              color='keystorePrimarySlate.200'
+              value={String(fee.totalFee)}
+              symbol={networkData.currency.symbol}
+            />
+            <HStack mt={3}>
+              <Text
+                fontWeight='extrabold'
+                color='keystorePrimarySlate.200'
+                fontSize='sm'
+                translation='wallet.gasFee.maxFee'
+              />
+              <RawText fontSize='sm' display='inline-flex'>
+                (<Amount.Crypto value={String(fee.totalFee)} symbol={networkData.currency.symbol} />
+                )
+              </RawText>
+            </HStack>
+          </VStack>
+        )}
+      </Box>
       <Text
         fontWeight='bold'
         fontSize='xs'
@@ -308,11 +334,8 @@ export const GasFee = ({ history }: RouteComponentProps) => {
         </AccordionItem>
       </Accordion>
       <VStack px={4} alignItems='center'>
-        <Link fontWeight='extrabold' my={4} color='lime.200' colorScheme='lime'>
-          {translate('wallet.gasFee.howShouldIChoose')}
-        </Link>
-        <Button onClick={handleSubmit(onFeeApply)} mt={8} width='100%' colorScheme='lime'>
-          {translate('wallet.common.save')}
+        <Button onClick={handleSubmit(onCancelTransaction)} mt={8} width='100%' colorScheme='lime'>
+          {translate('wallet.cancel.cancel')}
         </Button>
       </VStack>
     </Box>

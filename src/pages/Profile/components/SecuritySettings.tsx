@@ -12,7 +12,7 @@ export const SecuritySettings = () => {
   return (
     <Card p={3} w='370px' h='300px'>
       <Card.Header textAlign='left'>
-        <Text as='h4' size='md' color='keystone.200' translation='profile.securitySettings.title' />
+        <Text as='h4' size='md' color='keystore.200' translation='profile.securitySettings.title' />
       </Card.Header>
       <Card.Body>
         <Flex flexDirection='column'>
@@ -35,9 +35,9 @@ export const SecuritySettings = () => {
           >
             <Text translation='profile.securitySettings.changePassword' />
           </Button>
-          <Divider color='keystone.150' />
+          <Divider color='keystore.150' />
           <Text
-            color='keystone.200'
+            color='keystore.200'
             mt={5}
             mb={3}
             translation='profile.securitySettings.twoFactorAuth'
