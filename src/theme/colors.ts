@@ -30,6 +30,7 @@ const commonColors = {
     50: '#F7FAFC',
     dark: '#858689',
   },
+  orange: '#FFAC30',
   keystore: {
     150: '#CDD5DF',
     200: '#748094',

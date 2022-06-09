@@ -18,7 +18,7 @@ export const ProfileOverview = () => {
         />
       }
     >
-      <ProfileBody level={user.level} />
+      <ProfileBody />
     </Main>
   )
 }

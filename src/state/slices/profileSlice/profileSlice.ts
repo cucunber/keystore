@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { initialState, Profile } from './profileSliceCommon'
+import { initialState, Profile, User } from './profileSliceCommon'
 
 export const profile = createSlice({
   name: 'profile',
@@ -11,6 +11,9 @@ export const profile = createSlice({
     },
     updateProfile: (state, { payload }: { payload: Profile }) => {
       return { ...state, ...payload }
+    },
+    updateUser: (state, { payload }: { payload: User }) => {
+      return { ...state, user: { ...payload } }
     },
   },
 })

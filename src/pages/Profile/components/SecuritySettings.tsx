@@ -45,6 +45,7 @@ export const SecuritySettings = () => {
           <Button
             colorScheme='lime'
             w='115px'
+            variant={user.is2FAEnabled ? 'outline' : 'solid'}
             onClick={() =>
               dispatch({
                 type: ProfileActions.SET_PROFILE_MODAL,

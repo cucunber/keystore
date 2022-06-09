@@ -3,7 +3,6 @@ import noop from 'lodash/noop'
 import { StakingModal } from 'plugins/cosmos/components/modals/Staking/Staking'
 import React, { useMemo, useReducer } from 'react'
 import { WipeModal } from 'components/Layout/Header/NavBar/KeepKey/Modals/Wipe'
-import { EditDetailsModal } from 'components/Modals/EditDetails/EditDetails'
 import { FiatRampsModal } from 'components/Modals/FiatRamps/FiatRamps'
 import { ReceiveModal } from 'components/Modals/Receive/Receive'
 import { SendModal } from 'components/Modals/Send/Send'
@@ -21,7 +20,6 @@ const MODALS = {
   cosmosStaking: StakingModal,
   settings: SettingsModal,
   keepKeyWipe: WipeModal,
-  editDetails: EditDetailsModal,
 }
 
 // state

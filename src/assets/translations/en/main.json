@@ -211,6 +211,34 @@
       "subtitleEnabled": "Your Two-factor authentication is now enabled.",
       "subtitleDisabled": "Your Two-factor authentication is now disabled.",
       "done": "Done"
+    },
+    "levelVerification1": {
+      "title": "Level 1 Verification",
+      "buttonTitle": "Upload Selfie",
+      "uploadFile": "Upload File",
+      "removeFile": "Remove File",
+      "noFile": "no file selected",
+      "buttonSubtitle": "No older than 24 hours",
+      "continue": "Continue",
+      "done": "Done"
+    },
+    "levelVerification2": {
+      "title": "Level 2 Verification",
+      "buttonTitle": "Upload Copy of ID Document",
+      "uploadFile": "Upload File",
+      "removeFile": "Remove File",
+      "noFile": "no file selected",
+      "buttonSubtitle": "ID book / Both sides of ID card",
+      "done": "Done"
+    },
+    "levelVerification3": {
+      "title": "Level 3 Verification",
+      "buttonTitle": "Proof of Address",
+      "uploadFile": "Upload File",
+      "removeFile": "Remove File",
+      "noFile": "no file selected",
+      "buttonSubtitle": "Physical address in your own name, no older than 3 months",
+      "done": "Done"
     }
   },
   "dashboard": {

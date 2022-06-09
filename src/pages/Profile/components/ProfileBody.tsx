@@ -1,17 +1,12 @@
 import { Flex } from '@chakra-ui/react'
-import { VFC } from 'react'
 
 import { SecuritySettings } from './SecuritySettings'
 import { VerificationStatus } from './VerificationStatus'
 
-interface IProfileBody {
-  level: number
-}
-
-export const ProfileBody: VFC<IProfileBody> = ({ level }) => {
+export const ProfileBody = () => {
   return (
     <Flex gap={5}>
-      <VerificationStatus level={level} />
+      <VerificationStatus />
       <SecuritySettings />
     </Flex>
   )
