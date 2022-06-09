@@ -68,7 +68,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
               id='current-password'
               type={showCurrPw ? 'text' : 'password'}
               placeholder='**********'
-              {...register('password', {
+              {...register('current-password', {
                 required: true,
               })}
             />
@@ -97,7 +97,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
               id='new-password'
               type={showNewPw ? 'text' : 'password'}
               placeholder='**********'
-              {...register('password', {
+              {...register('new-password', {
                 required: true,
               })}
             />
@@ -157,7 +157,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
               id='confirm-password'
               type={showConfPw ? 'text' : 'password'}
               placeholder='**********'
-              {...register('password', {
+              {...register('confirm-password', {
                 required: true,
               })}
             />

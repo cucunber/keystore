@@ -1,7 +1,8 @@
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { RouteComponentProps } from 'react-router'
-import { SuccessCheckIcon } from 'components/Icons/SuccessCheck'
+import { FileUpload } from 'components/FileUpload'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 import { profile as profileSlice } from 'state/slices/profileSlice/profileSlice'
@@ -11,16 +12,18 @@ import { breakpoints } from 'theme/theme'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
-export const EnterVerificationSuccess = ({ history }: RouteComponentProps) => {
+export const LevelVerification2 = ({ history }: RouteComponentProps) => {
+  const [hasImgURL, setHasImgURL] = useState(false)
+  const { control } = useForm()
   const dispatch = useAppDispatch()
-  const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))
+  const { dispatch: profileDispatch } = useProfile()
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
   const onDoneClickHandler = useCallback(() => {
     dispatch(
       profileSlice.actions.updateUser({
         ...user,
-        is2FAEnabled: !user.is2FAEnabled,
+        level: 2,
       }),
     )
     profileDispatch({
@@ -31,35 +34,50 @@ export const EnterVerificationSuccess = ({ history }: RouteComponentProps) => {
   return (
     <>
       <ModalHeader textAlign='center'>
-        <SuccessCheckIcon width='42px' height='50px' />
         <Text
           color='slate.200'
           size='30px'
           fontWeight='extrabold'
-          translation='profile.enterVerificationSuccess.title'
+          translation='profile.levelVerification2.title'
         />
       </ModalHeader>
-      <ModalBody alignItems='center' justifyContent='center' textAlign='center' pt={0} px={0}>
+      <ModalBody
+        display='flex'
+        alignItems='flex-start'
+        justifyContent='flex-start'
+        flexDirection='column'
+        textAlign='center'
+        pt={0}
+        px={0}
+      >
         <Text
-          color='keystoneNeutral.200'
+          color='slate.200'
           size='18px'
           fontWeight='bold'
           mt={8}
-          translation={
-            user.is2FAEnabled
-              ? 'profile.enterVerificationSuccess.subtitleDisabled'
-              : 'profile.enterVerificationSuccess.subtitleEnabled'
-          }
+          translation='profile.levelVerification2.buttonTitle'
+        />
+        <FileUpload
+          name='levelVerification1.uploadFile'
+          acceptedFileTypes='image/*'
+          control={control}
+          onSetHasImgURL={setHasImgURL}
+        />
+        <Text
+          color='keystoneNeutral.200'
+          size='12px'
+          mt={2}
+          translation='profile.levelVerification2.buttonSubtitle'
         />
         <Flex
-          maxWidth={isLargerThanMd ? '50%' : '100%'}
-          margin='0 auto'
+          maxWidth={isLargerThanMd ? '100%' : '50%'}
+          w='full'
           alignItems='center'
           justifyContent='flex-end'
           mt={3}
         >
-          <Button mr={2} colorScheme='lime' onClick={onDoneClickHandler}>
-            <Text translation='profile.enterVerificationSuccess.done' />
+          <Button mr={2} colorScheme='lime' onClick={onDoneClickHandler} disabled={!hasImgURL}>
+            <Text translation='profile.levelVerification2.done' />
           </Button>
         </Flex>
       </ModalBody>
