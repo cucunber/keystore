@@ -30,6 +30,9 @@ import { ProfileActions } from '../ProfileActionTypes'
 //   email: string().email(),
 // })
 export const EditDetails = ({ history }: RouteComponentProps) => {
+  if (!history) {
+    console.error('')
+  }
   const dispatch = useAppDispatch()
   const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))

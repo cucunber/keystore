@@ -1,6 +1,5 @@
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
 import { useCallback } from 'react'
-import { RouteComponentProps } from 'react-router'
 import { SuccessCheckIcon } from 'components/Icons/SuccessCheck'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
@@ -11,7 +10,7 @@ import { breakpoints } from 'theme/theme'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
-export const EnterVerificationSuccess = ({ history }: RouteComponentProps) => {
+export const EnterVerificationSuccess = () => {
   const dispatch = useAppDispatch()
   const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))
