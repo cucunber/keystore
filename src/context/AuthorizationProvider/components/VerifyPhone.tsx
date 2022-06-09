@@ -56,7 +56,7 @@ export const VerifyPhone = ({ history }: RouteComponentProps) => {
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='50px'
           fontWeight='extrabold'
           translation='authorization.verifyMobile.title'
@@ -68,11 +68,11 @@ export const VerifyPhone = ({ history }: RouteComponentProps) => {
           width='95%'
           translation='authorization.verifyMobile.subtitle'
           margin='0 auto'
-          color='keystone.200'
+          color='keystore.200'
           fontWeight='medium'
           size='lg'
         />
-        <ChakraText textAlign='center' color='keystone.200' fontWeight='bold' size='lg'>
+        <ChakraText textAlign='center' color='keystore.200' fontWeight='bold' size='lg'>
           {phone}
         </ChakraText>
         <Text
@@ -80,7 +80,7 @@ export const VerifyPhone = ({ history }: RouteComponentProps) => {
           width='95%'
           translation='authorization.verifyMobile.enterCode'
           margin='0 auto'
-          color='keystone.200'
+          color='keystore.200'
           fontWeight='medium'
           size='lg'
           mt={4}

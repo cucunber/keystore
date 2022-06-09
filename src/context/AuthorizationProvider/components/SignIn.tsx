@@ -49,7 +49,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='50px'
           fontWeight='extrabold'
           translation='authorization.signIn.title'
@@ -59,7 +59,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
         <Box>
           <FormControl>
             <FormLabel htmlFor='signIn-email'>
-              <Text fontSize='13px' color='keystone.200' translation='authorization.common.email' />
+              <Text fontSize='13px' color='keystore.200' translation='authorization.common.email' />
             </FormLabel>
             <Input
               id='signIn-email'
@@ -78,7 +78,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
           <FormLabel htmlFor='signIn-password'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='authorization.common.password'
             />
           </FormLabel>
@@ -114,7 +114,7 @@ export const SignIn = ({ history }: RouteComponentProps) => {
           >
             <Text
               fontSize='lg'
-              color='keystoneNeutral.200'
+              color='keystoreNeutral.200'
               translation='authorization.forgetPassword.title'
             />
           </Button>

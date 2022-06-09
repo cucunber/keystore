@@ -1,5 +1,6 @@
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { DefiManagerProvider } from 'features/defi/contexts/DefiManagerProvider/DefiManagerProvider'
+import { NativeWallet } from 'features/wallet'
 import React from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
@@ -40,6 +41,7 @@ export function AppProviders({ children }: ProvidersProps) {
                         <ModalProvider>
                           <TransactionsProvider>
                             <AppProvider>
+                              <NativeWallet />
                               <MarketDataProvider>
                                 <DefiManagerProvider>{children}</DefiManagerProvider>
                               </MarketDataProvider>

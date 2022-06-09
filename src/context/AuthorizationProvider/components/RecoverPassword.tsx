@@ -39,7 +39,7 @@ export const RecoverPassword = ({ history }: RouteComponentProps) => {
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='50px'
           fontWeight='extrabold'
           translation='authorization.forgetPassword.title'
@@ -51,14 +51,14 @@ export const RecoverPassword = ({ history }: RouteComponentProps) => {
           width='95%'
           translation='authorization.forgetPassword.provideEmail'
           margin='0 auto'
-          color='keystone.200'
+          color='keystore.200'
           fontWeight='medium'
           size='lg'
         />
         <Box>
           <FormControl>
             <FormLabel mt={6} htmlFor='recovery-email'>
-              <Text fontSize='13px' color='keystone.200' translation='authorization.common.email' />
+              <Text fontSize='13px' color='keystore.200' translation='authorization.common.email' />
             </FormLabel>
             <Input
               id='recovery-email'

@@ -28,13 +28,15 @@ const commonColors = {
     100: '#EDF2F7',
     50: '#F7FAFC',
   },
-  keystone: {
+  keystore: {
     200: '#748094',
+    white: '#FFFFFF',
   },
-  keystoneNeutral: {
+  keystoreNeutral: {
+    100: '#E3E8EF',
     200: '#012A36',
   },
-  keystonePrimarySlate: {
+  keystorePrimarySlate: {
     200: '#012A36',
   },
   green: {
@@ -73,13 +75,19 @@ const commonColors = {
     500: '#144241',
     300: '#3F6D6C',
   },
+  statuses: {
+    failed: '#FF495C',
+    success: '#79C62B',
+    pending: '#FFAC30',
+    queued: '#748094',
+  },
 }
 
 export const brand = {
   primary: commonColors.lime[200],
   altBg: `radial-gradient(94.32% 94.6% at 4.04% -44.6%,
-    ${commonColors.lime[200]}66 0%,${commonColors.keystonePrimarySlate[200]}00 100%),
-    linear-gradient(0deg,${commonColors.keystonePrimarySlate[200]},${commonColors.keystonePrimarySlate[200]})`,
+    ${commonColors.lime[200]}66 0%,${commonColors.keystorePrimarySlate[200]}00 100%),
+    linear-gradient(0deg,${commonColors.keystorePrimarySlate[200]},${commonColors.keystorePrimarySlate[200]})`,
 }
 
 export const colors = {

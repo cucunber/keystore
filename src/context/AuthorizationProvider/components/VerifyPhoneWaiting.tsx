@@ -15,7 +15,7 @@ export const VerifyPhoneWaiting = ({ history }: RouteComponentProps) => {
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='50px'
           fontWeight='extrabold'
           translation='authorization.verifyMobile.title'
