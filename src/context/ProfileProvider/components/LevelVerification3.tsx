@@ -1,3 +1,4 @@
+import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
 import { useCallback } from 'react'
 import { RouteComponentProps } from 'react-router'
@@ -43,10 +44,10 @@ export const LevelVerification3 = ({ history }: RouteComponentProps) => {
           translation='profile.levelVerification3.buttonTitle'
         />
         <Flex justifyContent='flex-start' alignItems='center' gap={5} mt={4}>
-          <Button w='180px' colorScheme='lime'>
+          <Button w='180px' colorScheme='lime' leftIcon={<AddIcon />}>
             <Text translation='profile.levelVerification3.uploadFile' />
           </Button>
-          <Button w='180px' colorScheme='lime' variant='outline'>
+          <Button w='180px' colorScheme='lime' leftIcon={<MinusIcon />} variant='outline'>
             <Text translation='profile.levelVerification3.removeFile' />
           </Button>
           <Text translation='profile.levelVerification3.noFile' />
