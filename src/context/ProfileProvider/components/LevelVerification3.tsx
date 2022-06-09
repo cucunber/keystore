@@ -1,7 +1,8 @@
-import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { RouteComponentProps } from 'react-router'
+import { FileUpload } from 'components/FileUpload'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 import { profile as profileSlice } from 'state/slices/profileSlice/profileSlice'
@@ -12,6 +13,8 @@ import { breakpoints } from 'theme/theme'
 import { ProfileActions } from '../ProfileActionTypes'
 
 export const LevelVerification3 = ({ history }: RouteComponentProps) => {
+  const [hasImgURL, setHasImgURL] = useState(false)
+  const { control } = useForm()
   const dispatch = useAppDispatch()
   const { user } = useAppSelector(state => selectProfile(state))
   const { dispatch: profileDispatch } = useProfile()
@@ -54,15 +57,12 @@ export const LevelVerification3 = ({ history }: RouteComponentProps) => {
           mt={8}
           translation='profile.levelVerification3.buttonTitle'
         />
-        <Flex justifyContent='flex-start' alignItems='center' gap={5} mt={4}>
-          <Button w='180px' colorScheme='lime' leftIcon={<AddIcon />}>
-            <Text translation='profile.levelVerification3.uploadFile' />
-          </Button>
-          <Button w='180px' colorScheme='lime' leftIcon={<MinusIcon />} variant='outline'>
-            <Text translation='profile.levelVerification3.removeFile' />
-          </Button>
-          <Text translation='profile.levelVerification3.noFile' />
-        </Flex>
+        <FileUpload
+          name='levelVerification1.uploadFile'
+          acceptedFileTypes='image/*'
+          control={control}
+          onSetHasImgURL={setHasImgURL}
+        />
         <Text
           color='keystoneNeutral.200'
           size='12px'
@@ -76,7 +76,7 @@ export const LevelVerification3 = ({ history }: RouteComponentProps) => {
           justifyContent='flex-end'
           mt={3}
         >
-          <Button mr={2} colorScheme='lime' onClick={onDoneClickHandler}>
+          <Button mr={2} colorScheme='lime' onClick={onDoneClickHandler} disabled={!hasImgURL}>
             <Text translation='profile.levelVerification3.done' />
           </Button>
         </Flex>

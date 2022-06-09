@@ -1,7 +1,8 @@
-import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { RouteComponentProps } from 'react-router'
+import { FileUpload } from 'components/FileUpload'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
 import { profile as profileSlice } from 'state/slices/profileSlice/profileSlice'
@@ -12,6 +13,8 @@ import { breakpoints } from 'theme/theme'
 import { ProfileActions } from '../ProfileActionTypes'
 
 export const LevelVerification1 = ({ history }: RouteComponentProps) => {
+  const [hasImgURL, setHasImgURL] = useState(false)
+  const { control } = useForm()
   const dispatch = useAppDispatch()
   const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))
@@ -58,15 +61,12 @@ export const LevelVerification1 = ({ history }: RouteComponentProps) => {
           mt={8}
           translation='profile.levelVerification1.buttonTitle'
         />
-        <Flex justifyContent='flex-start' alignItems='center' gap={5} mt={4}>
-          <Button w='180px' colorScheme='lime' leftIcon={<AddIcon />}>
-            <Text translation='profile.levelVerification1.uploadFile' />
-          </Button>
-          <Button w='180px' colorScheme='lime' variant='outline' leftIcon={<MinusIcon />}>
-            <Text translation='profile.levelVerification1.removeFile' />
-          </Button>
-          <Text translation='profile.levelVerification1.noFile' />
-        </Flex>
+        <FileUpload
+          name='levelVerification1.uploadFile'
+          acceptedFileTypes='image/*'
+          control={control}
+          onSetHasImgURL={setHasImgURL}
+        />
         <Text
           color='keystoneNeutral.200'
           size='12px'
@@ -80,7 +80,7 @@ export const LevelVerification1 = ({ history }: RouteComponentProps) => {
           justifyContent='flex-end'
           mt={3}
         >
-          <Button mr={2} colorScheme='lime' onClick={onDoneClickHandler}>
+          <Button mr={2} colorScheme='lime' onClick={onDoneClickHandler} disabled={!hasImgURL}>
             <Text
               translation={
                 user.is2FAEnabled
