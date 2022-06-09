@@ -47,10 +47,10 @@ export const Step = ({
               disabled={!isButtonEnabled}
               onClick={handleCompleteClick}
             >
-              Comptlete {buttonTitle}
+              Complete {buttonTitle}
             </Button>
           )}
-          <Text color='keystone.200'>{buttonSubtitle}</Text>
+          <Text color='keystore.200'>{buttonSubtitle}</Text>
         </Flex>
       </Box>
     </Flex>

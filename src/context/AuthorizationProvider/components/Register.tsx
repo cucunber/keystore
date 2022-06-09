@@ -82,7 +82,7 @@ export const Register = ({ history }: RouteComponentProps) => {
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='50px'
           fontWeight='extrabold'
           translation='authorization.register.title'
@@ -94,7 +94,7 @@ export const Register = ({ history }: RouteComponentProps) => {
           width='95%'
           translation='authorization.register.subtitle'
           margin='0 auto'
-          color='keystone.200'
+          color='keystore.200'
           fontWeight='medium'
           size='lg'
         />
@@ -103,7 +103,7 @@ export const Register = ({ history }: RouteComponentProps) => {
             <FormLabel htmlFor='register-first-name'>
               <Text
                 fontSize='13px'
-                color='keystone.200'
+                color='keystore.200'
                 translation='authorization.common.firstName'
               />
             </FormLabel>
@@ -123,7 +123,7 @@ export const Register = ({ history }: RouteComponentProps) => {
             <FormLabel htmlFor='register-second-name'>
               <Text
                 fontSize='13px'
-                color='keystone.200'
+                color='keystore.200'
                 translation='authorization.common.lastName'
               />
             </FormLabel>
@@ -145,7 +145,7 @@ export const Register = ({ history }: RouteComponentProps) => {
             <FormLabel htmlFor='register-phone'>
               <Text
                 fontSize='13px'
-                color='keystone.200'
+                color='keystore.200'
                 translation='authorization.common.mobileNumber'
               />
             </FormLabel>
@@ -162,7 +162,7 @@ export const Register = ({ history }: RouteComponentProps) => {
           </FormControl>
           <FormControl>
             <FormLabel htmlFor='register-email'>
-              <Text fontSize='13px' color='keystone.200' translation='authorization.common.email' />
+              <Text fontSize='13px' color='keystore.200' translation='authorization.common.email' />
             </FormLabel>
             <Input
               id='register-email'
@@ -180,7 +180,7 @@ export const Register = ({ history }: RouteComponentProps) => {
           <FormLabel htmlFor='register-password'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='authorization.register.createPassword'
             />
           </FormLabel>
@@ -209,29 +209,29 @@ export const Register = ({ history }: RouteComponentProps) => {
           <Box>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.minCharsAmount', { amount: 8 }]}
             />
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='authorization.common.passwordRules.alphabet'
             />
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.uppercaseAmount', { amount: 1 }]}
             />
           </Box>
           <Box>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.lowercaseAmount', { amount: 1 }]}
             />
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.numberAmount', { amount: 1 }]}
             />
           </Box>
@@ -241,7 +241,7 @@ export const Register = ({ history }: RouteComponentProps) => {
           <FormLabel htmlFor='register-confirm-password'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='authorization.register.confirmPassword'
             />
           </FormLabel>

@@ -42,10 +42,10 @@ export const getStepLabel = (currentStep: StepConfig, activeStep: number) => {
   }
   return (
     <Flex mb={1} opacity={0.5}>
-      <Heading as='h4' size='md' color='keystone.200'>
+      <Heading as='h4' size='md' color='keystore.200'>
         {currentStep.label} -
       </Heading>
-      <Heading as='h4' size='md' color='keystone.200' ml={1}>
+      <Heading as='h4' size='md' color='keystore.200' ml={1}>
         Complete Level {currentStep?.step || 1 - 1} first
       </Heading>
     </Flex>
@@ -65,9 +65,9 @@ export const getStepIcon = (currentStep: StepConfig, activeStep: number) => {
   return (
     <Center
       borderWidth='1px'
-      borderColor='keystone.200'
+      borderColor='keystore.200'
       bg='transparent'
-      color='keystone.200'
+      color='keystore.200'
       w={30}
       h={30}
       borderRadius='full'
@@ -85,7 +85,7 @@ export const getStepSubtitle = (currentStep: StepConfig, activeStep: number) => 
     )
   }
   return (
-    <Heading as='h3' size='sm' color='keystone.200'>
+    <Heading as='h3' size='sm' color='keystore.200'>
       {currentStep.subtitle}
     </Heading>
   )

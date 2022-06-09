@@ -122,7 +122,7 @@ export const Authorization = () => {
         direction={'column'}
         gap={4}
         width='full'
-        bg='keystonePrimarySlate.200'
+        bg='keystorePrimarySlate.200'
         position='fixed'
         zIndex={3}
         py={3}

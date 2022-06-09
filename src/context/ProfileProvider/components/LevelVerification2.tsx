@@ -64,7 +64,7 @@ export const LevelVerification2 = ({ history }: RouteComponentProps) => {
           onSetHasImgURL={setHasImgURL}
         />
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='12px'
           mt={2}
           translation='profile.levelVerification2.buttonSubtitle'

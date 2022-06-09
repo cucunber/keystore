@@ -71,6 +71,56 @@
       "downloadCta": "Download Update"
     }
   },
+  "wallet": {
+    "common": {
+      "speedUp": "Speed Up",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "transaction": {
+      "status": "Status",
+      "viewOnBlockExplorer": "View on block explorer",
+      "copyTransactionId": "Copy transaction ID",
+      "from": "From",
+      "to": "To",
+      "transaction": "Transaction",
+      "nonce": "Nonce",
+      "amount": "Amount",
+      "gasLimit": "Gas Limit",
+      "units": "Units",
+      "gasUsed": "Gas Used",
+      "baseFee": "Base Fee",
+      "GWEI": "GWEI",
+      "priorityFee": "Priority Fee",
+      "totalGasFee": "Total Gas Fee",
+      "maxFeePerGas": "Max Fee Per Gas",
+      "total": "Total",
+      "activityLog": "Activity Log",
+      "transactionData": "Transaction Data",
+      "copyRawTransactionData": "Copy raw transaction data"
+    },
+    "gasFee": {
+      "newGasFee": "New Gas Fee",
+      "newGasFeeTooltip": "New Gas Fee tooltip",
+      "likelyIn": "Likely in < 15 seconds",
+      "veryLikelyIn": "Very likely in < 15 second",
+      "maybeIn": "Maybe in 30 seconds",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "advancedOptions": "Advanced Options",
+      "howShouldIChoose": "How should I choose?" ,
+      "maxPriorityFee": "Max priority fee",
+      "maxFee": "Max fee"
+    },
+    "cancel": {
+      "cancelTransaction": "Cancel transaction",
+      "cancel": "Cancel"
+    },
+    "activity": {
+      "title": "Wallet Activity"
+    }
+  },
   "authorization": {
     "signIn": {
       "title": "Sign In",

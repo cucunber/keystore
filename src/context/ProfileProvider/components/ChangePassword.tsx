@@ -48,7 +48,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoneNeutral.200'
+          color='keystoreNeutral.200'
           size='50px'
           fontWeight='extrabold'
           translation='profile.changePassword.title'
@@ -59,7 +59,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           <FormLabel htmlFor='current-password'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='profile.changePassword.currentPassword'
             />
           </FormLabel>
@@ -88,7 +88,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           <FormLabel htmlFor='new-password'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='profile.changePassword.newPassword'
             />
           </FormLabel>
@@ -117,29 +117,29 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           <Box mr='100px'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.minCharsAmount', { amount: 8 }]}
             />
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='authorization.common.passwordRules.alphabet'
             />
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.uppercaseAmount', { amount: 1 }]}
             />
           </Box>
           <Box>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.lowercaseAmount', { amount: 1 }]}
             />
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation={['authorization.common.passwordRules.numberAmount', { amount: 1 }]}
             />
           </Box>
@@ -148,7 +148,7 @@ export const ChangePassword = ({ history }: RouteComponentProps) => {
           <FormLabel htmlFor='confirm-password'>
             <Text
               fontSize='13px'
-              color='keystone.200'
+              color='keystore.200'
               translation='profile.changePassword.confirmPassword'
             />
           </FormLabel>
