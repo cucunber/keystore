@@ -7,7 +7,7 @@ interface IVerificationStatus {
   level: number
 }
 
-const steps = [
+export const steps = [
   {
     label: 'Register a Profile',
     isCompleted: true,

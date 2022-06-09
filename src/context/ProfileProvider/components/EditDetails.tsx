@@ -35,16 +35,14 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
   const { user } = useAppSelector(state => selectProfile(state))
   const translate = useTranslate()
   const { register, handleSubmit } = useForm()
-  const handleUpdateProfile = (data: FieldValues) => {
+  const handleUpdateUser = (data: FieldValues) => {
     dispatch(
-      profileSlice.actions.updateProfile({
-        user: {
-          ...user,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          email: data.email,
-          phone: data.phone,
-        },
+      profileSlice.actions.updateUser({
+        ...user,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
       }),
     )
     profileDispatch({
@@ -119,7 +117,7 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
             </FormControl>
           </Flex>
           <Flex justifyContent='flex-end'>
-            <Button colorScheme='lime' onClick={handleSubmit(handleUpdateProfile)}>
+            <Button colorScheme='lime' onClick={handleSubmit(handleUpdateUser)}>
               <Text translation='profile.changePassword.saveChanges' />
             </Button>
           </Flex>

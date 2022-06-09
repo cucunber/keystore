@@ -18,11 +18,9 @@ export const EnterVerificationSuccess = ({ history }: RouteComponentProps) => {
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
   const onDoneClickHandler = useCallback(() => {
     dispatch(
-      profileSlice.actions.updateProfile({
-        user: {
-          ...user,
-          is2FAEnabled: !user.is2FAEnabled,
-        },
+      profileSlice.actions.updateUser({
+        ...user,
+        is2FAEnabled: !user.is2FAEnabled,
       }),
     )
     profileDispatch({
