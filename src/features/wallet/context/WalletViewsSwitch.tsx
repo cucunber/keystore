@@ -50,6 +50,7 @@ export const NativeWalletViewsSwitch = ({ btnRef }: INativeWalletViewsSwitch) =>
     }
     return () => {
       if (btnRef && btnRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         btnRef.current.removeEventListener('click', toggleEvent)
       }
     }

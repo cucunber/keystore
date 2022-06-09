@@ -18,16 +18,11 @@ import { ArrowRightIcon } from 'features/wallet/components/icons/ArrowRightIcon'
 import { useNativeWallet } from 'features/wallet/hooks/useNativeWallet/useNativeWallet'
 import { Transaction } from 'features/wallet/types'
 import { formatText } from 'features/wallet/utils'
-import { History } from 'history'
 import { useEffect, useState } from 'react'
 import { useTranslate } from 'react-polyglot'
 import { useParams } from 'react-router-dom'
 import { Amount } from 'components/Amount/Amount'
 import { RawText, Text } from 'components/Text'
-
-type TransactionProps = {
-  history: History
-}
 
 const statusColorMap = {
   pending: 'statuses.pending',
@@ -81,7 +76,7 @@ const ActivityItem = ({ activity }: ActivityItemProps) => {
   )
 }
 
-export const TransactionInfo = ({}: TransactionProps) => {
+export const TransactionInfo = () => {
   const { hash } = useParams<{ hash: string }>()
   const {
     state: { transaction, network },
