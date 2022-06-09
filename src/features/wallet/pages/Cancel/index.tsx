@@ -244,7 +244,7 @@ export const CancelTransaction = ({ history }: RouteComponentProps) => {
                   mt={2}
                   defaultValue={feeMultiplier[feeSpeedValue] * gasLimit}
                   step={(feeMultiplier[feeSpeedValue] * fee.gasLimit) / 100}
-                  onChange={(str, val) => setValue('maxPriorityFee', val)}
+                  onChange={(_, val) => setValue('maxPriorityFee', val)}
                   value={gasLimit}
                 >
                   <NumberInputField />
@@ -271,7 +271,7 @@ export const CancelTransaction = ({ history }: RouteComponentProps) => {
                   defaultValue={feeMultiplier[feeSpeedValue] * maxPriorityFee}
                   step={(feeMultiplier[feeSpeedValue] * maxPriorityFee) / 100}
                   value={maxPriorityFee}
-                  onChange={(str, val) => setValue('maxPriorityFee', val)}
+                  onChange={(_, val) => setValue('maxPriorityFee', val)}
                   position='relative'
                   _after={{
                     content: `"${toFiat(
@@ -307,7 +307,7 @@ export const CancelTransaction = ({ history }: RouteComponentProps) => {
                   defaultValue={feeMultiplier[feeSpeedValue] * maxFee}
                   step={(feeMultiplier[feeSpeedValue] * maxFee) / 100}
                   value={maxFee}
-                  onChange={(str, val) => setValue('maxFee', val)}
+                  onChange={(_, val) => setValue('maxFee', val)}
                   position='relative'
                   _after={{
                     content: `"${toFiat(
