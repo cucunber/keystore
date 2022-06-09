@@ -42,6 +42,16 @@ export const mockStore: ReduxState = {
       ids: [],
     },
   },
+  profile: {
+    user: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      level: 0,
+      is2FAEnabled: false,
+    },
+  },
   accountSpecifiers: {
     accountSpecifiers: [],
   },

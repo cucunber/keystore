@@ -4,7 +4,7 @@ import { Text } from 'components/Text'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { useTimer } from 'hooks/useTimer'
 export const RecoverPasswordWaiting = () => {
-  const { start, seconds, formate } = useTimer({ timer: 300 })
+  const { start, seconds, formate } = useTimer({ timer: 300, id: 'recover-password' })
 
   const resendDisabled = useMemo(() => seconds !== 0, [seconds])
   const {

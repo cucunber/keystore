@@ -171,6 +171,42 @@
       }    
     }
   },
+  "profile": {
+    "changePassword": {
+      "title": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "saveChanges": "Save Changes"
+    },
+    "securitySettings": {
+      "title": "Security Settings",
+      "keepSign": "Keep me signed in",
+      "changePassword": "Change password",
+      "twoFactorAuth": "Two-Factor Authentication",
+      "enable2FA": "Enable 2FA",
+      "disable2FA": "Disable 2FA"
+    },
+    "enable2FA": {
+      "title": "Scan this code with your authenticator App",
+      "subtitle": "Link your Authenticator app to your Yiled Guru account by scanning the code below. When you’re done, press the next button to continue.",
+      "orEnterCode": "Or enter this code manually.",
+      "next": "Next"
+    },
+    "enterVerificationCode": {
+      "titleEnable": "Enter Verification Code",
+      "subtitleEnable": "Enter the verification code from your Authenticator app.",
+      "titleDisable": "Check Your Inbox",
+      "subtitleDisable": "We have sent a confirmation code to %{email}. Enter the code below to confirm that you want to disable two-factor authentication for your Yield Guru account.",
+      "confirm": "Confirm"
+    },
+    "enterVerificationSuccess": {
+      "success": "Success",
+      "subtitleEnabled": "Your Two-factor authentication is now enabled.",
+      "subtitleDisabled": "Your Two-factor authentication is now disabled.",
+      "done": "Done"
+    }
+  },
   "dashboard": {
     "portfolio": {
       "addAsset": "Add Asset",

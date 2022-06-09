@@ -6,29 +6,30 @@ import {
   ModalHeader,
   PinInput,
   PinInputField,
-  Text as ChakraText,
   useMediaQuery,
 } from '@chakra-ui/react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
-import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
+import { useProfile } from 'hooks/useProfile/useProfile'
 import { useTimer } from 'hooks/useTimer'
+import { selectProfile } from 'state/slices/selectors'
+import { useAppSelector } from 'state/store'
 import { breakpoints } from 'theme/theme'
 
-import { AuthorizationActions } from '../AuthorizationActionTypes'
-export const VerifyPhone = ({ history }: RouteComponentProps) => {
-  const { start, seconds, formate } = useTimer({ timer: 300, id: 'verify-phone' })
+import { ProfileActions } from '../ProfileActionTypes'
+
+export const EnterVerificationCode = ({ history }: RouteComponentProps) => {
+  const { user } = useAppSelector(state => selectProfile(state))
+  const { start, seconds, formate, finish } = useTimer({
+    timer: 300,
+    id: user.is2FAEnabled ? 'disable-verification' : 'enable-verification',
+  })
+  const { dispatch } = useProfile()
 
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
 
   const resendDisabled = useMemo(() => seconds !== 0, [seconds])
-  const {
-    state: {
-      accessoryInfo: { phone },
-    },
-    dispatch,
-  } = useAuthorization()
 
   const [pinValue, setPinValue] = useState('')
 
@@ -46,49 +47,44 @@ export const VerifyPhone = ({ history }: RouteComponentProps) => {
   }, [formate, seconds])
 
   useEffect(() => {
-    if (pinValue.length === 4) {
-      dispatch({ type: AuthorizationActions.SET_SHOW_BACK_BUTTON, payload: false })
-      history.push('/verify-phone/waiting')
+    if (pinValue.length === 5) {
+      dispatch({ type: ProfileActions.SET_SHOW_BACK_BUTTON, payload: false })
+      history.push('/enter-verification/success')
+      finish()
     }
-  }, [dispatch, history, pinValue.length])
-
+  }, [dispatch, finish, history, pinValue.length])
   return (
     <>
       <ModalHeader textAlign='center'>
         <Text
-          color='keystoreNeutral.200'
-          size='50px'
+          color='slate.200'
+          size='30px'
           fontWeight='extrabold'
-          translation='authorization.verifyMobile.title'
+          translation={
+            user.is2FAEnabled
+              ? ['profile.enterVerificationCode.titleDisable', { email: user.email }]
+              : 'profile.enterVerificationCode.titleEnable'
+          }
         />
       </ModalHeader>
-      <ModalBody>
+      <ModalBody alignItems='center' justifyContent='center' textAlign='center' pt={0} px={0}>
         <Text
-          textAlign='center'
-          width='95%'
-          translation='authorization.verifyMobile.subtitle'
-          margin='0 auto'
-          color='keystore.200'
-          fontWeight='medium'
-          size='lg'
-        />
-        <ChakraText textAlign='center' color='keystore.200' fontWeight='bold' size='lg'>
-          {phone}
-        </ChakraText>
-        <Text
-          textAlign='center'
-          width='95%'
-          translation='authorization.verifyMobile.enterCode'
-          margin='0 auto'
-          color='keystore.200'
-          fontWeight='medium'
-          size='lg'
-          mt={4}
-          mb={4}
+          color='keystoneNeutral.200'
+          size='18px'
+          fontWeight='bold'
+          translation={
+            user.is2FAEnabled
+              ? ['profile.enterVerificationCode.subtitleDisable', { email: user.email }]
+              : 'profile.enterVerificationCode.subtitleEnable'
+          }
         />
         <Flex alignItems='center' justifyContent='center'>
           <HStack>
             <PinInput value={pinValue} onChange={setPinValue} placeholder='' variant='filled'>
+              <PinInputField
+                minWidth={isLargerThanMd ? '70px' : '50px'}
+                height={isLargerThanMd ? '70px' : '50px'}
+              />
               <PinInputField
                 minWidth={isLargerThanMd ? '70px' : '50px'}
                 height={isLargerThanMd ? '70px' : '50px'}
