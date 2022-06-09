@@ -8,6 +8,7 @@ export type StepProps = {
   title: ReactNode
   subtitle: ReactNode
   hasButton: boolean
+  level: number
   buttonTitle?: string
   buttonSubtitle?: string
   isButtonEnabled?: boolean
@@ -18,6 +19,7 @@ export const Step = ({
   title,
   subtitle,
   hasButton,
+  level,
   buttonTitle,
   buttonSubtitle,
   isButtonEnabled,
@@ -26,9 +28,9 @@ export const Step = ({
   const handleCompleteClick = useCallback(() => {
     profileDispatch({
       type: ProfileActions.SET_PROFILE_MODAL,
-      payload: { modal: true, route: '/level-verification1' },
+      payload: { modal: true, route: `/level-verification${level}` },
     })
-  }, [profileDispatch])
+  }, [level, profileDispatch])
   return (
     <Flex alignItems='flex-start'>
       {icon}

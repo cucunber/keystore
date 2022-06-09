@@ -34,7 +34,14 @@ export const EditDetails = ({ history }: RouteComponentProps) => {
   const { dispatch: profileDispatch } = useProfile()
   const { user } = useAppSelector(state => selectProfile(state))
   const translate = useTranslate()
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      phone: user.phone,
+    },
+  })
   const handleUpdateUser = (data: FieldValues) => {
     dispatch(
       profileSlice.actions.updateUser({

@@ -5,7 +5,7 @@ import { getStepIcon, getStepLabel, getStepSubtitle } from './helpers'
 
 export type StepConfig = {
   label: string
-  isCompleted?: boolean
+  isCompleted: string
   step: number
   subtitle: string
   buttonSubtitle?: string
@@ -27,7 +27,8 @@ export const Levels = ({ activeStep, steps }: LevelsProps) => {
           buttonTitle={step.label}
           buttonSubtitle={step.buttonSubtitle}
           isButtonEnabled={step.step === activeStep}
-          hasButton={!step.isCompleted}
+          hasButton={step.isCompleted !== 'Complete'}
+          level={step.step}
         />
       ))}
     </VStack>

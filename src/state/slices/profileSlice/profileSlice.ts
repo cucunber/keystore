@@ -13,7 +13,7 @@ export const profile = createSlice({
       return { ...state, ...payload }
     },
     updateUser: (state, { payload }: { payload: User }) => {
-      return { ...state, ...payload }
+      return { ...state, user: { ...payload } }
     },
   },
 })

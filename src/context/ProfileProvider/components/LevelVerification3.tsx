@@ -4,19 +4,30 @@ import { useCallback } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
+import { profile as profileSlice } from 'state/slices/profileSlice/profileSlice'
+import { selectProfile } from 'state/slices/selectors'
+import { useAppDispatch, useAppSelector } from 'state/store'
 import { breakpoints } from 'theme/theme'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
 export const LevelVerification3 = ({ history }: RouteComponentProps) => {
+  const dispatch = useAppDispatch()
+  const { user } = useAppSelector(state => selectProfile(state))
   const { dispatch: profileDispatch } = useProfile()
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
   const onDoneClickHandler = useCallback(() => {
+    dispatch(
+      profileSlice.actions.updateUser({
+        ...user,
+        level: 3,
+      }),
+    )
     profileDispatch({
       type: ProfileActions.SET_PROFILE_MODAL,
       payload: { modal: false, route: '' },
     })
-  }, [profileDispatch])
+  }, [dispatch, profileDispatch, user])
   return (
     <>
       <ModalHeader textAlign='center'>
