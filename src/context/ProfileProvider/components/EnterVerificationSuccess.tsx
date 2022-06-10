@@ -1,5 +1,7 @@
 import { Button, Flex, ModalBody, ModalHeader, useMediaQuery } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/toast'
 import { useCallback } from 'react'
+import { useTranslate } from 'react-polyglot'
 import { SuccessCheckIcon } from 'components/Icons/SuccessCheck'
 import { Text } from 'components/Text'
 import { useProfile } from 'hooks/useProfile/useProfile'
@@ -13,9 +15,21 @@ import { ProfileActions } from '../ProfileActionTypes'
 export const EnterVerificationSuccess = () => {
   const dispatch = useAppDispatch()
   const { dispatch: profileDispatch } = useProfile()
+  const toast = useToast()
+  const translate = useTranslate()
   const { user } = useAppSelector(state => selectProfile(state))
   const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints['md']})`)
   const onDoneClickHandler = useCallback(() => {
+    toast({
+      title: translate('common.success'),
+      description: translate(
+        user.is2FAEnabled
+          ? 'profile.enterVerificationSuccess.subtitleDisabled'
+          : 'profile.enterVerificationSuccess.subtitleEnabled',
+      ),
+      status: 'success',
+      isClosable: true,
+    })
     dispatch(
       profileSlice.actions.updateUser({
         ...user,
@@ -26,7 +40,7 @@ export const EnterVerificationSuccess = () => {
       type: ProfileActions.SET_PROFILE_MODAL,
       payload: { modal: false, route: '' },
     })
-  }, [dispatch, profileDispatch, user])
+  }, [dispatch, profileDispatch, toast, translate, user])
   return (
     <>
       <ModalHeader textAlign='center'>

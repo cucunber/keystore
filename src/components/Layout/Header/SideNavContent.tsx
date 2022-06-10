@@ -65,7 +65,7 @@ export const SideNavContent = ({ onClose }: HeaderContentProps) => {
           size='sm'
           icon={<ChevronRightIcon transform={`rotate(${isSideBarActive ? 180 : 0}deg)`} />}
           position='absolute'
-          right={-4}
+          right={-3}
           top={1}
           variant='solid'
         />
