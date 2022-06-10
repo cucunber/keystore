@@ -6,7 +6,7 @@ import { useProfile } from 'hooks/useProfile/useProfile'
 
 import { ProfileActions } from '../ProfileActionTypes'
 
-const textCode = 'XBE-7B9-10A7'
+const textCode = 'KYS-7B9-10A7'
 
 export const Enable2FA = ({ history }: RouteComponentProps) => {
   const { dispatch: profileDispatch } = useProfile()

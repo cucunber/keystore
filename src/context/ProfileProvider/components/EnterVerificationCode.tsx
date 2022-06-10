@@ -47,12 +47,12 @@ export const EnterVerificationCode = ({ history }: RouteComponentProps) => {
   }, [formate, seconds])
 
   useEffect(() => {
-    if (pinValue.length === 5) {
+    if (pinValue.length === (user.is2FAEnabled ? 6 : 5)) {
       dispatch({ type: ProfileActions.SET_SHOW_BACK_BUTTON, payload: false })
       history.push('/enter-verification/success')
       finish()
     }
-  }, [dispatch, finish, history, pinValue.length])
+  }, [dispatch, finish, history, pinValue.length, user.is2FAEnabled])
   return (
     <>
       <ModalHeader textAlign='center'>
@@ -101,6 +101,12 @@ export const EnterVerificationCode = ({ history }: RouteComponentProps) => {
                 minWidth={isLargerThanMd ? '70px' : '50px'}
                 height={isLargerThanMd ? '70px' : '50px'}
               />
+              {user.is2FAEnabled && (
+                <PinInputField
+                  minWidth={isLargerThanMd ? '70px' : '50px'}
+                  height={isLargerThanMd ? '70px' : '50px'}
+                />
+              )}
             </PinInput>
           </HStack>
         </Flex>
