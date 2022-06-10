@@ -62,6 +62,12 @@
     "skip": "Skip",
     "generalError": "An error has occured"
   },
+  "completeProfile": {
+    "title": "Complete your profile",
+    "subtitle": "In order to start trading with Keystore you will need to complete a verification of your profile.",
+    "completeProfile": "Complete Profile",
+    "enable2FA": "Enable 2FA"
+  },
   "updateToast": {
     "body": "A new version of the app is available",
     "cta": "Reload App",
