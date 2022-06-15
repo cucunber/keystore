@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { initialState, Profile, User } from './profileSliceCommon'
+import { initialState, NotificationPayload, Profile, User } from './profileSliceCommon'
 
 export const profile = createSlice({
   name: 'profile',
@@ -14,6 +14,13 @@ export const profile = createSlice({
     },
     updateUser: (state, { payload }: { payload: User }) => {
       return { ...state, user: { ...payload } }
+    },
+    updateNotifications: (state, { payload }: { payload: NotificationPayload }) => {
+      const { notifications, shouldConcat } = payload
+      return {
+        ...state,
+        notifications: shouldConcat ? [...state.notifications] : notifications,
+      }
     },
   },
 })
