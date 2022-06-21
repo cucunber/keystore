@@ -13,6 +13,7 @@ import {
 import { useCallback, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { FoxIcon } from 'components/Icons/FoxIcon'
+import { Notification } from 'components/Notification'
 import { Text } from 'components/Text'
 import { WalletActions } from 'context/WalletProvider/actions'
 import { DemoConfig } from 'context/WalletProvider/DemoWallet/config'
@@ -79,7 +80,7 @@ export const Header = () => {
           </Box>
         )}
         <HStack height='4.5rem' width='full' px={4} borderBottomWidth={1} borderColor={borderColor}>
-          <Box flex={1} display={{ base: 'block', md: 'none' }}>
+          <Box flex={{ base: 0, md: 1 }} display={{ base: 'block', md: 'none' }}>
             <IconButton
               aria-label='Open menu'
               variant='ghost'
@@ -87,12 +88,12 @@ export const Header = () => {
               icon={<HamburgerIcon />}
             />
           </Box>
-          <Flex justifyContent={{ base: 'center', md: 'flex-start' }}>
-            <Box position='relative' mr={{ base: 0, md: 8 }} minWidth={16}>
+          <Flex flex={{ base: 1, md: 0 }} justifyContent={{ base: 'center', md: 'flex-start' }}>
+            <Flex justifyContent='center' position='relative' mr={{ base: 0, md: 8 }} minWidth={16}>
               <Link style={{ width: '100%', display: 'inline-block' }} to='/'>
                 <FoxIcon style={{ width: '100%' }} boxSize='7' />
               </Link>
-            </Box>
+            </Flex>
           </Flex>
           <HStack
             width='100%'
@@ -102,12 +103,13 @@ export const Header = () => {
           >
             <AutoCompleteSearch />
           </HStack>
-          <Flex justifyContent='flex-end' flex={1}>
-            <Box
-              display={{ base: 'none', md: 'block' }}
-              mr={{ base: 0, md: 4 }}
-              mb={{ base: 4, md: 0 }}
-            >
+          <Notification />
+          <Flex
+            justifyContent='flex-end'
+            flex={{ base: 0 }}
+            display={{ base: 'none', md: 'inline-flex' }}
+          >
+            <Box mr={{ base: 0, md: 4 }} mb={{ base: 4, md: 0 }}>
               <FiatRamps />
             </Box>
             <Box display={{ base: 'none', md: 'block' }}>

@@ -21,6 +21,7 @@ import { useTranslate } from 'react-polyglot'
 import { RouteComponentProps } from 'react-router'
 import { object, ref, string } from 'yup'
 import { Text } from 'components/Text'
+import { FriendlyCaptcha } from 'context/WalletProvider/NativeWallet/components/Captcha'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { breakpoints } from 'theme/theme'
 
@@ -45,12 +46,15 @@ const registerValidator = object().shape({
   confirm: string()
     .required()
     .oneOf([ref('password')]),
+  captchaKey: string().required(),
 })
 
 export const Register = ({ history }: RouteComponentProps) => {
   const {
     register,
     handleSubmit,
+    setValue,
+    watch,
     formState: { isValid },
   } = useForm({
     mode: 'onChange',
@@ -62,6 +66,8 @@ export const Register = ({ history }: RouteComponentProps) => {
   const [showConf, setShowConf] = useState(false)
 
   const { dispatch } = useAuthorization()
+
+  const captchaKey = watch('captchaKey')
 
   const translate = useTranslate()
 
@@ -266,7 +272,12 @@ export const Register = ({ history }: RouteComponentProps) => {
             </InputRightElement>
           </InputGroup>
         </Box>
-        <Box>Captcha</Box>
+        <Box>
+          <FriendlyCaptcha
+            solution={captchaKey}
+            handleCaptcha={captcha => setValue('captchaKey', captcha)}
+          />
+        </Box>
         <Stack
           mt={8}
           direction={{ md: 'row', base: 'column' }}

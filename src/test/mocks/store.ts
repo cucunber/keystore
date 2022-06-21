@@ -51,6 +51,7 @@ export const mockStore: ReduxState = {
       level: 0,
       is2FAEnabled: false,
     },
+    notifications: [],
   },
   accountSpecifiers: {
     accountSpecifiers: [],

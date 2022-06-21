@@ -18,6 +18,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useTranslate } from 'react-polyglot'
 import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
+import { FriendlyCaptcha } from 'context/WalletProvider/NativeWallet/components/Captcha'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { useWallet } from 'hooks/useWallet/useWallet'
 
@@ -25,12 +26,21 @@ import { AuthorizationActions } from '../AuthorizationActionTypes'
 
 export const SignIn = ({ history }: RouteComponentProps) => {
   const {
+    watch,
     register,
+    setValue,
     formState: { isValid },
   } = useForm({
     mode: 'onChange',
     reValidateMode: 'onBlur',
+    defaultValues: {
+      email: '',
+      password: '',
+      captchaKey: '',
+    },
   })
+
+  const captchaKey = watch('captchaKey')
 
   const [showPw, setShowPw] = useState(false)
 
@@ -104,7 +114,10 @@ export const SignIn = ({ history }: RouteComponentProps) => {
           </InputGroup>
         </Box>
         <Flex mt={6} mb={6}>
-          <Box>Captcha</Box>
+          <FriendlyCaptcha
+            solution={captchaKey}
+            handleCaptcha={captcha => setValue('captchaKey', captcha)}
+          />
         </Flex>
         <Flex justifyContent='center'>
           <Button

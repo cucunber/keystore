@@ -32,6 +32,7 @@ const commonColors = {
   },
   orange: '#FFAC30',
   keystore: {
+    50: '#F8FAFC',
     150: '#CDD5DF',
     200: '#748094',
     white: '#FFFFFF',
@@ -94,7 +95,12 @@ export const brand = {
     linear-gradient(0deg,${commonColors.keystorePrimarySlate[200]},${commonColors.keystorePrimarySlate[200]})`,
 }
 
+export const notifications = {
+  notificationsShadow: '0px 5px 10px rgba(0, 0, 0, 0.15)',
+}
+
 export const colors = {
   ...commonColors,
   ...brand,
+  ...notifications,
 }
