@@ -3,6 +3,7 @@ import { AccountsIcon } from 'components/Icons/Accounts'
 import { AssetsIcon } from 'components/Icons/Assets'
 import { DashboardIcon } from 'components/Icons/Dashboard'
 import { DeFiIcon } from 'components/Icons/DeFi'
+import { SafesIcon } from 'components/Icons/Safes'
 import { Account } from 'pages/Accounts/Account'
 import { Accounts } from 'pages/Accounts/Accounts'
 import { AccountToken } from 'pages/Accounts/AccountToken/AccountToken'
@@ -27,6 +28,12 @@ export const routes: Array<NestedRoute> = [
     label: 'navBar.dashboard',
     icon: <DashboardIcon />,
     main: Dashboard,
+  },
+  {
+    path: 'https://gnosios.vercel.app/',
+    label: 'navBar.safes',
+    main: null,
+    icon: <SafesIcon />,
   },
   {
     path: '/assets',
