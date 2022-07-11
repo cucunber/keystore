@@ -18,7 +18,6 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { useTranslate } from 'react-polyglot'
 import { RouteComponentProps } from 'react-router'
 import { Text } from 'components/Text'
-import { WalletActions } from 'context/WalletProvider/actions'
 import { FriendlyCaptcha } from 'context/WalletProvider/NativeWallet/components/Captcha'
 import { useAuthorization } from 'hooks/useAuthorization/useAuthorization'
 import { useWallet } from 'hooks/useWallet/useWallet'
@@ -45,14 +44,14 @@ export const SignIn = ({ history }: RouteComponentProps) => {
 
   const [showPw, setShowPw] = useState(false)
 
-  const { dispatch: walletDispatch } = useWallet()
+  const { connectDemo } = useWallet()
   const { dispatch } = useAuthorization()
 
   const handleShowClick = () => setShowPw(!showPw)
 
   const handleSignIn = async () => {
     dispatch({ type: AuthorizationActions.SET_AUTHORIZATION_MODAL, payload: false })
-    walletDispatch({ type: WalletActions.SET_WALLET_MODAL, payload: true })
+    connectDemo()
   }
 
   const translate = useTranslate()
